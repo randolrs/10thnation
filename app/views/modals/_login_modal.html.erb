@@ -1,0 +1,20 @@
+<div class="modal-container full" id="login-form">
+
+	<span class="dismiss-modal">+</span>
+
+	<div class="modal-content full">
+
+    <h3>10th</h3>
+
+    <%= form_for(:user, :url => session_path(:user)) do |f| %>
+	  <%= f.text_field :email, placeholder: "Email", autofocus: true %><br>
+	  <%= f.password_field :password, placeholder: "Password" %><br>
+	  <%= f.submit 'Login' %>
+	  <%= link_to "Forgot your password?", new_password_path(:user) %>
+	<% end %>
+
+  </div>
+
+
+</div>
+

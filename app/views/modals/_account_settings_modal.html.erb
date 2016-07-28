@@ -1,0 +1,109 @@
+<div class="modal-container full" id="settings">
+
+	<span class="dismiss-modal">+</span>
+
+  <div class="modal-content full">
+
+  	<h4>Account Settings</h4>
+
+	<div class="horizontal-sub-nav">
+
+		<ul>
+
+			<li><a class="option-item active" id="basic-option"><span>Basic Info</span></a></li>
+			<li><a class="option-item middle"  id="payment-option"><span>Payments</span></a></li>
+			<li><a class="option-item" id="cancel-option"><span>Cancel Account</span></a></li>
+
+		</ul>
+
+	</div>
+
+    <%= form_for(current_user, url: registration_path(current_user), html: { id: "basic", method: :put, class: "modal-form" }) do |f| %>
+
+    	<div class="main-form">
+
+	    	<div class="form-section">
+				<h5>Email</h5>
+				<%= f.email_field :email, autofocus: true %>
+			</div>
+
+			<div class="form-section">
+				<h5>Display Name</h5>
+				<%= f.text_field :display_name %>
+			</div>
+
+			<div class="form-section">
+				
+				<h5>Profile Picture</h5>
+
+				<%= image_tag current_user.image.url(:medium) %>
+
+				<%= f.file_field :image, class: "form-control" %>
+
+			</div>
+
+			<div class="form-section centered">
+				<a class="modal-form-submit update-profile">Update Profile</a>
+			</div>
+
+		</div>
+
+		<div class="confirm-form">
+
+			<div class="form-section centered current-password">
+				<%= f.password_field :current_password, autofocus: "on", placeholder: "Confirm Your Password" %>
+			</div>
+
+			<div class="form-section centered">
+				<%= f.submit "Confirm", class: "modal-form-submit" %>
+			</div>
+
+		</div>
+
+	<% end %>
+
+	<%= form_for(current_user, as: :user, url: edit_registration_path(current_user), html: { id: "payments", method: :put, class: "modal-form" }) do |f| %>
+
+		<div class="main-form">
+
+	    	<div class="form-section">
+				<h5>Card Number</h5>
+				<%= f.email_field :email, autofocus: true %>
+			</div>
+
+			<div class="form-section">
+				<h5>Expiration Date</h5>
+				<%= f.text_field :display_name %>
+			</div>
+
+			<div class="form-section centered">
+				<a class="modal-form-submit update-profile">Update Payment Information</a>
+			</div>
+
+		</div>
+
+		<div class="confirm-form">
+
+			<div class="form-section centered current-password">
+				<%= f.password_field :current_password, autofocus: "on", placeholder: "Confirm Your Password" %>
+			</div>
+
+			<div class="form-section centered">
+				<%= f.submit "Confirm", class: "modal-form-submit" %>
+			</div>
+
+		</div>
+
+	<% end %>
+
+	<div id="cancel-account">
+
+		<%= button_to "Cancel My Account", registration_path(current_user), data: { confirm: "Are you sure?" }, method: :delete, class: "cancel-account-button" %>
+
+	</div>
+
+  </div>
+
+
+</div>
+
