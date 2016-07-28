@@ -1,0 +1,425 @@
+// Place all the styles related to the pages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.modal-container{
+	position: fixed;
+	left:0;
+	right:0;
+	top:0px;
+	bottom:0px;
+	height:100%;
+	width:100%;
+    background: rgba(255, 185, 65, 0.7);
+    display:none;
+    vertical-overflow:hidden;
+    z-index: 999999;
+
+}
+
+.modal-content{
+	max-width:500px;
+	width:100%;
+	margin:0 auto;
+	z-index: 100;
+	background: #000;
+	top:20px;
+	position:relative;
+
+    box-shadow: inset 0px 2px 5px #333;
+    border-radius: 5px;
+    border: 1px solid #000;
+
+    h3{
+   
+        color:#eee;
+        background: #000;
+        box-shadow: inset 0px 2px 5px #333;
+        padding: 10px 15px;
+        border-radius: 5px 5px 0px 0px;
+        text-align:center;
+        font-weight: 400;
+        text-shadow: 0px 2px 0px #000;
+        font-size: 30px;
+
+    }
+
+    form{
+        padding: 20px;
+    }
+
+
+}
+
+.modal-container.full{
+    position: fixed;
+    left:0;
+    right:0;
+    top:0px;
+    bottom:0px;
+    height:100%;
+    width:100%;
+    background:rgba(0,0,0,.95);
+    display:none;
+    vertical-overflow:hidden;
+    z-index: 999999;
+
+}
+
+.modal-content.full{
+    max-width:500px;
+    width:100%;
+    margin:0 auto;
+    z-index: 100;
+    background: #000;
+    top: 40px;
+    position:relative;
+
+    box-shadow: 0px 0px 20px #333;
+    border-radius: 5px;
+    border: 2px solid #FF6400;
+
+    ::-webkit-input-placeholder {
+        color: #ccc;
+    }
+
+    :-moz-placeholder { /* Firefox 18- */
+       color: #ccc;  
+    }
+
+    ::-moz-placeholder {  /* Firefox 19+ */
+       color: #ccc;  
+    }
+
+    :-ms-input-placeholder {  
+       color: #ccc;  
+    }
+
+    h3{
+   
+        color:#FFB840;
+        background: #000;
+        box-shadow: none;
+        padding: 10px 15px;
+        border-radius: 5px 5px 0px 0px;
+        text-align:center;
+        font-weight: 400;
+        text-shadow: 0px 2px 1px #333;
+        font-size: 60px;
+
+    }
+
+    h4{
+   
+        color:#FFB840;
+        background: #000;
+        box-shadow: none;
+        padding: 10px 15px;
+        border-radius: 5px 5px 0px 0px;
+        text-align:center;
+        font-weight: 400;
+        text-shadow: 0px 2px 0px #000;
+        font-size: 40px;
+
+    }
+
+    form{
+        padding: 20px;
+
+        input{
+            margin: 0 auto;
+            display: block;
+
+            padding: 10px 0px;
+            max-width: 400px;
+            width: 100%;
+            background: none;
+            font-size: 24px;
+            color: #eee;
+            text-indent: 5px;
+       
+
+            outline: none;
+            border:none;
+            border-bottom: 2px solid rgba(0,0,0,0);
+        }
+
+        input#track_price{
+            max-width:100px;
+            text-align:center;
+            color: #59EA3A;
+        }
+
+        input:focus{
+            outline: none;
+            border:none;
+            border-bottom: 2px solid #437dd4;
+        }
+
+        input[type="submit"]{
+
+            text-shadow: 0px 1px 2px #222;
+            background-color: #0F4DA8;
+            background-image: -webkit-gradient(linear, left top, left bottom, from(#437dd4), to(#0f4da8));
+            background-image: -webkit-linear-gradient(top, #437dd4, #0f4da8);
+            background-image: -moz-linear-gradient(top, #437dd4, #0f4da8);
+            background-image: -ms-linear-gradient(top, #437dd4, #0f4da8);
+            background-image: -o-linear-gradient(top, #437dd4, #0f4da8);
+            background-image: linear-gradient(top, #437dd4, #0f4da8);
+            border: 1px solid rgba(0, 0, 0, 0.5);
+            box-shadow: inset 0px 1px 3px 0px #ccc;
+            color: #eee;
+        }
+
+        input[type="submit"]:hover{
+
+            cursor: pointer;
+        }
+    }
+
+
+}
+
+span.dismiss-modal{
+    border: 0;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+    position: absolute;
+    right: 0px;
+    top: -40px;
+    font-size: 36px;
+    font-weight: 400;
+    color: #ccc;
+    margin-top: 30px;
+    text-shadow: 0px 2px 1px #000;
+}
+
+span.dismiss-modal:hover{
+    cursor:pointer;
+    text-decoration:none;
+    webkit-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+
+}
+
+
+.horizontal-sub-nav{
+
+    z-index: 109999;
+
+    ul{
+
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        display: inline-table;
+        width: 100%;
+
+
+        li{
+
+            display: table-cell;
+            text-align: center;
+            width:196px;
+
+            a{
+
+                display: block;
+                padding: 10px 0px;
+                box-shadow: inset 0px 2px 3px #333;
+                box-shadow: 0px 2px 2px #000;
+                background: #222;
+                border-top: 2px solid #111;
+
+            }
+
+            a.middle{
+                border-left: 2px solid #111;
+                border-right: 2px solid #111;
+            }
+
+            a.active, a.active:hover{
+
+                background: #000;
+                color: #FFB840;
+                font-weight: 600;
+                border-top: 2px solid #FFB840;
+                box-shadow: none;
+                border-bottom: none;
+                cursor: default;
+
+
+            }
+
+            a:hover{
+
+                cursor: pointer;
+                box-shadow: none;
+                background: #111;
+                border-bottom: none;
+
+
+            }
+
+
+        }
+
+    }
+}
+
+form#payments{
+    display: none;
+}
+
+.modal-form{
+    
+    .form-section{
+        padding: 3px 0px;
+
+        h5{
+            color: #FFB840;
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+
+        img{
+            height: 100px;
+            width: 100px;
+            border-radius: 100px;
+            border: 2px solid #eee;
+        }
+
+        img:hover{
+            cursor: pointer;
+        }
+    }
+
+    .form-section.centered{
+        text-align: center;
+    }
+
+    input[type="email"], input[type="text"]{
+        
+        width: 100%;
+        font-size: 18px;
+        background: none;
+        color: #eee;
+        font-weight: 400;
+        border-bottom: 1px solid #000;
+        border: none;
+        padding: 5px 0px;
+    }
+
+    input[type="password"]{
+        
+        width: 50%;
+        font-size: 18px;
+        background: none;
+        color: #fff;
+        font-weight: 400;
+        padding: 10px 0px;
+        text-align:center;
+        border-radius: 3px;
+        border: 2px solid #fff;
+    }
+
+    input[type="password"]:focus{
+        
+        outline:none;
+        border: 2px solid #000;
+        background: #fff;
+        color: #111;
+    }
+
+    input[type="email"]:focus, input[type="text"]:focus{
+        
+        outline:none;
+        border-bottom: 1px solid #FFB840;
+    }
+
+    input[type="file"]{
+        position: absolute;
+        left: 20px;
+        width: 100px;
+        height: 100px;
+        opacity: 0;
+    }
+
+    input[type="file"]:hover{
+        cursor: pointer;
+    }
+}
+
+.modal-form-submit{
+    width: 50%;
+    display:block;
+    margin: 0 auto;
+    padding: 10px 0px;
+    border: none;
+    outline: none;
+    font-size: 20px;
+
+    text-align: center;
+
+    color: #fff;
+    text-shadow: 0px 1px 2px #222;
+    background-color: #0F4DA8;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#437dd4), to(#0f4da8));
+    background-image: -webkit-linear-gradient(top, #437dd4, #0f4da8);
+    background-image: -moz-linear-gradient(top, #437dd4, #0f4da8);
+    background-image: -ms-linear-gradient(top, #437dd4, #0f4da8);
+    background-image: -o-linear-gradient(top, #437dd4, #0f4da8);
+    background-image: linear-gradient(top, #437dd4, #0f4da8);
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    box-shadow: inset 0px 1px 3px 0px #ccc;
+    border-radius: 30px;
+}
+
+.modal-form-submit:hover{
+    cursor:pointer;
+}
+
+.current-password{
+    dispaly: none;
+}
+
+.confirm-form{
+    display: none;
+}
+
+#cancel-account{
+    display: none;
+}
+
+.cancel-account-button{
+
+    width: 50%;
+    display:block;
+    margin: 0 auto;
+    padding: 10px 0px;
+    border: none;
+    outline: none;
+    font-size: 20px;
+
+    text-align: center;
+
+    color: #fff;
+    text-shadow: 0px 1px 2px #222;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#FF3116), to(#A8200F));
+    background-image: -webkit-linear-gradient(top, #FF3116, #A8200F);
+    background-image: -moz-linear-gradient(top, #FF3116, #A8200F);
+    background-image: -ms-linear-gradient(top, #FF3116, #A8200F);
+    background-image: -o-linear-gradient(top, #FF3116, #A8200F);
+    background-image: linear-gradient(top, #FF3116, #A8200F);
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    box-shadow: inset 0px 1px 3px 0px #FF9999;
+    border-radius: 30px;
+    
+}
+
+.cancel-account-button:hover{
+
+    cursor: pointer;
+    
+}

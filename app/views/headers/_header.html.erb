@@ -1,0 +1,35 @@
+<div class="header-container">
+
+	<div class="header-center">
+
+		<ul class="header-left">
+
+			<li class="site-title"><%= link_to "10th", root_path, class: "site-title" %></li>
+
+			<li><%= link_to "Producers", producers_path, class: "first-item" %></li>
+
+		</ul>
+
+		<ul class="header-right">
+
+		<% unless user_signed_in? %>
+
+			<li><a class="login-modal-cta">Login</a></li>
+
+			<li><a class="join-modal-cta">Signup</a></li>
+
+		<%else%>
+
+			<li><a class="<% if @page == "balance" %> active <%end%>" href="<%= balance_path%>"><span><img></img></span>Balance: <span class="money-green-span">$20.00</span></a></li>
+
+			<li><a class="account-settings-modal">Account Settings</a></li>
+
+			<li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
+
+		<%end%>
+
+		</ul>
+
+	</div>
+
+</div>
