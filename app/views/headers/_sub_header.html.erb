@@ -1,0 +1,35 @@
+<div class="dashboard-header-container">
+
+	<div class="header-center">
+
+		<ul class="header-left">
+
+			<li><a class="<% if @page == "home" %> active <%end%>" href="<%= root_path %>">Home</a></li>
+
+			<% unless current_user.display_name == "" %><li><a class=" <% if @page == "profile" %> active <%end%>" href="<%= profile_page_path(current_user.display_name)%>">My Profile</a></li><%end%>
+
+			<li><a class="<% if @page == "requests" %> active <%end%>" href="<%= requests_path %>">Requests</a></li>
+
+		</ul>
+
+		<ul class="header-right">
+
+		<% unless user_signed_in? %>
+
+			<li><a class="login-modal-cta">Login</a></li>
+
+			<li><a class="join-modal-cta header-cta">Signup</a></li>
+
+		<%else%>
+
+
+			<li><a class="header-cta blue" id="upload-track-cta">Sell</a></li>
+			<li><a class="header-cta darkblue" id="upload-track-cta">Make Request</a></li>
+
+		<%end%>
+
+		</ul>
+
+	</div>
+
+</div>

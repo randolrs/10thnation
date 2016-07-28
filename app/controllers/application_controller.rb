@@ -26,9 +26,9 @@ class ApplicationController < ActionController::Base
 	
 		unless current_user.stripe_account_id
 
-			account = Stripe::Account.create({:country => "US", :managed => true})
+			#account = Stripe::Account.create({:country => "US", :managed => true})
 
-			current_user.update(:stripe_account_id => "")
+			#current_user.update(:stripe_account_id => "")
 
 
 
@@ -38,9 +38,10 @@ class ApplicationController < ActionController::Base
 
 
 	def configure_permitted_parameters
-	    registration_params = [:email, :display_name, :first_name, :last_name, :password, :image, :password, :password_confirmation]
-	    devise_parameter_sanitizer.for(:sign_up) { |u| u.permit(registration_params) }
-	    devise_parameter_sanitizer.for(:sign_in) { |u| u.permit(registration_params) }
-	    devise_parameter_sanitizer.for(:account_update) { |u| u.permit(registration_params) }
+	    
+	    registration_params = [:email, :display_name, :first_name, :last_name, :password, :password, :password_confirmation]
+	   
+    	devise_parameter_sanitizer.permit(:sign_up, keys: registration_params)
+
   	end
 end

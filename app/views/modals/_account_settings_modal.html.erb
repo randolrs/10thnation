@@ -18,83 +18,9 @@
 
 	</div>
 
-    <%= form_for(current_user, url: registration_path(current_user), html: { id: "basic", method: :put, class: "modal-form" }) do |f| %>
+<!--     #missing two forms here -->
 
-    	<div class="main-form">
 
-	    	<div class="form-section">
-				<h5>Email</h5>
-				<%= f.email_field :email, autofocus: true %>
-			</div>
-
-			<div class="form-section">
-				<h5>Display Name</h5>
-				<%= f.text_field :display_name %>
-			</div>
-
-			<div class="form-section">
-				
-				<h5>Profile Picture</h5>
-
-				<%= image_tag current_user.image.url(:medium) %>
-
-				<%= f.file_field :image, class: "form-control" %>
-
-			</div>
-
-			<div class="form-section centered">
-				<a class="modal-form-submit update-profile">Update Profile</a>
-			</div>
-
-		</div>
-
-		<div class="confirm-form">
-
-			<div class="form-section centered current-password">
-				<%= f.password_field :current_password, autofocus: "on", placeholder: "Confirm Your Password" %>
-			</div>
-
-			<div class="form-section centered">
-				<%= f.submit "Confirm", class: "modal-form-submit" %>
-			</div>
-
-		</div>
-
-	<% end %>
-
-	<%= form_for(current_user, as: :user, url: edit_registration_path(current_user), html: { id: "payments", method: :put, class: "modal-form" }) do |f| %>
-
-		<div class="main-form">
-
-	    	<div class="form-section">
-				<h5>Card Number</h5>
-				<%= f.email_field :email, autofocus: true %>
-			</div>
-
-			<div class="form-section">
-				<h5>Expiration Date</h5>
-				<%= f.text_field :display_name %>
-			</div>
-
-			<div class="form-section centered">
-				<a class="modal-form-submit update-profile">Update Payment Information</a>
-			</div>
-
-		</div>
-
-		<div class="confirm-form">
-
-			<div class="form-section centered current-password">
-				<%= f.password_field :current_password, autofocus: "on", placeholder: "Confirm Your Password" %>
-			</div>
-
-			<div class="form-section centered">
-				<%= f.submit "Confirm", class: "modal-form-submit" %>
-			</div>
-
-		</div>
-
-	<% end %>
 
 	<div id="cancel-account">
 
