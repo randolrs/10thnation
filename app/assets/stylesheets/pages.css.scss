@@ -24,7 +24,6 @@ body{
     	font-weight: 400;
     	line-height: 50px;
     	text-shadow: 0px 2px 0px #000;
-    	margin-bottom:10px;
 	}
 }
 
@@ -354,9 +353,17 @@ body{
     }
 
     h3{
-    	color: #FFA100;
     	font-size: 24px;
-    	letter-spacing: 1px;
+	    font-weight: 400;
+	    text-shadow: 0px 2px 0px #000;
+	    text-align: center;
+	    color: #FFA100;
+	    line-height: 50px;
+	    letter-spacing: 1px;
+	    background: #111;
+	    box-shadow: inset 0px 2px 5px #333;
+	    border: 1px solid #000;
+	    border-bottom: none;
     }
 
     h4{
