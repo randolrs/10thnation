@@ -1,0 +1,154 @@
+// Place all the styles related to the pages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.full-content-container{
+    position: fixed;
+    left:0;
+    right:0;
+    top:0px;
+    bottom:0px;
+    height:100%;
+    width:100%;
+    padding: 20px;
+    background:rgba(0,0,0,.95);
+    vertical-overflow:hidden;
+    z-index: 999999;
+
+}
+
+.full-content{
+    max-width:500px;
+    width:100%;
+    margin:0 auto;
+    z-index: 100;
+    background: #000;
+    top: 40px;
+    position:relative;
+
+    box-shadow: 0px 0px 20px #333;
+    border-radius: 5px;
+    border: 2px solid #FF6400;
+
+    ::-webkit-input-placeholder {
+        color: #ccc;
+    }
+
+    :-moz-placeholder { /* Firefox 18- */
+       color: #ccc;  
+    }
+
+    ::-moz-placeholder {  /* Firefox 19+ */
+       color: #ccc;  
+    }
+
+    :-ms-input-placeholder {  
+       color: #ccc;  
+    }
+
+    h3{
+   
+        color:#FFB840;
+        background: #000;
+        box-shadow: none;
+        padding: 10px 15px;
+        border-radius: 5px 5px 0px 0px;
+        text-align:center;
+        font-weight: 400;
+        text-shadow: 0px 2px 1px #333;
+        font-size: 60px;
+
+    }
+
+    h4{
+   
+        color:#FFB840;
+        background: #000;
+        box-shadow: none;
+        padding: 10px 15px;
+        border-radius: 5px 5px 0px 0px;
+        text-align:center;
+        font-weight: 400;
+        text-shadow: 0px 2px 0px #000;
+        font-size: 40px;
+
+    }
+
+    form{
+        padding: 20px;
+
+        input{
+            margin: 0 auto;
+            display: block;
+
+            padding: 10px 0px;
+            max-width: 400px;
+            width: 100%;
+            background: none;
+            font-size: 24px;
+            color: #eee;
+            text-indent: 5px;
+       
+
+            outline: none;
+            border:none;
+            border-bottom: 2px solid rgba(0,0,0,0);
+        }
+
+        input#track_price{
+            max-width:100px;
+            text-align:center;
+            color: #59EA3A;
+        }
+
+        input:focus{
+            outline: none;
+            border:none;
+            border-bottom: 2px solid #437dd4;
+        }
+
+        input[type="submit"]{
+
+            text-shadow: 0px 1px 2px #222;
+            background-color: #0F4DA8;
+            background-image: -webkit-gradient(linear, left top, left bottom, from(#437dd4), to(#0f4da8));
+            background-image: -webkit-linear-gradient(top, #437dd4, #0f4da8);
+            background-image: -moz-linear-gradient(top, #437dd4, #0f4da8);
+            background-image: -ms-linear-gradient(top, #437dd4, #0f4da8);
+            background-image: -o-linear-gradient(top, #437dd4, #0f4da8);
+            background-image: linear-gradient(top, #437dd4, #0f4da8);
+            border: 1px solid rgba(0, 0, 0, 0.5);
+            box-shadow: inset 0px 1px 3px 0px #ccc;
+            color: #eee;
+        }
+
+        input[type="submit"]:hover{
+
+            cursor: pointer;
+        }
+    }
+
+
+}
+
+a.dismiss-return{
+    border: 0;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+    position: absolute;
+    right: 0px;
+    top: -40px;
+    font-size: 36px;
+    font-weight: 400;
+    color: #ccc;
+    margin-top: 30px;
+    text-shadow: 0px 2px 1px #000;
+}
+
+a.dismiss-return:hover{
+    cursor:pointer;
+    text-decoration:none;
+    webkit-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+
+}
