@@ -8,12 +8,10 @@ ready = ->
 		
 		jQuery ->
 
-			$(".modal-container").click (event), ->
-				contentContainer = $('body').find(".content-container")
-				contentContainer.removeClass('blurred')
-				$(@).hide()
+			$(".full-content-container").click (event), ->
+				window.location.href = "/";
 
-			$(".modal-content").click (event), ->
+			$(".full-content").click (event), ->
 				event.stopPropagation()
 
 			$("span.dismiss-modal").click (event), ->

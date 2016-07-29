@@ -1,10 +1,21 @@
 @import 'bootstrap';
 
+a {
+    color: #eee;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #eee;
+    text-decoration: none;
+}
+
 nav.header-fixed{
     position:fixed;
     background: #111;
     width:100%;
     border:none;
+    z-index: 99999999;
 }
 
 .navbar-default .navbar-brand {
