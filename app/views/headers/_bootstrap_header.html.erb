@@ -15,12 +15,50 @@
     
     <ul class="nav navbar-nav navbar-left">
       <li><%= link_to "Home", root_path %></li>
-      <li><%= link_to "About", about_path %></li> 
+      
+      <% if user_signed_in? %>
+      	
+      	<li><%= link_to "Dashboard", dashboard_path %></li> 
+      
+      <% else %>
+
+      	<li><%= link_to "About", about_path %></li> 
+
+      <%end%>
+
     </ul>
 
     <ul class="nav navbar-nav navbar-right">
-      <li><%= link_to "Home", root_path %></li>
-      <li><%= link_to "About", about_path %></li> 
+    	<% if user_signed_in?%>
+	    	
+	    	<li>
+		    	<div class="dropdown">
+
+					<a class="btn dropdown-toggle" type="button" data-toggle="dropdown">
+						<%= image_tag current_user.image.url(:medium), class: "header-image" %>
+	  				<span class="caret"></span></a>
+					  <ul class="dropdown-menu">
+					  	<% unless current_user.display_name == "" %><li><a href="<%= profile_page_path(current_user.display_name)%>">Profile</a></li><%end%>
+					  	
+					  	<li><a href="#">Messages</a></li>
+					  	
+					  	<li><a href="<%= requests_path %>">Requests</a></li>
+					  	
+					  	<li class="dropdown-logout-option"><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
+						
+					  </ul>
+		      	</div>
+	      	</li>
+
+
+      	<%else%>
+
+      		<li><a class="login-modal-cta">Login</a></li>
+
+			<li><a class="join-modal-cta">Signup</a></li>
+
+      	<%end%>
+
     </ul>
 
   </div><!-- /.navbar-collapse -->
