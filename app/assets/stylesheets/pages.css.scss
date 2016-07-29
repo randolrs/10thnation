@@ -76,7 +76,7 @@ body{
 	width: auto;
     background: #111;
     box-shadow: inset 0px 2px 5px #333;
-    border: 1px solid #000;
+    border: 1px solid #111;
 
     text-shadow: 0px 2px 0px #000;
 
@@ -152,8 +152,7 @@ body{
 
 .content-panel.list:hover{
 	
-	background: #B40046;
-	text-shadow: 0px 1px 0px #333;
+	border: 1px solid #fff;
 
 }
 
@@ -432,4 +431,23 @@ span.citizen-badge{
     box-shadow: 0px 1px 2px #333;
 }
 
+@media only screen and (max-width: 800px) {
+	
+	.main-content-column{
+		display: block;
+		margin: 0 auto;
+		width: auto;
+		padding: 0px 10px;
+		max-width: 600px;
+		min-width:0px;
+	}
 
+	.side-content-column{
+		display: block;
+		margin: 0 auto;
+		width: auto;
+		padding: 0px 10px;
+		max-width: 600px;
+	}
+
+}

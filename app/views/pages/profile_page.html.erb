@@ -1,6 +1,10 @@
 
 
-<div class="profile-cover">
+<div class="profile-cover <% unless @user.has_cover_image %> empty <%end%>">
+
+	<% if @user.has_cover_image %>
+		<%= image_tag @user.cover_image.url(:large) %>
+	<%end%>
 
 	<div class="profile-info">
 
