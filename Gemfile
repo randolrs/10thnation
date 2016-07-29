@@ -17,6 +17,8 @@ gem 'paperclip', '~> 4.2'
 
 gem 'devise'
 
+gem 'bootstrap-sass'
+
 
 gem "stripe", :git => 'https://github.com/stripe/stripe-ruby'
 

@@ -8,7 +8,11 @@ Rails.application.routes.draw do
 
   get 'producers' => "pages#producers"
 
+  get 'about' => "pages#about"
+
   get 'requests' => "pages#requests"
+
+  get 'dashboard' => "pages#dashboard"
 
   get 'balance' => "pages#balance"
 

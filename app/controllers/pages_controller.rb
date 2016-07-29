@@ -6,6 +6,13 @@ class PagesController < ApplicationController
 
 	end
 
+	def dashboard
+
+
+
+
+	end
+
 	def balance
 
 		@page = "balance"

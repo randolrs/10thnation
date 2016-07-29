@@ -150,6 +150,13 @@ body{
 	
 }
 
+.content-panel.list:hover{
+	
+	background: #B40046;
+	text-shadow: 0px 1px 0px #333;
+
+}
+
 .home-profile-header{
 	width:100%;
 	padding: 10px 0px;
@@ -341,10 +348,10 @@ body{
 
 .main-content-column{
 	
-	width:600px;
-	display: inline-block;
+	min-width: 600px;
+    padding-right: 50px;
+    display: table-cell;
     vertical-align: top;
-    margin-right: 30px;
 
     h2{
     	color: #FFA100;
@@ -373,8 +380,8 @@ body{
 }
 
 .side-content-column{
-	width:370px;
-	display: inline-block;
+	min-width: 40%;
+	display: table-cell;
     vertical-align: top;
     
     h4{

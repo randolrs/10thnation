@@ -6,7 +6,17 @@
 
 			<li class="site-title"><%= link_to "10th", root_path, class: "site-title" %></li>
 
-			<li><%= link_to "Producers", producers_path, class: "first-item" %></li>
+			<% if user_signed_in? %>
+
+				<li><a class="<% if @page == "home" %> active <%end%>" href="<%= root_path %>">Home</a></li>
+
+				<li><a class="<% if @page == "requests" %> active <%end%>" href="<%= dashboard_path %>">Dashboard</a></li>
+			
+			<%else%>
+
+				<li><a class="<% if @page == "about" %> active <%end%>" href="<%= about_path %>">About</a></li>
+
+			<%end%>
 
 		</ul>
 
@@ -22,9 +32,17 @@
 
 			<li><a class="balance-header <% if @page == "balance" %> active <%end%>" href="<%= balance_path%>"><span><img></img></span>Balance: <span class="money-green-span">$20.00</span></a></li>
 
+			<li>
+				<button type="button" class="btn btn-default" data-container="body" data-toggle="popover" data-placement="bottom" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
+					Popover on bottom
+				</button>
+			</li>
+
 			<li><a class="account-settings-modal">Account Settings</a></li>
 
 			<li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
+
+			<li><a class="header-image-container<% if @page == "requests" %> active <%end%>" href="<%= dashboard_path %>"><%= image_tag current_user.image.url(:medium), class: "header-image" %></a></li>
 
 		<%end%>
 
@@ -33,3 +51,25 @@
 	</div>
 
 </div>
+
+
+<nav class="navbar navbar-default" role="navigation" style="top:60px;">
+  <!-- Brand and toggle get grouped for better mobile display -->
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <a class="navbar-brand" href="#">10th</a>
+  </div>
+
+  <!-- Collect the nav links, forms, and other content for toggling -->
+  <div class="collapse navbar-collapse navbar-ex1-collapse">
+    <ul class="nav navbar-nav navbar-right">
+      <li><%= link_to "Home", root_path %></li>
+      <li><%= link_to "About", about_path %></li> 
+    </ul>
+  </div><!-- /.navbar-collapse -->
+</nav>

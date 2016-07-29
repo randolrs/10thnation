@@ -1,0 +1,38 @@
+@import 'bootstrap';
+
+nav.header-fixed{
+    position:fixed;
+    background: #111;
+    width:100%;
+    border:none;
+}
+
+.navbar-default .navbar-brand {
+    font-weight: 600;
+    text-shadow: 0px 3px 0px #000;
+    color: #FFA100;
+}
+
+.navbar-default .navbar-nav > li > a {
+    color: #eee;
+}
+
+.navbar-default .navbar-nav > li > a:hover {
+    color: #0ff;
+}
+
+.navbar-default .navbar-toggle {
+   border: 2px solid #eee;
+}
+
+.navbar-default .navbar-toggle:focus {
+   background: #111;
+}
+
+.navbar-default .navbar-toggle:hover {
+    background: #111;
+}
+
+.navbar-default .navbar-toggle .icon-bar {
+    background-color: #eee;
+}
