@@ -3,14 +3,14 @@
 <div class="profile-cover <% unless @user.has_cover_image %> empty <%end%>">
 
 	<% if @user.has_cover_image %>
-		<%= image_tag @user.cover_image.url(:large) %>
+		<%= image_tag @user.cover_image.url(:large), class: "profile-cover-image" %>
 	<%end%>
 
 	<div class="profile-info">
 
 		<ul>
 
-			<li><%= image_tag @user.image.url(:medium) %></li>
+			<li><%= image_tag @user.image.url(:medium), class: "profile-user-image" %></li>
 
 			<li>
 

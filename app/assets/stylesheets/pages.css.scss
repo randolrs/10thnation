@@ -433,21 +433,49 @@ span.citizen-badge{
 
 @media only screen and (max-width: 800px) {
 	
-	.main-content-column{
-		display: block;
-		margin: 0 auto;
-		width: auto;
-		padding: 0px;
-		max-width: 600px;
-		min-width:0px;
-	}
+	body{
 
-	.side-content-column{
-		display: block;
-		margin: 0 auto;
-		width: auto;
-		padding: 0px;
-		max-width: 600px;
+		.main-content-column{
+			display: block;
+			margin: 0 auto;
+			width: auto;
+			padding: 0px;
+			max-width: 600px;
+			min-width:0px;
+		}
+
+		.side-content-column{
+			display: block;
+			margin: 0 auto;
+			width: auto;
+			padding: 0px;
+			max-width: 600px;
+		}
+
+
+		.profile-cover{
+			
+
+			.profile-info{
+
+				img.profile-user-image{
+
+			    	width: 75px;
+		    		height: 75px;
+		    	}
+			}
+		}
+
+
+		.profile-header{
+
+			.centered-content{
+				left: 110px;
+				
+			}
+
+		}
+
 	}
 
 }
