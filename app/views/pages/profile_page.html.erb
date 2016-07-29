@@ -43,7 +43,9 @@
 
 	</div>
 
-
+	<a class="user-cta">
+		Subscribe
+	</a>
 
 </div>
 
@@ -52,60 +54,31 @@
 	<div class="content-box">
 
 		<div class="main-content-column">
-		
-			<div class="content-frame">
 
-				<div class="content-panel">
+			<div class="content-frame stacked">
 
-					<div class="home-profile-header">
+				<div class="content-panel list">
 
-						<div class="home-profile-image">
+					<div class="user-info-header">
 
-							<%= image_tag @user.image.url(:medium) %>
-
+						<div class="user-info-image">
+							<%= image_tag @user.image.url(:medium), class: "tiny-profile-image" %>
 						</div>
 
-						<div class="home-profile-text">
+						<div class="user-info-name">
 
-							<h2 class="name"><%= @user.display_name %></h2>
-
-							<h4>Producer</h4>
-
-
-							<h6>
-
-								<% if @user.bio %>
-
-									<%= @user.bio %>
-
-								<% else %>
-
-									Just another resident of the 10th Nation.
-
-								<%end%>
-
-							</h6>
+							<a class="profile-name"><%= @user.display_name %><br>August 21, 2016</a>
 
 						</div>
-
-						<div class="home-profile-citizenship">
-
-							<span class="citizen-badge">Citizen</span>
-
-						</div>
+						
 
 					</div>
 
+					<div class="user-post-content">
 
-					<div class="tabular-data">
+						<h5>Title of my Post</h5>
 
-						<ul>
-
-							<li><a class="tabular-option active"><span class="tabular-data-header">Posts</span><br><span>122</span></a></li>
-							<li><a class="middle tabular-option"><span class="tabular-data-header">Followers</span><br><span>122</span></a></li>
-							<li><a class="tabular-option"><span class="tabular-data-header">Friends</span><br><span>122</span></a></li>
-
-						</ul>
+						<p>Maybe jsut a formatted twitter feed</p>
 
 					</div>
 
@@ -117,7 +90,28 @@
 
 				<div class="content-panel list">
 
-					<p>Maybe jsut a formatted twitter feed</p>
+					<div class="user-info-header">
+
+						<div class="user-info-image">
+							<%= image_tag @user.image.url(:medium), class: "tiny-profile-image" %>
+						</div>
+
+						<div class="user-info-name">
+
+							<a class="profile-name"><%= @user.display_name %><br>August 21, 2016</a>
+
+						</div>
+						
+
+					</div>
+
+					<div class="user-post-content">
+
+						<h5>Title of my Post</h5>
+
+						<p>Maybe jsut a formatted twitter feed</p>
+
+					</div>
 
 				</div>
 
@@ -127,17 +121,28 @@
 
 				<div class="content-panel list">
 
-					<p>You have 6 new requests for beats totalling $4,000.</p>
+					<div class="user-info-header">
 
-				</div>
+						<div class="user-info-image">
+							<%= image_tag @user.image.url(:medium), class: "tiny-profile-image" %>
+						</div>
 
-			</div>
+						<div class="user-info-name">
 
-			<div class="content-frame">
+							<a class="profile-name"><%= @user.display_name %><br>August 21, 2016</a>
 
-				<div class="content-panel list">
+						</div>
+						
 
-					<p>You have 6 new requests for beats totalling $4,000.</p>
+					</div>
+
+					<div class="user-post-content">
+
+						<h5>Title of my Post</h5>
+
+						<p>Maybe jsut a formatted twitter feed</p>
+
+					</div>
 
 				</div>
 
