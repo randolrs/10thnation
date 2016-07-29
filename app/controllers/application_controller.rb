@@ -48,6 +48,9 @@ class ApplicationController < ActionController::Base
 	    #devise_parameter_sanitizer.for(:sign_in) { |u| u.permit(registration_params) }
 	    #devise_parameter_sanitizer.for(:account_update) { |u| u.permit(registration_params) }
 
+	    #devise_parameter_sanitizer.for(:sign_up) + registration_params
+	    #devise_parameter_sanitizer.for(:sign_in) + registration_params
+	    #devise_parameter_sanitizer.for(:account_update) + registration_params
 
     	devise_parameter_sanitizer.permit(:sign_up, keys: registration_params)
     	devise_parameter_sanitizer.permit(:sign_in, keys: registration_params)
