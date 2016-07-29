@@ -454,6 +454,10 @@ span.citizen-badge{
 
 
 		.profile-cover{
+
+			height: 150px;
+
+
 			
 
 			.profile-info{
@@ -462,6 +466,18 @@ span.citizen-badge{
 
 			    	width: 75px;
 		    		height: 75px;
+		    	}
+
+		    	ul{
+		    		li{
+		    			h2.name{
+							font-size: 36px;
+						}
+
+						h3{
+							font-size: 18px;
+						}
+		    		}
 		    	}
 			}
 		}
