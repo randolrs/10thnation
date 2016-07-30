@@ -32,7 +32,7 @@
 
 		<ul>
 			<li>
-				<span class="profile-header-numbers"><a>122</a></span><a>Posts</a>
+				<span class="profile-header-numbers"><a><%= @user.posts.count %></a></span><a>Posts</a>
 			</li>
 
 			<li>
@@ -59,7 +59,7 @@
 
 		<div class="main-content-column">
 
-			<% @user.posts.each do |post| %>
+			<% @user.posts.reverse.each do |post| %>
 
 				<div class="content-frame stacked">
 
@@ -74,7 +74,7 @@
 				      <div class="user-info-name">
 
 				        <span class="post-display-name"><%= link_to post.user.display_name, profile_page_path(post.user.display_name) %></span>
-				        <span class="post-date"><%= post.created_at %></span>
+				        <span class="post-date"><%= post.created_at.strftime("%b %d, %Y") %></span>
 
 				      </div>
 				      
