@@ -543,6 +543,28 @@ span.citizen-badge{
 						    background-image: -o-linear-gradient(top, #F21D00, #A81300);
 						    background-image: linear-gradient(top, #F21D00, #A81300);
     					}
+
+    					a.user-cta:hover{
+    						cursor: pointer;
+    					}
+
+
+    					a.user-cta.following{
+							color: #FF413A;
+					    	border: 2px solid #00B80B;
+					    	text-shadow: 0px 1px 1px #333;
+
+							background-color: #82FF8F;
+
+					        background-image: -webkit-gradient(linear, left top, left bottom, from(#82FF8F), to(#82FF8F));
+					        background-image: -webkit-linear-gradient(top, #82FF8F, #82FF8F);
+					        background-image: -moz-linear-gradient(top, #82FF8F, #82FF8F);
+					        background-image: -ms-linear-gradient(top, #82FF8F, #82FF8F);
+					        background-image: -o-linear-gradient(top, #82FF8F, #82FF8F);
+					        background-image: linear-gradient(top, #82FF8F, #82FF8F);
+
+						}
+
 					}
 		    	}
 			}

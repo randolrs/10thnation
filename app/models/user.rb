@@ -32,4 +32,35 @@ class User < ActiveRecord::Base
 		end
 
 	end
+
+	def followers
+
+		return Following.where(:following_id => self.id, :active => true)
+
+	end
+
+	def followings
+
+		return Following.where(:follower_id => self.id, :active => true)
+
+	end
+
+	def is_following(following_id)
+
+		#return true
+		@existing_following = Following.where(following_id: following_id, follower_id: self.id, active: true).first
+			
+		if @existing_following
+
+			
+			return true
+		
+		else
+			
+			return false
+
+		end
+
+	end
+
 end

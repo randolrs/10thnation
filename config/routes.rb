@@ -21,6 +21,8 @@ Rails.application.routes.draw do
 
   get '/:username/' => 'pages#profile_page', as: 'profile_page'
 
+  get '/user/follow/:followingID', :to => 'pages#follow'
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

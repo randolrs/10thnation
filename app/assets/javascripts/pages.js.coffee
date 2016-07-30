@@ -105,6 +105,22 @@ ready = ->
 
 			$("a#new-post").click (event), ->
 				$('body').find("#post-form").show()
+
+			$(".subscribe-cta").click (event), ->
+				followingID = $(@).data('following-id')
+				$me = $(@)
+				alert('stuff')
+				$.ajax
+					url: "/user/follow/#{followingID}"
+					type: "GET"
+					success: (data) ->
+				  		console.log(data)
+				  		if data.now_following
+				  			$me.text("Following")
+				  			$me.addClass('following')
+				  		else
+				  			$me.text("Follow")
+				  			$me.removeClass('following')
 					
 $(document).ready(ready)
 $(document).on('page:load', ready)

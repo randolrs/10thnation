@@ -23,9 +23,19 @@
 
 			<li class="for-mobile">
 
-				<a class="user-cta">
-					Subscribe
-				</a>
+				<% if current_user.is_following(@user.id)  %>
+
+					<a class="user-cta subscribe-cta following" data-following-id="<%= @user.id%>">
+						Following
+					</a>
+
+				<% else %>
+
+					<a class="user-cta subscribe-cta" data-following-id="<%= @user.id%>">
+						Follow
+					</a>
+
+				<% end %>
 
 			</li>
 
@@ -57,9 +67,19 @@
 
 	</div>
 
-	<a class="user-cta main">
-		Subscribe
-	</a>
+	<% if current_user.is_following(@user.id)  %>
+
+		<a class="user-cta subscribe-cta following" data-following-id="<%= @user.id%>">
+			Following
+		</a>
+
+	<% else %>
+
+		<a class="user-cta subscribe-cta" data-following-id="<%= @user.id%>">
+			Follow
+		</a>
+
+	<% end %>
 
 </div>
 
