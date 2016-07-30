@@ -485,6 +485,7 @@ span.citizen-badge{
 			width: auto;
 			padding: 0px;
 			max-width: 600px;
+			min-width:0px;
 		}
 
 
@@ -551,7 +552,7 @@ span.citizen-badge{
 		.profile-header{
 
 			text-align: center;
-			
+
 			.centered-content{
 				margin-left: 0px;
 				
