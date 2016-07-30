@@ -109,7 +109,6 @@ ready = ->
 			$(".subscribe-cta").click (event), ->
 				followingID = $(@).data('following-id')
 				$me = $(@)
-				alert('stuff')
 				$.ajax
 					url: "/user/follow/#{followingID}"
 					type: "GET"
