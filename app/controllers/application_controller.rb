@@ -11,16 +11,18 @@ class ApplicationController < ActionController::Base
 
   	before_action :check_account, if: :user_signed_in?
 
+  	before_action :new_post_for_modal
+
 	before_action :configure_permitted_parameters, if: :devise_controller?
 
   	protected
 
 
-	#def new_track_for_form
+	def new_post_for_modal
 
-		#@new_track = Track.new
+		@new_post = Post.new
 
-	#end
+	end
 
 	def check_account
 	

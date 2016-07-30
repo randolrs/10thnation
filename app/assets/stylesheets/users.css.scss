@@ -21,7 +21,7 @@
 		bottom: 0px;
 		position: absolute;
 		width:100%;
-		padding: 0px 50px;
+		padding: 0px 20px;
 
 		ul{
 
@@ -83,7 +83,7 @@
 
 	.centered-content{
 		
-		margin-left: 180px;
+		margin-left: 150px;
     	position: relative;
     	display: inline-block;
 
@@ -175,10 +175,104 @@ a.profile-name{
 
 .user-post-content{
 	
-	padding-top: 20px;
+	padding: 10px;
 
 	h5{
 		font-weight: 500;
 		font-size: 22px;
 	}
+
+	p{
+		font-size: 16px;
+	}
+
+	input#post_title, textarea {
+
+		background: transparent;
+    	border: 1px solid transparent;
+    	padding: 10px;
+    	display: block;
+    	width: 100%;
+    	outline: none;
+
+
+	}
+
+	input#post_title{
+
+		
+    	font-weight: 500;
+		font-size: 22px;
+		text-shadow: 0px 2px 0px #000;
+	}
+
+	textarea{
+
+    	font-size: 16px;
+    	resize: none;
+    	height: 200px;
+
+	}
+
+	input#post_title:focus, textarea:focus{
+		border: 1px solid #fff;
+	}
+
+	.new-post-submit{
+		display: block;
+    	width: 50%;
+    	background: blue;
+    	padding: 10px 30px;
+    	margin: 10px auto;
+    	outline: none;
+    	border: 1px solid #111;
+    	border-radius: 3px;
+    	font-size: 18px;
+    	font-weight: 700;
+    	text-shadow: 0px 1px 1px #111;
+
+    	background-color: #A81300;
+
+        background-image: -webkit-gradient(linear, left top, left bottom, from(#F21D00), to(#A81300));
+        background-image: -webkit-linear-gradient(top, #F21D00, #A81300);
+        background-image: -moz-linear-gradient(top, #F21D00, #A81300);
+        background-image: -ms-linear-gradient(top, #F21D00, #A81300);
+        background-image: -o-linear-gradient(top, #F21D00, #A81300);
+        background-image: linear-gradient(top, #F21D00, #A81300);
+
+
+	}
+
+
+	::-webkit-input-placeholder {
+	   color: #ddd;
+	}
+
+	:-moz-placeholder { /* Firefox 18- */
+	   color: #ddd;  
+	}
+
+	::-moz-placeholder {  /* Firefox 19+ */
+	   color: #ddd;  
+	}
+
+	:-ms-input-placeholder {  
+	   color: #ddd;  
+	}
+}
+
+span.post-display-name{
+	line-height: 34px;
+	font-size: 28px;
+	font-weight: 500;
+	display:block;
+}
+
+span.post-date{
+	line-height: 20px;
+	color: #ddd;
+	font-size: 16px;
+	display: block;
+	padding: 3px 0px;
+	text-shadow: none;
 }

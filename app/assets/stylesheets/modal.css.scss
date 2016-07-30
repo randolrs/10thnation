@@ -13,7 +13,7 @@
     background: rgba(255, 185, 65, 0.7);
     display:none;
     vertical-overflow:hidden;
-    z-index: 999999;
+    z-index: 999999999999;
 
 }
 
@@ -63,8 +63,12 @@
     background:rgba(0,0,0,.95);
     display:none;
     vertical-overflow:hidden;
-    z-index: 999999;
+  
 
+}
+
+.modal-content.blank{
+    box-shadow: none;    
 }
 
 .modal-content.full{

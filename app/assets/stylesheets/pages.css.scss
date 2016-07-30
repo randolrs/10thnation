@@ -68,8 +68,12 @@ body{
 	margin-bottom: 25px;
 }
 
+.content-frame.form{
+	border: 2px solid #0F4DA8;
+}
+
 .content-frame.stacked:hover{
-	cursor: pointer;
+	
 }
 
 .content-panel{
@@ -152,7 +156,7 @@ body{
 
 .content-panel.list:hover{
 	
-	border: 1px solid #fff;
+	
 
 }
 
@@ -434,6 +438,11 @@ span.citizen-badge{
 @media only screen and (max-width: 800px) {
 	
 	body{
+
+		.content-box{
+			padding: 30px 10px;
+		}
+
 
 		.main-content-column{
 			display: block;

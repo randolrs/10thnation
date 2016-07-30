@@ -1,0 +1,54 @@
+<%= form_for(@new_post) do |f| %>
+
+  <div class="content-frame stacked form">
+
+    <div class="content-panel list">
+
+      <div class="user-info-header">
+
+        <div class="user-info-image">
+          <%= image_tag current_user.image.url(:medium), class: "tiny-profile-image" %>
+        </div>
+
+        <div class="user-info-name">
+
+          <span class="post-display-name"><%= link_to current_user.display_name, profile_page_path(current_user.display_name) %></span>
+          
+          <span class="post-date">August 21, 2016</span>
+
+        </div>
+        
+
+      </div>
+
+      <div class="user-post-content">
+
+        <%= f.text_field :title, placeholder: "Title" %>
+
+        <%= f.text_area :body, placeholder: "Your Post" %>
+
+         <%= f.submit 'Post', :class=> 'new-post-submit' %>
+
+      </div>
+
+     
+
+      <% if @new_post.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@new_post.errors.count, "error") %> prohibited this post from being saved:</h2>
+
+          <ul>
+          <% @new_post.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+          </ul>
+        </div>
+      <% end %>
+
+    </div>
+
+  </div>
+
+</div>
+
+<% end %>

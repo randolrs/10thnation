@@ -19,6 +19,8 @@ class User < ActiveRecord::Base
 
 	validates_attachment_content_type :cover_image, :content_type => ["image/jpg", "image/jpeg", "image/png", "image/gif"]
 
+	has_many :posts
+
 	def has_cover_image
 
 		if self.cover_image.url == "cover_img_original.png"
