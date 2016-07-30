@@ -33,6 +33,10 @@
 		    vertical-align: bottom;
 
 
+			li.for-mobile{
+				display: none;
+			}
+
 			li{
 
 				display: inline-block;
@@ -276,3 +280,4 @@ span.post-date{
 	padding: 3px 0px;
 	text-shadow: none;
 }
+
