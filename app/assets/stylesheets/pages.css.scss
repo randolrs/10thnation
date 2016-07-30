@@ -459,12 +459,16 @@ span.citizen-badge{
 
 			.profile-info{
 
-				padding: 0px 15px;
+				padding: 5px 15px;
 
 				img.profile-user-image{
 
 			    	width: 75px;
 		    		height: 75px;
+
+					-webkit-transform: translateY(0%);
+			    	transform: translateY(0%);
+
 		    	}
 
 		    	ul{
@@ -485,7 +489,7 @@ span.citizen-badge{
 		.profile-header{
 
 			.centered-content{
-				left: 75px;
+				margin-left: 0px;
 				
 			}
 
