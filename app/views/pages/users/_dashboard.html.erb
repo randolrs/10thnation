@@ -89,16 +89,28 @@
 
 		<div class="three-columns second">
 		
-			<ul>
+<!-- 			<ul>
 
 				<li class="active">
 					<a>Recent Activity</a>
 				</li>
 
-<!-- 				<li>
+				<li>
 					<a>Questions for You</a>
-				</li> -->
-			</ul>
+				</li>
+			</ul> -->
+
+			<div class="content-frame stacked">
+
+			  <div class="content-panel list">
+
+			  	<input class="dashboard-post-input" placeholder="What's up?"></input>
+
+			  	<submit>Post</submit>
+
+			  </div>
+
+			</div>
 
 			<% current_user.posts.reverse.each do |post| %>
 

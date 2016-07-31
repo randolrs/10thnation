@@ -313,6 +313,27 @@ body{
 
 }
 
+input.dashboard-post-input{
+	width: 100%;
+	outline: none;
+	border: none;
+	padding: 10px 0px;
+	font-size: 16px;
+	text-indent: 5px;
+	background: #555;
+    border: 1px solid #111;
+    box-shadow: 0px 1px 2px #111;
+    border-radius: 2px;	
+
+}
+
+input.dashboard-post-input:focus{
+	outline: none;
+	background: #666;
+	
+}
+
+
 .time-period{
 
     border-bottom: 2px solid #000;
@@ -459,9 +480,9 @@ body{
 
 .main-content-column{
 	
-	min-width: 600px;
+	width: 60%;
     padding-right: 50px;
-    display: table-cell;
+    display: inline-block;
     vertical-align: top;
 
     h2{
@@ -491,8 +512,8 @@ body{
 }
 
 .side-content-column{
-	min-width: 440px;
-	display: table-cell;
+	width: 39%;
+	display: inline-block;
     vertical-align: top;
     
     h4{
@@ -714,9 +735,10 @@ span.citizen-badge{
     					
     					a.user-cta{
     						line-height: 20px;
-    						margin: 20px 0px;
+    						margin: 20px 5px;
     						padding: 10px;
     						display: block;
+    						float: left;
 
 
     						text-align: center;

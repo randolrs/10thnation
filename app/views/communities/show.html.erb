@@ -1,29 +1,278 @@
-<p id="notice"><%= notice %></p>
+<div class="profile-cover <%# unless @user.has_cover_image %> empty <%#end%>">
 
-<p>
-  <strong>User:</strong>
-  <%= @community.user_id %>
-</p>
+  <%# if @community.has_cover_image %>
+    <%# image_tag @community.cover_image.url(:large), class: "profile-cover-image" %>
+  <%#end%>
 
-<p>
-  <strong>Name:</strong>
-  <%= @community.name %>
-</p>
+  <div class="profile-info">
 
-<p>
-  <strong>Description:</strong>
-  <%= @community.description %>
-</p>
+    <ul>
 
-<p>
-  <strong>Approved:</strong>
-  <%= @community.approved %>
-</p>
+      <li><%= image_tag @community.image.url(:medium), class: "profile-user-image" %></li>
 
-<p>
-  <strong>Parent community:</strong>
-  <%= @community.parent_community_id %>
-</p>
+      <li>
 
-<%= link_to 'Edit', edit_community_path(@community) %> |
-<%= link_to 'Back', communities_path %>
+        <h2 class="name"><%= @community.name %></h2>
+
+        <h3 class="community">Community</h3>
+
+      </li>
+
+
+      <li class="for-mobile">
+
+        <% if current_user.is_following_community(@community.id)  %>
+
+          <a class="user-cta subscribe-cta following" data-following-id="<%= @community.id%>">
+            Following
+          </a>
+
+        <% else %>
+
+          <a class="user-cta subscribe-cta" data-following-id="<%= @community.id%>">
+            Follow
+          </a>
+
+        <% end %>
+
+
+          <% if current_user.is_member_of_community(@community.id)  %>
+
+            <a class="user-cta subscribe-cta following community" data-following-id="<%= @community.id%>">
+              Member
+            </a>
+
+          <% else %>
+
+            <a class="user-cta subscribe-cta community" data-following-id="<%= @community.id%>">
+              Join
+            </a>
+
+          <% end %>
+
+      </li>
+
+    </ul>
+
+  </div>
+
+</div>
+
+<div class="profile-header">
+
+  <div class="centered-content">
+
+    <ul>
+      <li class="profile-header-option active" id="profile_option_posts" data-option-type="posts">
+        <a><span class="profile-header-numbers">12<%# @community.posts.count %></span><br>Posts</a>
+      </li>
+
+      <li class="profile-header-option" id="profile_option_subscribers" data-option-type="subscribers">
+        <a><span class="profile-header-numbers">11<%# @community.followers.count %></span><br>Followers</a>
+      </li>
+
+      <li class="profile-header-option" id="profile_option_subscribers" data-option-type="subscribers">
+        <a><span class="profile-header-numbers">1666<%# @community.followers.count %></span><br>Communities</a>
+      </li>
+
+    </ul>
+
+  </div>
+
+  <% if current_user.is_following_community(@community.id)  %>
+
+    <a class="user-cta subscribe-cta following community" data-following-id="<%= @community.id%>">
+      Following
+    </a>
+
+  <% else %>
+
+    <a class="user-cta subscribe-cta community" data-following-id="<%= @community.id%>">
+      Follow
+    </a>
+
+  <% end %>
+
+  <% if current_user.is_member_of_community(@community.id)  %>
+
+    <a class="user-cta subscribe-cta following community" data-following-id="<%= @community.id%>">
+      Member
+    </a>
+
+  <% else %>
+
+    <a class="user-cta subscribe-cta community" data-following-id="<%= @community.id%>">
+      Join
+    </a>
+
+  <% end %>
+
+</div>
+
+<div class="content">
+
+  <div class="content-box">
+
+    <div class="main-content-column">
+
+      <div class="column-content" id="column_content_posts">
+
+        <% Post.all.reverse.each do |post| %>
+
+          <div class="content-frame stacked">
+
+            <div class="content-panel list">
+
+              <div class="user-info-header">
+
+                <div class="user-info-image">
+                  <%= image_tag post.user.image.url(:medium), class: "tiny-profile-image" %>
+                </div>
+
+                <div class="user-info-name">
+
+                  <span class="post-display-name"><%= link_to post.user.display_name, profile_page_path(post.user.display_name) %></span>
+                  <span class="post-date"><%= post.created_at.strftime("%b %d, %Y") %></span>
+
+                </div>
+                
+
+              </div>
+
+              <div class="user-post-content">
+
+                <h5><%= post.title %></h5>
+
+                <p><%= post.body %></p>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        <%end%>
+
+      </div>
+
+      <div class="column-content default-off" id="column_content_subscribers">
+        
+        <%# @community.followers.each do |follower| %>
+
+          <div class="content-frame stacked">
+
+            <div class="content-panel list">
+
+              <div class="user-info-header">
+
+                <div class="user-info-image">
+                  <%# image_tag follower.image.url(:medium), class: "tiny-profile-image" %>
+                </div>
+
+                <div class="user-info-name">
+
+                  <span class="post-display-name"><%# link_to follower.display_name, profile_page_path(follower.display_name) %></span>
+
+                </div>
+                
+
+              </div>
+
+            </div>
+
+          </div>
+
+        <%#end%>
+
+      </div>
+
+      <div class="column-content default-off" id="column_content_work">
+        work
+      </div>
+
+    </div>
+
+    <div class="side-content-column">
+
+      <h4>For Sale</h4>
+
+      <div class="content-frame stacked">
+
+        <div class="content-panel list">
+
+          <p>You have 6 new requests for beats totalling $4,000.</p>
+
+        </div>
+
+      </div>
+
+      <div class="content-frame stacked">
+
+        <div class="content-panel list">
+
+          <p>You have 6 new requests for beats totalling $4,000.</p>
+
+        </div>
+
+      </div>
+
+      <div class="content-frame stacked">
+
+        <div class="content-panel list">
+
+          <p>You have 6 new requests for beats totalling $4,000.</p>
+
+        </div>
+
+      </div>
+
+      <br>
+
+      <h4>Requests</h4>
+
+      <div class="content-frame stacked">
+
+        <div class="content-panel list">
+
+          <p>You have 6 new requests for beats totalling $4,000.</p>
+
+        </div>
+
+      </div>
+
+      <div class="content-frame stacked">
+
+        <div class="content-panel list">
+
+          <p>You have 6 new requests for beats totalling $4,000.</p>
+
+        </div>
+
+      </div>
+
+      <div class="content-frame stacked">
+
+        <div class="content-panel list">
+
+          <p>You have 6 new requests for beats totalling $4,000.</p>
+
+        </div>
+
+      </div>
+
+      <div class="content-frame stacked">
+
+        <div class="content-panel list">
+
+          <p>You have 6 new requests for beats totalling $4,000.</p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+

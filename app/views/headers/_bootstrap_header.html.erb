@@ -32,28 +32,29 @@
     <ul class="nav navbar-nav navbar-right">
     	
       <% if user_signed_in?%>
-	    	
-        <li><a class="header-cta blue" id="new-post">New Post</a></li>
 
 	    	<li>
 
 		    	<div class="dropdown">
 
-					<a class="btn dropdown-toggle" type="button" data-toggle="dropdown">
-						<%= image_tag current_user.image.url(:medium), class: "header-image" %>
-	  				<span class="caret"></span></a>
-					  <ul class="dropdown-menu">
-					  	<% unless current_user.display_name == "" %><li><a href="<%= profile_page_path(current_user.display_name)%>">Profile</a></li><%end%>
-					  	
-					  	<li><a href="#">Messages</a></li>
-					  	
-					  	<li><a href="<%= requests_path %>">Requests</a></li>
-					  	
-					  	<li class="dropdown-logout-option"><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
-						
-					  </ul>
+  					<a class="btn dropdown-toggle" type="button" data-toggle="dropdown">
+  						<%= image_tag current_user.image.url(:medium), class: "header-image" %>
+  	  				<span class="caret"></span></a>
+  					  <ul class="dropdown-menu">
+  					  	<% unless current_user.display_name == "" %><li><a href="<%= profile_page_path(current_user.display_name)%>">Profile</a></li><%end%>
+  					  	
+  					  	<li><a href="#">Messages</a></li>
+  					  	
+  					  	<li><a href="<%= requests_path %>">Requests</a></li>
+  					  	
+  					  	<li class="dropdown-logout-option"><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
+  						
+  					  </ul>
 		      	</div>
+            
 	      	</li>
+
+          <li><a class="header-cta blue" id="new-post">New Post</a></li>
 
 
       	<%else%>

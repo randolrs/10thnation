@@ -95,4 +95,14 @@ class User < ActiveRecord::Base
 
 	end
 
+	def is_following_community(community_id)
+
+		return false
+	end
+
+	def is_member_of_community(community_id)
+
+		return false
+	end
+
 end
