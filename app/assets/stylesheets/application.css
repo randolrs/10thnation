@@ -60,6 +60,10 @@ a:visited {color:#eee;}
   	filter: blur(3px);
 }
 
+.no-scroll{
+  overflow: hidden;
+}
+
 .header-offset{
 	padding-top: 54px;
 

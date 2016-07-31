@@ -35,7 +35,23 @@ class User < ActiveRecord::Base
 
 	def followers
 
-		return Following.where(:following_id => self.id, :active => true)
+		@following_users = Array.new
+
+		@followings = Following.where(:following_id => self.id, :active => true)
+		
+		@followings.each do |following|
+			
+			@user_following = User.where(id: following.follower_id).first
+			
+			if @user_following 
+			
+				@following_users << @user_following
+
+			end
+
+		end
+
+		return @following_users
 
 	end
 

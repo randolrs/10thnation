@@ -56,11 +56,11 @@
 			</li>
 
 			<li class="profile-header-option" id="profile_option_subscribers" data-option-type="subscribers">
-				<a><span class="profile-header-numbers">122</span><br>Subscribers</a>
+				<a><span class="profile-header-numbers"><%= @user.followers.count %></span><br>Subscribers</a>
 			</li>
 
 			<li class="profile-header-option" id="profile_option_works" data-option-type="works">
-				<a><span class="profile-header-numbers">122</span><br>Works</a>
+				<a><span class="profile-header-numbers">122</span><br>Answers</a>
 			</li>
 
 		</ul>
@@ -130,7 +130,34 @@
 			</div>
 
 			<div class="column-content default-off" id="column_content_subscribers">
-				subscribers
+				
+				<% @user.followers.each do |follower| %>
+
+					<div class="content-frame stacked">
+
+					  <div class="content-panel list">
+
+					    <div class="user-info-header">
+
+					      <div class="user-info-image">
+					        <%= image_tag follower.image.url(:medium), class: "tiny-profile-image" %>
+					      </div>
+
+					      <div class="user-info-name">
+
+					        <span class="post-display-name"><%= link_to follower.display_name, profile_page_path(follower.display_name) %></span>
+
+					      </div>
+					      
+
+					    </div>
+
+					  </div>
+
+					</div>
+
+				<%end%>
+
 			</div>
 
 			<div class="column-content default-off" id="column_content_work">

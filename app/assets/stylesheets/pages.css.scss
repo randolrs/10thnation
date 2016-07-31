@@ -65,7 +65,7 @@ body{
 }
 
 .content-frame.stacked{
-	margin-bottom: 25px;
+	
 }
 
 .content-frame.form{
@@ -480,12 +480,8 @@ span.citizen-badge{
 		}
 
 		.side-content-column{
-			display: block;
-			margin: 0 auto;
-			width: auto;
-			padding: 0px;
-			max-width: 600px;
-			min-width:0px;
+			display: none;
+			
 		}
 
 
@@ -590,3 +586,16 @@ span.citizen-badge{
 	}
 
 }
+
+@media only screen and (max-device-width: 600px) {
+	
+	body{
+
+		.content-box{
+			padding: 0px;
+		}
+
+	}
+
+}
+

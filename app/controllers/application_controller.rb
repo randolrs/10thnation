@@ -24,6 +24,7 @@ class ApplicationController < ActionController::Base
 
 	end
 
+
 	def check_account
 	
 		unless current_user.stripe_account_id
