@@ -75,6 +75,69 @@ class PagesController < ApplicationController
 
 	end
 
+
+	def follow_community
+
+		if params[:followingID]
+
+			@followingCommunity = Community.where(id: params[:followingID]).first
+
+			if @followingCommunity
+
+				@existing_following = Following.where(following_id: @followingCommunity.id, follower_id: current_user.id).first
+				
+				if @existing_following
+
+					if @existing_following.active
+
+						@existing_following.update(:active => false)
+
+						respond_to do |format|
+							format.js { render json: { :status => "success", :now_following => false } , content_type: 'text/json' }
+						end
+					
+					else
+
+						@existing_following.update(:active => true)
+
+						respond_to do |format|
+							format.js { render json: { :status => "success", :now_following => true } , content_type: 'text/json' }
+						end
+
+					end
+
+				else
+		      		@following = Following.new
+
+		      		@following.update(:following_id => params[:followingID], :follower_id => current_user.id, :active => true)
+
+		      		if @following.save
+
+						respond_to do |format|
+							format.js { render json: { :status => "success", :now_following => true } , content_type: 'text/json' }
+						end
+
+					else
+
+						respond_to do |format|
+							format.js { render json: { :status => "failure", :now_following => false } , content_type: 'text/json' }
+						end
+					end
+
+				end
+
+			else
+
+				respond_to do |format|
+						format.js { render json: { :status => "failure", :now_following => false } , content_type: 'text/json' }
+				end
+
+			end
+		
+		end
+
+	end
+
 	def balance
 
 		@page = "balance"

@@ -24,6 +24,8 @@ Rails.application.routes.draw do
 
   get '/user/follow/:followingID', :to => 'pages#follow'
 
+  get '/user/community/follow/:followingID', :to => 'pages#follow_community'
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

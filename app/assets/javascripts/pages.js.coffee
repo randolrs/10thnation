@@ -142,6 +142,22 @@ ready = ->
 				  		else
 				  			$me.text("Follow")
 				  			$me.removeClass('following')
+			
+			$(".follow-community-cta").click (event), ->
+				followingID = $(@).data('following-id')
+				alert("alert")
+				$me = $(@)
+				$.ajax
+					url: "/user/community/follow/#{followingID}"
+					type: "GET"
+					success: (data) ->
+				  		console.log(data)
+				  		if data.now_following
+				  			$me.text("Following")
+				  			$me.addClass('following')
+				  		else
+				  			$me.text("Follow")
+				  			$me.removeClass('following')
 
 			$(".profile-header-option").click (event), ->
 				$('body').find('.profile-header-option.active').removeClass("active")

@@ -23,13 +23,13 @@
 
         <% if current_user.is_following_community(@community.id)  %>
 
-          <a class="user-cta subscribe-cta following" data-following-id="<%= @community.id%>">
+          <a class="user-cta follow-community-cta following" data-following-id="<%= @community.id%>">
             &#10004; Following
           </a>
 
         <% else %>
 
-          <a class="user-cta subscribe-cta" data-following-id="<%= @community.id%>">
+          <a class="user-cta follow-community-cta" data-following-id="<%= @community.id%>">
             Follow
           </a>
 
@@ -38,13 +38,13 @@
 
           <% if current_user.is_member_of_community(@community.id)  %>
 
-            <a class="user-cta subscribe-cta following community" data-following-id="<%= @community.id%>">
+            <a class="user-cta join-community-cta following community" data-following-id="<%= @community.id%>">
               &#10004; Member
             </a>
 
           <% else %>
 
-            <a class="user-cta subscribe-cta community" data-following-id="<%= @community.id%>">
+            <a class="user-cta join-community-cta community" data-following-id="<%= @community.id%>">
               Join Community
             </a>
 
@@ -81,13 +81,13 @@
 
   <% if current_user.is_following_community(@community.id)  %>
 
-    <a class="user-cta subscribe-cta following community" data-following-id="<%= @community.id%>">
+    <a class="user-cta follow-community-cta following community" data-following-id="<%= @community.id%>">
       &#10004; Following
     </a>
 
   <% else %>
 
-    <a class="user-cta subscribe-cta community" data-following-id="<%= @community.id%>">
+    <a class="user-cta follow-community-cta community" data-following-id="<%= @community.id%>">
       Follow
     </a>
 
@@ -95,13 +95,13 @@
 
   <% if current_user.is_member_of_community(@community.id)  %>
 
-    <a class="user-cta subscribe-cta following community" data-following-id="<%= @community.id%>">
+    <a class="user-cta join-community-cta following community" data-following-id="<%= @community.id%>">
       &#10004; Member
     </a>
 
   <% else %>
 
-    <a class="user-cta subscribe-cta community" data-following-id="<%= @community.id%>">
+    <a class="user-cta join-community-cta community" data-following-id="<%= @community.id%>">
       Join
     </a>
 
