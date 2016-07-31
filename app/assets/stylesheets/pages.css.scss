@@ -143,7 +143,8 @@ body{
 	}
 
     p{
-    	padding:10px;
+    	padding:10px 0px;
+    	font-size: 18px;
     }
 }
 
@@ -448,11 +449,13 @@ span.citizen-badge{
 			padding: 0px;
 			max-width: 600px;
 			min-width:0px;
+			margin-bottom:30px;
 		}
 
 		.side-content-column{
 			display: block;
 			margin: 0 auto;
+			
 			width: auto;
 			padding: 0px;
 			max-width: 600px;
