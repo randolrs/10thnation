@@ -111,6 +111,15 @@ nav.header-fixed{
     background-color: #eee;
 }
 
+body{
+    .navbar-toggle .icon-bar {
+        display: block;
+        width: 22px;
+        height: 3px;
+        border-radius: 1px;
+    }
+}
+
 .btn{
     border-radius: 0px;
     background: none;
