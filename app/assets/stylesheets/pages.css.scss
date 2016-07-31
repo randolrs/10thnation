@@ -28,15 +28,13 @@ body{
 
 	.three-columns {
     	display: inline-block;
-    	padding: 0 20px;
     	vertical-align: top;
 
     	.dashboard-profile{
   
     		display: block;
-    		padding:10px 5px;
     		border-radius: 3px 3px 0px 0px;
-
+    		padding: 10px 0px;
     		font-size: 24px;
 		    font-weight: 400;
 		    text-shadow: 0px 2px 0px #000;
@@ -48,6 +46,22 @@ body{
 		    box-shadow: inset 0px 2px 5px #333;
 		    border: 1px solid #000;
 		    border-bottom: none;
+
+		    h5{
+		    	padding: 10px 5px;
+		    }
+    	}
+
+    	.dashboard-profile.clickable{
+  			
+  			padding: 0px;
+    		
+    	}
+
+    	.dashboard-profile.clickable:hover{
+  			
+  			cursor: pointer;
+    		
     	}
 
     	.dashboard-followings{
@@ -59,12 +73,14 @@ body{
 	}
 
 	.three-columns.first {
-		width: 30%;
+		width: 25%;
 
 	}
 
 	.three-columns.second {
-		width: 39%;
+		width: 49%;
+
+		padding: 0 30px;
 
 		ul{
 
@@ -107,7 +123,7 @@ body{
 	}
 
 	.three-columns.third {
-		width: 30%;
+		width: 25%;
 	}
 }
 

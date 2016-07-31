@@ -10,35 +10,59 @@
 
 				<h3><%= link_to current_user.display_name, profile_page_path(current_user.display_name) %></h3>
 
-				<h5>Following <%= current_user.followings.count %> Users</h5>
-
 			</div>
 
 
-			<div class="dashboard-followings">
+			<div class="dashboard-profile clickable">
 
-				<% current_user.followings.each do |follower| %>
+				<h5>Member of 4 Communities</h5>
 
-					  <div class="content-panel list">
+				<div class="dashboard-profile-content default-off">
+					communities
+				</div>
 
-					    <div class="user-info-header">
+			</div>
 
-					      <div class="user-info-image">
-					        <%= image_tag follower.image.url(:medium), class: "tiny-profile-image" %>
-					      </div>
+			<div class="dashboard-profile clickable">
 
-					      <div class="user-info-name">
+				<h5>Following 6 Communities</h5>
 
-					        <span class="post-display-name"><%= link_to follower.display_name, profile_page_path(follower.display_name) %></span>
+				<div class="dashboard-profile-content default-off">
+					communities
+				</div>
 
-					      </div>
-					      
+			</div>
 
-					    </div>
+			<div class="dashboard-profile clickable">
 
-					  </div>
+				<h5>Following <%= current_user.followings.count %> Users</h5>
 
-				<%end%>
+				<div class="dashboard-profile-content default-off">
+
+					<% current_user.followings.each do |follower| %>
+
+						  <div class="content-panel list">
+
+						    <div class="user-info-header">
+
+						      <div class="user-info-image">
+						        <%= image_tag follower.image.url(:medium), class: "tiny-profile-image" %>
+						      </div>
+
+						      <div class="user-info-name">
+
+						        <span class="post-display-name"><%= link_to follower.display_name, profile_page_path(follower.display_name) %></span>
+
+						      </div>
+						      
+
+						    </div>
+
+						  </div>
+
+					<%end%>
+
+				</div>
 
 			</div>
 
@@ -49,56 +73,59 @@
 			<ul>
 
 				<li class="active">
-					<a>Posts</a>
+					<a>Recent Activity</a>
 				</li>
 
-				<li>
+<!-- 				<li>
 					<a>Questions for You</a>
-				</li>
+				</li> -->
 			</ul>
 
 			<% current_user.posts.reverse.each do |post| %>
 
-					<div class="content-frame stacked">
+				<div class="content-frame stacked">
 
-					  <div class="content-panel list">
+				  <div class="content-panel list">
 
-					    <div class="user-info-header">
+				    <div class="user-info-header">
 
-					      <div class="user-info-image">
-					        <%= image_tag post.user.image.url(:medium), class: "tiny-profile-image" %>
-					      </div>
+				      <div class="user-info-image">
+				        <%= image_tag post.user.image.url(:medium), class: "tiny-profile-image" %>
+				      </div>
 
-					      <div class="user-info-name">
+				      <div class="user-info-name">
 
-					        <span class="post-display-name"><%= link_to post.user.display_name, profile_page_path(post.user.display_name) %></span>
-					        <span class="post-date"><%= post.created_at.strftime("%b %d, %Y") %></span>
+				        <span class="post-display-name"><%= link_to post.user.display_name, profile_page_path(post.user.display_name) %></span>
+				        <span class="post-date"><%= post.created_at.strftime("%b %d, %Y") %></span>
 
-					      </div>
-					      
+				      </div>
+				      
 
-					    </div>
+				    </div>
 
-					    <div class="user-post-content">
+				    <div class="user-post-content">
 
-					      <h5><%= post.title %></h5>
+				      <h5><%= post.title %></h5>
 
-					      <p><%= post.body %></p>
+				      <p><%= post.body %></p>
 
-					    </div>
+				    </div>
 
-					  </div>
+				  </div>
 
-					</div>
+				</div>
 
-				<%end%>
-
+			<%end%>
 
 		</div>
 
 		<div class="three-columns third">
 		
-			RRER
+			<div class="dashboard-profile">
+
+				<h4>Suggested</h4>
+
+			</div>
 
 		</div>
 

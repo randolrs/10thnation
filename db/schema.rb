@@ -11,7 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160730202745) do
+ActiveRecord::Schema.define(version: 20160731181057) do
+
+  create_table "communities", force: :cascade do |t|
+    t.integer  "user_id"
+    t.string   "name"
+    t.text     "description"
+    t.boolean  "approved"
+    t.integer  "parent_community_id"
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
+  end
 
   create_table "followings", force: :cascade do |t|
     t.integer  "follower_id"

@@ -122,6 +122,12 @@ ready = ->
 				$('body').find('.content-container').addClass('blurred')
 				$('body').addClass('no-scroll')
 
+			$(".dashboard-profile.clickable").click (event), ->
+				$(@).children(".dashboard-profile-content").slideToggle()
+
+			$(".dashboard-profile-content").click (event), ->
+				event.stopPropagation()
+
 			$(".subscribe-cta").click (event), ->
 				followingID = $(@).data('following-id')
 				$me = $(@)
