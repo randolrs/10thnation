@@ -32,16 +32,26 @@ body{
     	vertical-align: top;
 
     	.dashboard-profile{
-    		background: #111;
+  
     		display: block;
-    		text-align: center;
     		padding:10px 5px;
-    		box-shadow: 0px 1px 4px #666;
     		border-radius: 3px 3px 0px 0px;
+
+    		font-size: 24px;
+		    font-weight: 400;
+		    text-shadow: 0px 2px 0px #000;
+		    text-align: center;
+		    color: #FFA100;
+		    line-height: 50px;
+		    letter-spacing: 1px;
+		    background: #111;
+		    box-shadow: inset 0px 2px 5px #333;
+		    border: 1px solid #000;
+		    border-bottom: none;
     	}
 
     	.dashboard-followings{
-    		border-top: 2px solid #999;
+    		border-top: 1px solid #000;
     	}
 
 
