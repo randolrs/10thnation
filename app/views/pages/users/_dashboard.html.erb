@@ -66,6 +66,25 @@
 
 			</div>
 
+			<div class="dashboard-profile mobile">
+
+				<h4>Suggested</h4>
+
+				<div class="dashboard-profile-content">
+
+					<% Community.all.each do |community| %>
+
+						  <div class="content-panel list">
+
+						  	<p><%= community.name %></p>
+						  </div>
+
+					<%end%>
+
+				</div>
+
+			</div>
+
 		</div>
 
 		<div class="three-columns second">
@@ -124,6 +143,20 @@
 			<div class="dashboard-profile">
 
 				<h4>Suggested</h4>
+
+				<div class="dashboard-profile-content">
+
+					<% Community.all.each do |community| %>
+
+					  <div class="content-panel list">
+
+					  	<p><%= community.name %></p>
+
+					  </div>
+
+					<%end%>
+
+				</div>
 
 			</div>
 
