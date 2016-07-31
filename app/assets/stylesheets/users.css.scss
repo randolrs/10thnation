@@ -78,7 +78,7 @@
 }
 
 .profile-header{
-	padding: 5px 30px;
+	padding: 0px 30px;
 
 	background: #111;
     box-shadow: inset 0px 2px 5px #333;
@@ -118,9 +118,25 @@
 		    		display: block;
 	    			letter-spacing: 1.1px;
 
-	    			
-
 		    	}
+
+		    	a:hover{
+		    		color: #0ff;
+		    	}
+
+		    	
+			}
+
+			li.active{
+
+				border-bottom: 3px solid #0ff;
+
+				a{
+		    		color:#0ff;
+		    	}
+			}
+			li:hover{
+				cursor: pointer;
 			}
 
 		}

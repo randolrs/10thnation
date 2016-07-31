@@ -51,16 +51,16 @@
 	<div class="centered-content">
 
 		<ul>
-			<li>
-				<span class="profile-header-numbers"><a><%= @user.posts.count %></a></span><a>Posts</a>
+			<li class="profile-header-option active" id="profile_option_posts" data-option-type="posts">
+				<a><span class="profile-header-numbers"><%= @user.posts.count %></span><br>Posts</a>
 			</li>
 
-			<li>
-				<span class="profile-header-numbers"><a>122</a></span><a>Subscribers</a>
+			<li class="profile-header-option" id="profile_option_subscribers" data-option-type="subscribers">
+				<a><span class="profile-header-numbers">122</span><br>Subscribers</a>
 			</li>
 
-			<li>
-				<span class="profile-header-numbers"><a>122</a></span><a>Works</a>
+			<li class="profile-header-option" id="profile_option_works" data-option-type="works">
+				<a><span class="profile-header-numbers">122</span><br>Works</a>
 			</li>
 
 		</ul>
@@ -89,41 +89,53 @@
 
 		<div class="main-content-column">
 
-			<% @user.posts.reverse.each do |post| %>
+			<div class="column-content" id="column_content_posts">
 
-				<div class="content-frame stacked">
+				<% @user.posts.reverse.each do |post| %>
 
-				  <div class="content-panel list">
+					<div class="content-frame stacked">
 
-				    <div class="user-info-header">
+					  <div class="content-panel list">
 
-				      <div class="user-info-image">
-				        <%= image_tag post.user.image.url(:medium), class: "tiny-profile-image" %>
-				      </div>
+					    <div class="user-info-header">
 
-				      <div class="user-info-name">
+					      <div class="user-info-image">
+					        <%= image_tag post.user.image.url(:medium), class: "tiny-profile-image" %>
+					      </div>
 
-				        <span class="post-display-name"><%= link_to post.user.display_name, profile_page_path(post.user.display_name) %></span>
-				        <span class="post-date"><%= post.created_at.strftime("%b %d, %Y") %></span>
+					      <div class="user-info-name">
 
-				      </div>
-				      
+					        <span class="post-display-name"><%= link_to post.user.display_name, profile_page_path(post.user.display_name) %></span>
+					        <span class="post-date"><%= post.created_at.strftime("%b %d, %Y") %></span>
 
-				    </div>
+					      </div>
+					      
 
-				    <div class="user-post-content">
+					    </div>
 
-				      <h5><%= post.title %></h5>
+					    <div class="user-post-content">
 
-				      <p><%= post.body %></p>
+					      <h5><%= post.title %></h5>
 
-				    </div>
+					      <p><%= post.body %></p>
 
-				  </div>
+					    </div>
 
-				</div>
+					  </div>
 
-			<%end%>
+					</div>
+
+				<%end%>
+
+			</div>
+
+			<div class="column-content default-off" id="column_content_subscribers">
+				subscribers
+			</div>
+
+			<div class="column-content default-off" id="column_content_work">
+				work
+			</div>
 
 		</div>
 

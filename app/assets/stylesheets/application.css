@@ -111,3 +111,7 @@ a.link-wrapper{
 span.money-green-span{
     color: #59EA3A;
 }
+
+.default-off{
+  display: none;
+}

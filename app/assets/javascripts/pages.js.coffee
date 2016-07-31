@@ -120,6 +120,22 @@ ready = ->
 				  		else
 				  			$me.text("Follow")
 				  			$me.removeClass('following')
+
+			$(".profile-header-option").click (event), ->
+				$('body').find('.profile-header-option.active').removeClass("active")
+				$(@).addClass("active")
+				if $(@).data('option-type') == "posts"
+					$('body').find('.column-content#column_content_posts').fadeIn()
+					$('body').find('.column-content#column_content_works').hide()
+					$('body').find('.column-content#column_content_subscribers').hide()
+				else if $(@).data('option-type') == "subscribers"
+					$('body').find('.column-content#column_content_subscribers').fadeIn()
+					$('body').find('.column-content#column_content_posts').hide()
+					$('body').find('.column-content#column_content_works').hide()
+				else if $(@).data('option-type') == "works"
+					$('body').find('.column-content#column_content_works').fadeIn()
+					$('body').find('.column-content#column_content_posts').hide()
+					$('body').find('.column-content#column_content_subscribers').hide()
 					
 $(document).ready(ready)
 $(document).on('page:load', ready)
