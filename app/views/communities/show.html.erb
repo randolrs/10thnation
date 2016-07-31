@@ -24,7 +24,7 @@
         <% if current_user.is_following_community(@community.id)  %>
 
           <a class="user-cta subscribe-cta following" data-following-id="<%= @community.id%>">
-            Following
+            &#10004; Following
           </a>
 
         <% else %>
@@ -39,13 +39,13 @@
           <% if current_user.is_member_of_community(@community.id)  %>
 
             <a class="user-cta subscribe-cta following community" data-following-id="<%= @community.id%>">
-              Member
+              &#10004; Member
             </a>
 
           <% else %>
 
             <a class="user-cta subscribe-cta community" data-following-id="<%= @community.id%>">
-              Join
+              Join Community
             </a>
 
           <% end %>
@@ -82,7 +82,7 @@
   <% if current_user.is_following_community(@community.id)  %>
 
     <a class="user-cta subscribe-cta following community" data-following-id="<%= @community.id%>">
-      Following
+      &#10004; Following
     </a>
 
   <% else %>
@@ -96,7 +96,7 @@
   <% if current_user.is_member_of_community(@community.id)  %>
 
     <a class="user-cta subscribe-cta following community" data-following-id="<%= @community.id%>">
-      Member
+      &#10004; Member
     </a>
 
   <% else %>
