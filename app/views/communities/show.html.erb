@@ -113,39 +113,68 @@
 
   <div class="content-box">
 
-    <div class="main-content-column">
+    <div class="three-columns first">
+
+      <div class="dashboard-profile clickable">
+
+        <h4>Communities</h4>
+
+        <div class="dashboard-profile-content">
+
+          <% Community.all.each do |community| %>
+
+              <div class="content-panel list">
+
+                <p><%= community.name %></p>
+
+              </div>
+
+          <%end%>
+
+        </div>
+
+      </div>
+
+      <div class="dashboard-profile mobile">
+
+        <h4>For Sale</h4>
+
+        <div class="dashboard-profile-content">
+
+          <% Community.all.each do |community| %>
+
+              <div class="content-panel list">
+
+                <p><%= community.name %></p>
+              </div>
+
+          <%end%>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="three-columns second">
 
       <div class="column-content" id="column_content_posts">
 
         <% Post.all.reverse.each do |post| %>
 
-          <div class="content-frame stacked">
+          <div class="post-frame">
 
-            <div class="content-panel list">
+            <div class="post-panel image">
+              
+              <%= image_tag post.user.image.url(:medium), class: "tiny-profile-image" %>
+            
+            </div>
 
-              <div class="user-info-header">
+            <div class="post-panel message">
 
-                <div class="user-info-image">
-                  <%= image_tag post.user.image.url(:medium), class: "tiny-profile-image" %>
-                </div>
-
-                <div class="user-info-name">
-
-                  <span class="post-display-name"><%= link_to post.user.display_name, profile_page_path(post.user.display_name) %></span>
-                  <span class="post-date"><%= post.created_at.strftime("%b %d, %Y") %></span>
-
-                </div>
-                
-
-              </div>
-
-              <div class="user-post-content">
-
-                <h5><%= post.title %></h5>
-
-                <p><%= post.body %></p>
-
-              </div>
+              <span class="post-user"><%= link_to post.user.display_name, profile_page_path(post.user.display_name) %></span><span class="divider">&#183;</span><span class="post-time"><%= post.created_at.strftime("%b %d, %Y") %></span>
+              <br>
+              <p><%= post.body %></p>
 
             </div>
 
@@ -156,8 +185,8 @@
       </div>
 
       <div class="column-content default-off" id="column_content_subscribers">
-        
-        <%# @community.followers.each do |follower| %>
+
+        <%# @user.followers.each do |follower| %>
 
           <div class="content-frame stacked">
 
@@ -166,7 +195,7 @@
               <div class="user-info-header">
 
                 <div class="user-info-image">
-                  <%# image_tag follower.image.url(:medium), class: "tiny-profile-image" %>
+                  <%#cimage_tag follower.image.url(:medium), class: "tiny-profile-image" %>
                 </div>
 
                 <div class="user-info-name">
@@ -186,85 +215,25 @@
 
       </div>
 
-      <div class="column-content default-off" id="column_content_work">
-        work
-      </div>
-
     </div>
 
-    <div class="side-content-column">
+    <div class="three-columns third">
+    
+      <div class="dashboard-profile">
 
-      <h4>For Sale</h4>
+        <h4>For Sale</h4>
 
-      <div class="content-frame stacked">
+        <div class="dashboard-profile-content">
 
-        <div class="content-panel list">
+          <% Community.all.each do |community| %>
 
-          <p>You have 6 new requests for beats totalling $4,000.</p>
+            <div class="content-panel list">
 
-        </div>
+              <a href="<%= community_path(community.name) %>"><p><%= community.name %></p></a>
 
-      </div>
+            </div>
 
-      <div class="content-frame stacked">
-
-        <div class="content-panel list">
-
-          <p>You have 6 new requests for beats totalling $4,000.</p>
-
-        </div>
-
-      </div>
-
-      <div class="content-frame stacked">
-
-        <div class="content-panel list">
-
-          <p>You have 6 new requests for beats totalling $4,000.</p>
-
-        </div>
-
-      </div>
-
-      <br>
-
-      <h4>Requests</h4>
-
-      <div class="content-frame stacked">
-
-        <div class="content-panel list">
-
-          <p>You have 6 new requests for beats totalling $4,000.</p>
-
-        </div>
-
-      </div>
-
-      <div class="content-frame stacked">
-
-        <div class="content-panel list">
-
-          <p>You have 6 new requests for beats totalling $4,000.</p>
-
-        </div>
-
-      </div>
-
-      <div class="content-frame stacked">
-
-        <div class="content-panel list">
-
-          <p>You have 6 new requests for beats totalling $4,000.</p>
-
-        </div>
-
-      </div>
-
-      <div class="content-frame stacked">
-
-        <div class="content-panel list">
-
-          <p>You have 6 new requests for beats totalling $4,000.</p>
+          <%end%>
 
         </div>
 
