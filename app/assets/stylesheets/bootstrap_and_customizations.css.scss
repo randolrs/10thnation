@@ -172,6 +172,25 @@ ul.dropdown-menu {
     margin: 0px -15px;
 }
 
+span.caret.quote{
+
+    -ms-transform: rotate(90deg);
+    -webkit-transform: rotate(90deg);
+    transform: rotate(90deg);
+
+    border-top: 8px dashed;
+    border-top: 8px solid \9;
+    border-right: 8px solid transparent;
+    border-left: 8px solid transparent;
+    margin: 0px;
+
+    position: absolute;
+    margin-left: -18px;
+    margin-top: 30px;
+    color: #111;
+    
+}
+
 
 @media (max-width: 767px) {
     

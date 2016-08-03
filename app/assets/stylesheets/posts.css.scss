@@ -1,0 +1,64 @@
+// Place all the styles related to the posts controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.post-frame{
+
+	background: #222;
+    box-shadow: inset 0px 2px 5px #333;
+    border: 1px solid #000;
+    margin-bottom: -1px;
+
+	.post-panel{
+		display:table-cell;
+		vertical-align: top;
+
+		span.post-user{
+			line-height: 20px;
+    		font-size: 20px;
+    		font-weight: 500;
+		}
+
+		span.post-time{
+			line-height: 20px;
+    		font-size: 16px;
+		}
+
+		span.divider{
+			margin: 0px 5px;
+			font-size: 20px;
+    		line-height: 20px;
+		}
+
+		img{
+			width: 60px;
+			height: 60px;
+			border-radius: 80px;
+			border: 2px solid #fff;
+		}
+	}
+
+	.post-panel.image{
+		padding:8px;
+	}
+
+	.post-panel.quote{
+		vertical-align: middle;
+	}
+
+	.post-panel.message{
+		width: 100%;
+		padding: 8px;
+
+    	p{
+    		padding: 5px 0px;
+    		font-size: 16px;
+    		text-shadow: 0px 1px 1px #000;
+    	}
+	}
+}
+
+.post-frame:hover{
+	background: #333;
+	cursor: pointer;
+}
