@@ -1,3 +1,27 @@
+<div class="profile-header">
+
+	<div class="centered-content">
+
+		<ul>
+			<li class="profile-header-option active" id="profile_option_posts" data-option-type="posts">
+				<a>Posts</a>
+			</li>
+
+			<li class="profile-header-option" id="profile_option_subscribers" data-option-type="subscribers">
+				<a>Following</a>
+			</li>
+
+			<li class="profile-header-option" id="profile_option_subscribers" data-option-type="communities">
+				<a>Communities</a>
+			</li>
+
+		</ul>
+
+	</div>
+
+</div>
+
+
 <div class="content">
 
 	<div class="content-box">
@@ -11,7 +35,6 @@
 				<h3><%= link_to current_user.display_name, profile_page_path(current_user.display_name) %></h3>
 
 			</div>
-
 
 			<div class="dashboard-profile clickable">
 
@@ -88,17 +111,6 @@
 		</div>
 
 		<div class="three-columns second">
-		
-<!-- 			<ul>
-
-				<li class="active">
-					<a>Recent Activity</a>
-				</li>
-
-				<li>
-					<a>Questions for You</a>
-				</li>
-			</ul> -->
 
 			<div class="content-frame stacked form">
 
@@ -112,60 +124,42 @@
 
 			</div>
 
-			<% current_user.posts.reverse.each do |post| %>
+			<div class="column-content" id="column_content_posts">
 
-<!-- 				<div class="content-frame stacked">
+				<% current_user.posts.reverse.each do |post| %>
 
-				  <div class="content-panel list">
+					<div class="post-frame">
 
-				    <div class="user-info-header">
-
-				      <div class="user-info-image">
-				        <%# image_tag post.user.image.url(:medium), class: "tiny-profile-image" %>
-				      </div>
-
-				      <div class="user-info-name">
-
-				        <span class="post-display-name"><%# link_to post.user.display_name, profile_page_path(post.user.display_name) %></span>
-				        <span class="post-date"><%# post.created_at.strftime("%b %d, %Y") %></span>
-
-				      </div>
-				      
-
-				    </div>
-
-				    <div class="user-post-content">
-
-				      <h5><%# post.title %></h5>
-
-				      <p><%# post.body %></p>
-
-				    </div>
-
-				  </div>
-
-				</div> -->
-
-
-				<div class="post-frame">
-
-					<div class="post-panel image">
+						<div class="post-panel image">
+							
+							<%= image_tag post.user.image.url(:medium), class: "tiny-profile-image" %>
 						
-						<%= image_tag post.user.image.url(:medium), class: "tiny-profile-image" %>
-					
+						</div>
+
+						<div class="post-panel message">
+
+							<span class="post-user"><%= link_to post.user.display_name, profile_page_path(post.user.display_name) %></span><span class="divider">&#183;</span><span class="post-time"><%= post.created_at.strftime("%b %d, %Y") %></span>
+							<br>
+							<p><%= post.body %></p>
+
+						</div>
+
 					</div>
 
-					<div class="post-panel message">
+				<%end%>
 
-						<span class="post-user"><%= link_to post.user.display_name, profile_page_path(post.user.display_name) %></span><span class="divider">&#183;</span><span class="post-time"><%= post.created_at.strftime("%b %d, %Y") %></span>
-						<br>
-						<p><%= post.body %></p>
+			</div>
 
-					</div>
+			<div class="column-content" id="column_content_subscribers" style="display:none;">
+				 subs
+			</div>
 
-				</div>
 
-			<%end%>
+			<div class="column-content" id="column_content_communities" style="display:none;">
+
+				communities
+
+			</div>
 
 		</div>
 

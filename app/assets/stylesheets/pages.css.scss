@@ -866,6 +866,17 @@ span.citizen-badge{
 			
 		}
 
+		.content-frame.form{
+			width: 100%;
+    		position: fixed;
+    		bottom: 0px;
+    		left: 0px;
+		}
+
+		.header-offset{
+			padding-bottom: 150px;
+		}
+
 	}
 
 }
@@ -878,16 +889,7 @@ span.citizen-badge{
 			padding: 0px;
 		}
 
-		.content-frame.form{
-			width: 100%;
-    		position: fixed;
-    		bottom: 0px;
-    		left: 0px;
-		}
-
-		.header-offset{
-			padding-bottom: 150px;
-		}
+		
 
 	}
 
