@@ -171,7 +171,19 @@ ready = ->
 			else if $(@).data('option-type') == "works"
 				$('body').find('.column-content#column_content_works').fadeIn()
 				$('body').find('.column-content#column_content_posts').hide()
-				$('body').find('.column-content#column_content_subscribers').hide()
-				
+				$('body').find('.column-content#column_content_subscribers').hide()	
+
+		$('input.dashboard-post-input').on 'focusin', (event), ->
+			submitButton = $(@).parent().find('.dashboard-post-submit')
+			submitButton.show()
+
+		$('input.dashboard-post-input').on 'focusout', (event), ->
+			postText = $(@).val()
+			if postText.length == 0
+				submitButton = $(@).parent().find('.dashboard-post-submit')
+				submitButton.hide()
+			end
+
+
 $(document).ready(ready)
 $(document).on('page:load', ready)
