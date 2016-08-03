@@ -605,6 +605,10 @@ span.citizen-badge{
     box-shadow: 0px 1px 2px #333;
 }
 
+#dashboard-header-for-mobile{
+	display: none;
+}
+
 @media only screen and (max-width: 1300px) {
 	
 	body{
@@ -837,6 +841,20 @@ span.citizen-badge{
 			}
 		}
 
+		.content-frame.form{
+			width: 100%;
+    		position: fixed;
+    		bottom: 0px;
+    		left: 0px;
+		}
+
+		.header-offset{
+			padding-bottom: 150px;
+		}
+
+		#dashboard-header-for-mobile{
+			display: block;
+		}
 
 		.profile-header{
 
@@ -866,16 +884,7 @@ span.citizen-badge{
 			
 		}
 
-		.content-frame.form{
-			width: 100%;
-    		position: fixed;
-    		bottom: 0px;
-    		left: 0px;
-		}
 
-		.header-offset{
-			padding-bottom: 150px;
-		}
 
 	}
 
@@ -888,8 +897,6 @@ span.citizen-badge{
 		.content-box{
 			padding: 0px;
 		}
-
-		
 
 	}
 

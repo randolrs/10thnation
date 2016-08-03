@@ -189,6 +189,5 @@ ready = ->
 				submitButton.hide()
 			end
 
-
 $(document).ready(ready)
 $(document).on('page:load', ready)
