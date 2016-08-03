@@ -1,0 +1,21 @@
+<% if user_signed_in?%>
+
+	<% unless current_user.id == @user.id %>
+
+		<% if current_user.is_following(@user.id)  %>
+
+			<a class="user-cta subscribe-cta following" data-following-id="<%= @user.id%>">
+				&#10004; Following
+			</a>
+
+		<% else %>
+
+			<a class="user-cta subscribe-cta" data-following-id="<%= @user.id%>">
+				Follow
+			</a>
+
+		<% end %>
+
+	<% end %>
+
+<% end %>

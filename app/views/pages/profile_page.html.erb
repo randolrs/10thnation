@@ -23,19 +23,7 @@
 
 			<li class="for-mobile">
 
-				<% if current_user.is_following(@user.id)  %>
-
-					<a class="user-cta subscribe-cta following" data-following-id="<%= @user.id%>">
-						&#10004; Following
-					</a>
-
-				<% else %>
-
-					<a class="user-cta subscribe-cta" data-following-id="<%= @user.id%>">
-						Follow
-					</a>
-
-				<% end %>
+				<%= render 'pages/users/follow_cta_mobile' %>
 
 			</li>
 
@@ -55,10 +43,6 @@
 				<a><span class="profile-header-numbers"><%= @user.posts.count %></span><br>Posts</a>
 			</li>
 
-<!-- 			<li class="profile-header-option" id="profile_option_works" data-option-type="works">
-				<a><span class="profile-header-numbers">122</span><br>Communities</a>
-			</li> -->
-
 			<li class="profile-header-option" id="profile_option_subscribers" data-option-type="subscribers">
 				<a><span class="profile-header-numbers"><%= @user.followers.count %></span><br>Followers</a>
 			</li>
@@ -67,19 +51,7 @@
 
 	</div>
 
-	<% if current_user.is_following(@user.id)  %>
-
-		<a class="user-cta subscribe-cta following" data-following-id="<%= @user.id%>">
-			&#10004; Following
-		</a>
-
-	<% else %>
-
-		<a class="user-cta subscribe-cta" data-following-id="<%= @user.id%>">
-			Follow
-		</a>
-
-	<% end %>
+	<%= render 'pages/users/follow_cta' %>
 
 </div>
 
@@ -87,41 +59,70 @@
 
 	<div class="content-box">
 
-		<div class="main-content-column">
+		<div class="three-columns first">
+
+			<div class="dashboard-profile clickable">
+
+				<h4>Communities</h4>
+
+				<div class="dashboard-profile-content">
+
+					<% Community.all.each do |community| %>
+
+						  <div class="content-panel list">
+
+						  	<p><%= community.name %></p>
+
+						  </div>
+
+					<%end%>
+
+				</div>
+
+			</div>
+
+			<div class="dashboard-profile mobile">
+
+				<h4>For Sale</h4>
+
+				<div class="dashboard-profile-content">
+
+					<% Community.all.each do |community| %>
+
+						  <div class="content-panel list">
+
+						  	<p><%= community.name %></p>
+						  </div>
+
+					<%end%>
+
+				</div>
+
+			</div>
+
+		</div>
+
+		<div class="three-columns second">
 
 			<div class="column-content" id="column_content_posts">
 
-				<% @user.posts.reverse.each do |post| %>
+				<% current_user.posts.reverse.each do |post| %>
 
-					<div class="content-frame stacked">
+					<div class="post-frame">
 
-					  <div class="content-panel list">
+						<div class="post-panel image">
+							
+							<%= image_tag post.user.image.url(:medium), class: "tiny-profile-image" %>
+						
+						</div>
 
-					    <div class="user-info-header">
+						<div class="post-panel message">
 
-					      <div class="user-info-image">
-					        <%= image_tag post.user.image.url(:medium), class: "tiny-profile-image" %>
-					      </div>
+							<span class="post-user"><%= link_to post.user.display_name, profile_page_path(post.user.display_name) %></span><span class="divider">&#183;</span><span class="post-time"><%= post.created_at.strftime("%b %d, %Y") %></span>
+							<br>
+							<p><%= post.body %></p>
 
-					      <div class="user-info-name">
-
-					        <span class="post-display-name"><%= link_to post.user.display_name, profile_page_path(post.user.display_name) %></span>
-					        <span class="post-date"><%= post.created_at.strftime("%b %d, %Y") %></span>
-
-					      </div>
-					      
-
-					    </div>
-
-					    <div class="user-post-content">
-
-					      <h5><%= post.title %></h5>
-
-					      <p><%= post.body %></p>
-
-					    </div>
-
-					  </div>
+						</div>
 
 					</div>
 
@@ -129,8 +130,9 @@
 
 			</div>
 
+
 			<div class="column-content default-off" id="column_content_subscribers">
-				
+
 				<% @user.followers.each do |follower| %>
 
 					<div class="content-frame stacked">
@@ -160,85 +162,25 @@
 
 			</div>
 
-			<div class="column-content default-off" id="column_content_work">
-				work
-			</div>
-
 		</div>
 
-		<div class="side-content-column">
+		<div class="three-columns third">
+		
+			<div class="dashboard-profile">
 
-			<h4>For Sale</h4>
+				<h4>For Sale</h4>
 
-			<div class="content-frame stacked">
+				<div class="dashboard-profile-content">
 
-				<div class="content-panel list">
+					<% Community.all.each do |community| %>
 
-					<p>You have 6 new requests for beats totalling $4,000.</p>
+					  <div class="content-panel list">
 
-				</div>
+					  	<p><%= community.name %></p>
 
-			</div>
+					  </div>
 
-			<div class="content-frame stacked">
-
-				<div class="content-panel list">
-
-					<p>You have 6 new requests for beats totalling $4,000.</p>
-
-				</div>
-
-			</div>
-
-			<div class="content-frame stacked">
-
-				<div class="content-panel list">
-
-					<p>You have 6 new requests for beats totalling $4,000.</p>
-
-				</div>
-
-			</div>
-
-			<br>
-
-			<h4>Requests</h4>
-
-			<div class="content-frame stacked">
-
-				<div class="content-panel list">
-
-					<p>You have 6 new requests for beats totalling $4,000.</p>
-
-				</div>
-
-			</div>
-
-			<div class="content-frame stacked">
-
-				<div class="content-panel list">
-
-					<p>You have 6 new requests for beats totalling $4,000.</p>
-
-				</div>
-
-			</div>
-
-			<div class="content-frame stacked">
-
-				<div class="content-panel list">
-
-					<p>You have 6 new requests for beats totalling $4,000.</p>
-
-				</div>
-
-			</div>
-
-			<div class="content-frame stacked">
-
-				<div class="content-panel list">
-
-					<p>You have 6 new requests for beats totalling $4,000.</p>
+					<%end%>
 
 				</div>
 

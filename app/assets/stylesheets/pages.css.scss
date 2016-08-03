@@ -730,6 +730,18 @@ span.citizen-badge{
 			
 		}
 
+		.content-box{
+		
+			.three-columns.first{
+				display:none;
+			}
+
+			.three-columns.second{
+				width: 100%;
+			}
+
+		}
+
 
 		.profile-cover{
 
@@ -840,9 +852,7 @@ span.citizen-badge{
 
 		.profile-cover{
 
-			.profile-info{
-				position: relative;
-			}
+			
 		}
 
 	}
