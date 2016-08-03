@@ -184,6 +184,14 @@ body{
 	
 }
 
+.content-frame.half{
+    
+    width: 400px;
+    display: table-cell;
+    padding: 0 10px;
+    box-shadow: none;
+}
+
 .content-panel{
 	width: auto;
     background: #111;

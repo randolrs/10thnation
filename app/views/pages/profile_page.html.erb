@@ -1,5 +1,4 @@
 
-
 <div class="profile-cover <% unless @user.has_cover_image %> empty <%end%>">
 
 	<% if @user.has_cover_image %>
@@ -130,12 +129,34 @@
 
 			</div>
 
-
 			<div class="column-content default-off" id="column_content_subscribers">
 
 				<% @user.followers.each do |follower| %>
 
-					<div class="content-frame stacked">
+					<div class="content-frame stacked half">
+
+					  <div class="content-panel list">
+
+					    <div class="user-info-header">
+
+					      <div class="user-info-image">
+					        <%= image_tag follower.image.url(:medium), class: "tiny-profile-image" %>
+					      </div>
+
+					      <div class="user-info-name">
+
+					        <span class="post-display-name"><%= link_to follower.display_name, profile_page_path(follower.display_name) %></span>
+
+					      </div>
+					      
+
+					    </div>
+
+					  </div>
+
+					</div>
+
+					<div class="content-frame stacked half">
 
 					  <div class="content-panel list">
 
