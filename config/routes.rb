@@ -22,6 +22,8 @@ Rails.application.routes.draw do
 
   get '/:username/' => 'pages#profile_page', as: 'profile_page'
 
+  get '/community/:id/' => 'communities#show', as: 'community_page'
+
   get '/user/follow/:followingID', :to => 'pages#follow'
 
   get '/user/community/follow/:followingID', :to => 'pages#follow_community'

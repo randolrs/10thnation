@@ -9,7 +9,19 @@ class CommunitiesController < ApplicationController
 
   # GET /communities/1
   # GET /communities/1.json
+  
   def show
+    
+    if params[:id]
+     
+      @community = Community.find(params[:id])
+
+    else
+
+      redirect_to root_path
+
+    end
+
   end
 
   # GET /communities/new

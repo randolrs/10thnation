@@ -105,4 +105,25 @@ class User < ActiveRecord::Base
 		return false
 	end
 
+	def communities_array
+
+		@communities_array = Array.new
+
+		@user_community_join = UserCommunityJoin.where(:user_id => self.id, :active => true)
+		
+		@user_community_join.each do |following|
+			
+			@user_following = User.where(id: following.follower_id).first
+			
+			if @user_following 
+			
+				@communities_array << @user_following
+
+			end
+
+		end
+
+		return @communities_array
+	end
+
 end

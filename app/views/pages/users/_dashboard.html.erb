@@ -76,7 +76,7 @@
 
 						  <div class="content-panel list">
 
-						  	<p><%= community.name %></p>
+						  	<p><%= link_to community.name, community_path(community.name) %></p>
 						  </div>
 
 					<%end%>
@@ -181,7 +181,7 @@
 
 					  <div class="content-panel list">
 
-					  	<p><%= community.name %></p>
+					  	<p><%= link_to community.name, community_page_path(community.id) %></p>
 
 					  </div>
 
