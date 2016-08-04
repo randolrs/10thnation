@@ -27,6 +27,8 @@
 
         <%= f.text_field :url, placeholder: "URL" %>
 
+        <%= f.file_field :image, class: "form-control" %>
+
         <%= f.text_area :body, placeholder: "Your Post" %>
 
          <%= f.submit 'Post', :class=> 'new-post-submit' %>
