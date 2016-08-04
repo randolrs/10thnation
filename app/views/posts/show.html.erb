@@ -1,4 +1,4 @@
-<%= render :partial => 'communities/cover', :locals => {:community => Community.find(1)} %>
+<%# render :partial => 'communities/cover', :locals => {:community => Community.find(1)} %>
 
 <div class="content">
 
@@ -14,13 +14,23 @@
 
 				<h5>Top Comments</h5>
 
+				<% @post.comments.reverse.each do |comment| %>
+
+					<div class="comment-content">
+					
+						<%= render :partial => 'comments/list', :locals => {:comment => comment} %>
+
+					</div>
+
+				<% end %>
+
 			</div>
 
 		</div>
 
 		<div class="side-content-column">
 
-			<h4>Filter</h4>
+			<h4>10th Nation</h4>
 
 			<div class="content-frame stacked">
 
@@ -38,6 +48,7 @@
 
 </div>
 
+<%# render :partial => 'modals/new_comment_modal', :locals => {:post => @post} %>
 
 <p id="notice"><%= notice %></p>
 

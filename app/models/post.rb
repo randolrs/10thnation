@@ -2,6 +2,8 @@ class Post < ActiveRecord::Base
 
 	belongs_to :user
 
+	has_many :comments
+
 	has_attached_file :image, 
 	:styles => { :medium => "194x194#", :small => "70x70#", :thumb => "30x30#"},
 	:s3_protocol => :https
