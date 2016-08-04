@@ -12,11 +12,11 @@
 
   <div class="post-panel message">
 
-    <span class="post-title"><%= link_to post.title, post_path(post.id) %></span>
+    <span class="post-title"><% if post.url%><%= link_to post.title, post.url %><%else%><%= link_to post.title, post_path(post.id) %><%end%></span>
     <span class="submitter">Submitted on <%= post.created_at.strftime("%b %e") %> by <a href="<%=profile_page_path(post.user.display_name)%>"><%= image_tag post.user.image.url(:medium), class: "tiny-user-image" %><%= post.user.display_name %></a></span> in
     <span class="post-community"><%= link_to "10th Nation", community_path(1)%></span>
     <br>
-    <span class="post-comments">60 Comments</span><span class="divider">&#183;</span><span class="post-share">Share</span>
+    <span class="post-comments"><%= link_to "60 Comments", post_path(post.id) %></span><span class="divider">&#183;</span><span class="post-share">Share</span>
 
   </div>
 

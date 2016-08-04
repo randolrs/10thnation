@@ -109,54 +109,12 @@
 
 </div>
 
+
 <div class="content">
 
   <div class="content-box">
 
-    <div class="three-columns first">
-
-      <div class="dashboard-profile clickable">
-
-        <h4>Communities</h4>
-
-        <div class="dashboard-profile-content">
-
-          <% Community.all.each do |community| %>
-
-              <div class="content-panel list">
-
-                <p><%= community.name %></p>
-
-              </div>
-
-          <%end%>
-
-        </div>
-
-      </div>
-
-      <div class="dashboard-profile mobile">
-
-        <h4>For Sale</h4>
-
-        <div class="dashboard-profile-content">
-
-          <% Community.all.each do |community| %>
-
-              <div class="content-panel list">
-
-                <p><%= community.name %></p>
-              </div>
-
-          <%end%>
-
-        </div>
-
-      </div>
-
-    </div>
-
-    <div class="three-columns second">
+    <div class="main-content-column">
 
       <div class="column-content" id="column_content_posts">
 
@@ -168,56 +126,17 @@
 
       </div>
 
-      <div class="column-content default-off" id="column_content_subscribers">
-
-        <%# @user.followers.each do |follower| %>
-
-          <div class="content-frame stacked">
-
-            <div class="content-panel list">
-
-              <div class="user-info-header">
-
-                <div class="user-info-image">
-                  <%#cimage_tag follower.image.url(:medium), class: "tiny-profile-image" %>
-                </div>
-
-                <div class="user-info-name">
-
-                  <span class="post-display-name"><%# link_to follower.display_name, profile_page_path(follower.display_name) %></span>
-
-                </div>
-                
-
-              </div>
-
-            </div>
-
-          </div>
-
-        <%#end%>
-
-      </div>
-
     </div>
 
-    <div class="three-columns third">
-    
-      <div class="dashboard-profile">
+    <div class="side-content-column">
 
-        <h4>For Sale</h4>
+      <h4>Filter</h4>
 
-        <div class="dashboard-profile-content">
+      <div class="content-frame stacked">
 
-          <% Community.all.each do |community| %>
+        <div class="content-panel">
 
-            <div class="content-panel list">
-
-              <a href="<%= community_path(community.name) %>"><p><%= community.name %></p></a>
-
-            </div>
-
-          <%end%>
+          <p>Improve Your Account</p>
 
         </div>
 
@@ -228,4 +147,3 @@
   </div>
 
 </div>
-
