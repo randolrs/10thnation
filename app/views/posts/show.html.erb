@@ -1,3 +1,44 @@
+<%= render :partial => 'communities/cover', :locals => {:community => Community.find(1)} %>
+
+<div class="content">
+
+	<div class="content-box">
+
+		<div class="main-content-column">
+
+			<%= render :partial => 'posts/list', :locals => {:post => @post} %>
+
+			<div class="comment-container">
+
+				<h5>Comments</h5>
+
+			</div>
+
+		</div>
+
+		<div class="side-content-column">
+
+			<h4>Filter</h4>
+
+			<div class="content-frame stacked">
+
+				<div class="content-panel">
+
+					<p>Improve Your Account</p>
+
+				</div>
+
+			</div>
+
+		</div>
+
+
+
+	</div>
+
+</div>
+
+
 <p id="notice"><%= notice %></p>
 
 <p>

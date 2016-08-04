@@ -7,5 +7,16 @@ class Community < ActiveRecord::Base
 
 		validates_attachment_content_type :image, :content_type => ["image/jpg", "image/jpeg", "image/png", "image/gif"]
 
+		def has_cover_image
+
+			if self.cover_image.url == "cover_img_original.png"
+
+				return false
+			else
+
+				return true
+			end
+
+		end
 
 end

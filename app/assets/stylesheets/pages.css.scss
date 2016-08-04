@@ -10,8 +10,6 @@ body{
 
 .content-box{
 
-	    display: inline-block;
-
 	
 
 	h2{
@@ -521,9 +519,9 @@ input.dashboard-post-input:focus{
 
 .main-content-column{
 	
-	width: 60%;
-    padding-right: 50px;
-    display: inline-block;
+	width: 950px;
+    padding: 0px 30px;
+    display: table-cell;
     vertical-align: top;
 
     h2{
@@ -553,8 +551,9 @@ input.dashboard-post-input:focus{
 }
 
 .side-content-column{
-	width: 39%;
-	display: inline-block;
+	width: 400px;
+	display: table-cell;
+	padding: 0px 20px;
     vertical-align: top;
     
     h4{
@@ -617,8 +616,7 @@ span.citizen-badge{
 			display: block;
 			margin: 0 auto;
 			width: auto;
-			padding: 0px;
-			max-width: 600px;
+			max-width: 950px;
 			min-width:0px;
 			margin-bottom:30px;
 		}
@@ -733,8 +731,8 @@ span.citizen-badge{
 			display: block;
 			margin: 0 auto;
 			width: auto;
-			padding: 0px;
-			max-width: 600px;
+			max-width: 950px;
+			width:100%;
 			min-width:0px;
 		}
 
@@ -882,13 +880,14 @@ span.citizen-badge{
 
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 950px) {
 	
 	body{
 
-		.profile-cover{
+		.main-content-column{
 
-			
+			padding: 0px;
+
 		}
 
 

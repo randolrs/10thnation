@@ -1,0 +1,21 @@
+
+<div class="profile-header">
+
+	<div class="centered-content">
+
+		<ul>
+			<li class="profile-header-option active" id="profile_option_posts" data-option-type="posts">
+				<a><span class="profile-header-numbers"><%= profile.posts.count %></span><br>Posts</a>
+			</li>
+
+			<li class="profile-header-option" id="profile_option_subscribers" data-option-type="subscribers">
+				<a><span class="profile-header-numbers"><%= profile.followers.count %></span><br>Followers</a>
+			</li>
+
+		</ul>
+
+	</div>
+
+	<%= render 'pages/users/follow_cta' %>
+
+</div>

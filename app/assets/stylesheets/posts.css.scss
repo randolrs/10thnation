@@ -59,8 +59,7 @@
 }
 
 .post-frame:hover{
-	background: #333;
-	cursor: pointer;
+	
 }
 
 .post-frame::before{
@@ -89,4 +88,20 @@ span.post-community{
 	a{
 		color: #FFA100;
 		}
+}
+
+
+.profile-cover.cover{
+	height: 150px;
+	padding-top: 30px;
+
+	.profile-info{
+		padding: 5px 15px;
+
+		img.squared.cover{
+			height:75px;
+			width:75px;
+		}
+
+	}
 }
