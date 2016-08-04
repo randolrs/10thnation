@@ -191,8 +191,6 @@ ready = ->
 				submitButton.hide()
 			end
 
-		$('img.small-post-image').width($('img.small-post-image').height());
-
 		$('a.comment-cta').click (event), ->
 			$('body').find('.modal-container#comment-form').show()
 

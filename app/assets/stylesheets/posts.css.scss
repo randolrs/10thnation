@@ -6,7 +6,7 @@
 
 	background: #222;
     box-shadow: inset 0px 2px 5px #333;
-    border: 1px solid #000;
+    border: 1px solid #111;
     margin-bottom: -1px;
 
 	.post-panel{
@@ -81,8 +81,8 @@
 }
 
 .small-post-image{
-    height: 100%;
-    max-height: 120px;
+    height: 110px;
+    width: 110px;
 }
 
 span.post-community{
