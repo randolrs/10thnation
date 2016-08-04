@@ -17,19 +17,13 @@
 //= require turbolinks
 //= require_tree .
 
-var ready;
-ready = function() {
 
-  	$(function () {
-  		$('[data-toggle="popover"]').popover()
-	})
+$(function () {
+	$('[data-toggle="popover"]').popover()
+})
 
-	$(function () {
-  		$('[data-toggle="tooltip"]').tooltip()
-	})
+$(function () {
+	$('[data-toggle="tooltip"]').tooltip()
+})
 
-};
-
-$(document).ready(ready);
-$(document).on('page:load', ready);
 
