@@ -18,6 +18,10 @@
     <br>
     <span class="post-comments"><%= link_to post.comments.count.to_s + " Comments", post_path(post.id) %></span><span class="divider">&#183;</span><span class="post-share">Share</span>
 
+    <% if @commentable %>
+      <a class="comment-cta">Comment</a>
+    <%end%>
+
   </div>
 
 </div>

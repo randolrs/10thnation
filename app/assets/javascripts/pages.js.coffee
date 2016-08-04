@@ -193,5 +193,8 @@ ready = ->
 
 		$('img.small-post-image').width($('img.small-post-image').height());
 
+		$('a.comment-cta').click (event), ->
+			$('body').find('.modal-container#comment-form').show()
+
 $(document).ready(ready)
 $(document).on('page:load', ready)

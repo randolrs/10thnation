@@ -24,7 +24,7 @@ gem "stripe", :git => 'https://github.com/stripe/stripe-ruby'
 
 gem "stripe_event"
 
-gem "aws-sdk"
+gem "aws-sdk", "> 2.0"
 
 gem 'possessive'
 
