@@ -1,30 +1,22 @@
-<div class="content-frame stacked">
+<div class="post-frame">
 
-  <div class="content-panel list">
-
-    <div class="user-info-header">
-
-      <div class="user-info-image">
-        <%= image_tag post.user.image.url(:medium), class: "tiny-profile-image" %>
-      </div>
-
-      <div class="user-info-name">
-
-        <span class="post-display-name"><%= link_to post.user.display_name, profile_page_path(post.user.display_name) %></span>
-        <span class="post-date"><%= post.created_at %></span>
-
-      </div>
+  <% if post.image %>
+  
+    <div class="post-panel image">
       
-
+      <%= image_tag post.image.url(:medium), class: "small-post-image" %>
+    
     </div>
 
-    <div class="user-post-content">
+  <%end%>
 
-      <h5>Title of my Post</h5>
+  <div class="post-panel message">
 
-      <p>Maybe jsut a formatted twitter feed</p>
-
-    </div>
+    <span class="post-title"><%= link_to post.title, post_path(post.id) %></span>
+    <span class="submitter">Submitted on <%= post.created_at.strftime("%b %e") %> by <%= image_tag post.user.image.url(:medium), class: "tiny-user-image" %><%= link_to post.user.display_name, profile_page_path(post.user.display_name) %></span> in
+    <span class="post-community"><%= link_to "10th Nation", community_path(1)%></span>
+    <br>
+    <span class="post-comments">60 Comments</span><span class="divider">&#183;</span><span class="post-share">Share</span>
 
   </div>
 

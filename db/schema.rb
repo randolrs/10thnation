@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160731194052) do
+ActiveRecord::Schema.define(version: 20160804163821) do
 
   create_table "communities", force: :cascade do |t|
     t.integer  "user_id"
@@ -39,8 +39,14 @@ ActiveRecord::Schema.define(version: 20160731194052) do
     t.integer  "user_id"
     t.string   "title"
     t.text     "body"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.string   "url"
+    t.integer  "community_id"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
   end
 
   create_table "user_community_joins", force: :cascade do |t|

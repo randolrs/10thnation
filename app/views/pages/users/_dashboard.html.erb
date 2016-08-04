@@ -128,23 +128,7 @@
 
 				<% current_user.posts.reverse.each do |post| %>
 
-					<div class="post-frame">
-
-						<div class="post-panel image">
-							
-							<%= image_tag post.user.image.url(:medium), class: "tiny-profile-image" %>
-						
-						</div>
-
-						<div class="post-panel message">
-
-							<span class="post-user"><%= link_to post.user.display_name, profile_page_path(post.user.display_name) %></span><span class="divider">&#183;</span><span class="post-time"><%= post.created_at.strftime("%b %d, %Y") %></span>
-							<br>
-							<p><%= post.body %></p>
-
-						</div>
-
-					</div>
+					<%= render :partial => 'posts/list', :locals => {:post => post} %>
 
 				<%end%>
 

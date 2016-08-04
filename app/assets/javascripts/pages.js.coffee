@@ -191,5 +191,7 @@ ready = ->
 				submitButton.hide()
 			end
 
+		$('img.small-post-image').width($('img.small-post-image').height());
+
 $(document).ready(ready)
 $(document).on('page:load', ready)

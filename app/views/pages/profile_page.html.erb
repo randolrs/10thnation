@@ -1,58 +1,5 @@
 
-<div class="profile-cover <% unless @user.has_cover_image %> empty <%end%>">
-
-	<% if @user.has_cover_image %>
-		<%= image_tag @user.cover_image.url(:large), class: "profile-cover-image" %>
-	<%end%>
-
-	<div class="profile-info">
-
-		<ul>
-
-			<li><%= image_tag @user.image.url(:medium), class: "profile-user-image" %></li>
-
-			<li>
-
-				<h2 class="name"><%= @user.display_name %></h2>
-
-				<h3>Producer</h3>
-
-			</li>
-
-
-			<li class="for-mobile">
-
-				<%= render 'pages/users/follow_cta_mobile' %>
-
-			</li>
-
-
-		</ul>
-
-	</div>
-
-</div>
-
-<div class="profile-header">
-
-	<div class="centered-content">
-
-		<ul>
-			<li class="profile-header-option active" id="profile_option_posts" data-option-type="posts">
-				<a><span class="profile-header-numbers"><%= @user.posts.count %></span><br>Posts</a>
-			</li>
-
-			<li class="profile-header-option" id="profile_option_subscribers" data-option-type="subscribers">
-				<a><span class="profile-header-numbers"><%= @user.followers.count %></span><br>Followers</a>
-			</li>
-
-		</ul>
-
-	</div>
-
-	<%= render 'pages/users/follow_cta' %>
-
-</div>
+<%= render :partial => 'layouts/profile_cover', :locals => {:profile => @user} %>
 
 <div class="content">
 
@@ -104,26 +51,10 @@
 		<div class="three-columns second">
 
 			<div class="column-content" id="column_content_posts">
+	
+				<% @user.posts.reverse.each do |post| %>
 
-				<% current_user.posts.reverse.each do |post| %>
-
-					<div class="post-frame">
-
-						<div class="post-panel image">
-							
-							<%= image_tag post.user.image.url(:medium), class: "tiny-profile-image" %>
-						
-						</div>
-
-						<div class="post-panel message">
-
-							<span class="post-user"><%= link_to post.user.display_name, profile_page_path(post.user.display_name) %></span><span class="divider">&#183;</span><span class="post-time"><%= post.created_at.strftime("%b %d, %Y") %></span>
-							<br>
-							<p><%= post.body %></p>
-
-						</div>
-
-					</div>
+					<%= render :partial => 'posts/list', :locals => {:post => post} %>
 
 				<%end%>
 
