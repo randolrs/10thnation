@@ -862,7 +862,14 @@ span.citizen-badge{
 
 			.centered-content{
 				margin-left: 0px;
-				
+
+				ul {
+
+					li{
+						width: 33.3%;
+					}
+				}
+
 			}
 
 			.user-cta{
