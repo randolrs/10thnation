@@ -11,16 +11,25 @@
 // about supported directives.
 //
 //= require jquery
-//= require jquery_ujs
 //= require jquery.turbolinks
+//= require jquery_ujs
 //= require bootstrap-sprockets
 //= require turbolinks
 //= require_tree .
 
-$(function () {
-  $('[data-toggle="popover"]').popover()
-})
+var ready;
+ready = function() {
 
-$(function () {
-  $('[data-toggle="tooltip"]').tooltip()
-})
+  	$(function () {
+  		$('[data-toggle="popover"]').popover()
+	})
+
+	$(function () {
+  		$('[data-toggle="tooltip"]').tooltip()
+	})
+
+};
+
+$(document).ready(ready);
+$(document).on('page:load', ready);
+
