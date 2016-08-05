@@ -14,10 +14,10 @@
 
 		<ul>
 
-			<li><a>My Profile</a></li>
+			<li><a href="<%= profile_page_path(current_user.display_name)%>">Profile</a></li>
 			<li><a>Messages</a></li>
-			<li><a>Requests</a></li>
-			<li class="logout"><a>Logout</a></li>
+			<li><a href="<%= requests_path %>">Requests</a></li>
+			<li class="logout"><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
 
 		</ul>
 
