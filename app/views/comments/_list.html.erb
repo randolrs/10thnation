@@ -1,6 +1,14 @@
 
 <a href="<%=profile_page_path(comment.user.display_name)%>" title="<%= comment.user.display_name %>"><%= image_tag comment.user.image.url(:medium), class: "header-image" %><span class="user-display-name"><%= comment.user.display_name%></span></a>
 
+<a class="comment-reply-cta">Reply</a>
+
 <span class="comment-text"><%= comment.comment_text %></span>
 
-<a class="comment-reply-cta">Reply</a>
+<div class="comment-actions">
+
+	<span>Like</span>
+	<span>Hate</span>
+	<span>Report</span>
+</div>
+

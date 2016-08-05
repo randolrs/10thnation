@@ -10,13 +10,14 @@ class PostsController < ApplicationController
   # GET /posts/1
   # GET /posts/1.json
   def show
+    
     @comment = Comment.new
     @commentable = true
     
-    if @post.body
+    if @post.body.length > 0
       @show_post_details = true
     end
-    
+
   end
 
   # GET /posts/new

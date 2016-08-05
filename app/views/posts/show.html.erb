@@ -14,27 +14,39 @@
 
 				<h5><%= @post.comments.count %> Comments</h5>
 
-				<% @post.comments.reverse.each do |comment| %>
+				<% if @post.comments.count > 0 %>
 
-					<div class="comment-content">
-					
-						<%= render :partial => 'comments/list', :locals => {:comment => comment} %>
+					<% @post.comments.reverse.each do |comment| %>
 
-<!-- 						<div class="comment-content">
-					
-							<%# render :partial => 'comments/list', :locals => {:comment => comment} %>
+						<div class="comment-content">
+						
+							<%= render :partial => 'comments/list', :locals => {:comment => comment} %>
 
-						</div> -->
+	<!-- 						<div class="comment-content">
+						
+								<%# render :partial => 'comments/list', :locals => {:comment => comment} %>
 
-					</div>
+							</div> -->
 
-				<% end %>
+						</div>
+
+					<% end %>
+				
+				<%else%>
+
+<!-- 					<div class="comment-content empty">
+						
+						<a class="comment-cta">Be First to Comment</a>
+
+					</div> -->
+
+				<%end%>
 
 			</div>
 
 		</div>
 
-		<div class="side-content-column">
+<!-- 		<div class="side-content-column">
 
 			<h4>10th Nation</h4>
 
@@ -48,7 +60,7 @@
 
 			</div>
 
-		</div>
+		</div> -->
 
 	</div>
 
