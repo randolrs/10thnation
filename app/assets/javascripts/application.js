@@ -17,6 +17,7 @@
 //= require turbolinks
 //= require_tree .
 
+$.turbo.use('turbolinks:load', 'turbolinks:request-start')
 
 $(function () {
 	$('[data-toggle="popover"]').popover()
@@ -25,5 +26,6 @@ $(function () {
 $(function () {
 	$('[data-toggle="tooltip"]').tooltip()
 })
+
 
 

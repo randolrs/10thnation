@@ -843,8 +843,11 @@ span.citizen-badge{
 
 				ul {
 
+					white-space: nowrap;
+
 					li{
-						width: 30%;
+						
+						
 						
 					}
 				}
@@ -861,7 +864,7 @@ span.citizen-badge{
 
 }
 
-@media only screen and (max-width: 950px) {
+@media only screen and (max-width: 910px) {
 	
 	body{
 
@@ -879,6 +882,23 @@ span.citizen-badge{
 		a.comment-cta-mobile{
 
 			display: block;
+		}
+
+		.profile-header{
+
+			.centered-content{
+				
+
+				ul {
+
+					li{
+
+						padding: 10px;
+						margin: 0px 10px;
+
+					}
+				}
+			}
 		}
 
 	}
@@ -904,6 +924,12 @@ span.citizen-badge{
 
 		.content-box{
 			padding: 0px;
+
+			.main-content-column{
+
+				padding: 0px;
+
+			}
 		}
 
 	}
