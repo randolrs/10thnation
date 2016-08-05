@@ -197,5 +197,21 @@ ready = ->
 		$('a.comment-cta-mobile').click (event), ->
 			$('body').find('.modal-container#comment-form').show()
 
+		$('button.navbar-toggle').click (event), ->
+			$('body').find("#sidebar-nav").show()
+			contentContainer = $('body').find(".content-container")
+			contentContainer.addClass('blurred')
+			$('body').addClass('no-scroll')
+
+		$('a.dropdown-toggle').click (event), ->
+			$('body').find("#sidebar-nav").show()
+			contentContainer = $('body').find(".content-container")
+			contentContainer.addClass('blurred')
+			$('body').addClass('no-scroll')
+
+		$('.sidebar').click (event), ->
+			event.stopPropagation()
+
+
 $(document).ready(ready)
 $(document).on('turbolinks:load', ready)

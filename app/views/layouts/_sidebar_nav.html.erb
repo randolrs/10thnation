@@ -1,0 +1,29 @@
+<div class="modal-container full" id="sidebar-nav">
+
+	<span class="dismiss-modal">+</span>
+
+	<div class="sidebar">
+
+		<div class="sidebar-profile-header">
+
+			<%= image_tag current_user.image.url(:medium), class: "tiny-profile-image" %>
+
+			<h3><%= link_to current_user.display_name, profile_page_path(current_user.display_name) %></h3>
+
+		</div>
+
+		<ul>
+
+			<li><a>My Profile</a></li>
+			<li><a>Messages</a></li>
+			<li><a>Requests</a></li>
+			<li class="logout"><a>Logout</a></li>
+
+		</ul>
+
+
+
+	</div>
+
+
+</div>
