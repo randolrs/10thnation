@@ -17,11 +17,7 @@
     
     <ul class="nav navbar-nav navbar-left">
       
-      <% if user_signed_in? %>
-      	
-      	<li><%= link_to "Communities", communities_path %></li> 
-      
-      <% else %>
+      <% unless user_signed_in? %>
 
       	<li><%= link_to "About", about_path %></li> 
 

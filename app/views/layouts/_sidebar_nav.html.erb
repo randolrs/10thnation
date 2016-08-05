@@ -18,6 +18,7 @@
 				<li><a href="<%= root_path %>">Home</a></li>
 				<li><a href="<%= profile_page_path(current_user.display_name)%>">Profile</a></li>
 				<li><a>Messages</a></li>
+				<li><%= link_to "Communities", communities_path %></li> 
 				<li><a href="<%= requests_path %>">Requests</a></li>
 				<li class="logout"><a data-method="delete" href='<%=destroy_user_session_path%>'>Logout</a></li>
 
