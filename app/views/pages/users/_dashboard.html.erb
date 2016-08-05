@@ -4,16 +4,20 @@
 
 		<ul>
 			<li class="profile-header-option active" id="profile_option_posts" data-option-type="posts">
-				<a>Posts</a>
+				<a>Hot</a>
 			</li>
 
-			<li class="profile-header-option" id="profile_option_subscribers" data-option-type="communities">
+			<li class="profile-header-option" id="profile_option_new" data-option-type="new">
+				<a>New</a>
+			</li>
+
+<!-- 			<li class="profile-header-option" id="profile_option_subscribers" data-option-type="communities">
 				<a>Communities</a>
 			</li>
 
 			<li class="profile-header-option" id="profile_option_subscribers" data-option-type="subscribers">
 				<a>Following</a>
-			</li>
+			</li> -->
 
 		</ul>
 
@@ -38,6 +42,16 @@
 
 			</div>
 
+			<div class="column-content" id="column_content_new" style="display:none;">
+				 
+				 <% Post.all.reverse.each do |post| %>
+
+					<%= render :partial => 'posts/list', :locals => {:post => post} %>
+
+				<%end%>
+
+			</div>
+
 			<div class="column-content" id="column_content_subscribers" style="display:none;">
 				 subs
 			</div>
@@ -51,13 +65,13 @@
 
 		</div>
 
-		<div class="side-content-column">
+		<!-- <div class="side-content-column">
 
 			<div class="dashboard-profile">
 
-				<%= image_tag current_user.image.url(:medium), class: "tiny-profile-image" %>
+				<%# image_tag current_user.image.url(:medium), class: "tiny-profile-image" %>
 
-				<h3><%= link_to current_user.display_name, profile_page_path(current_user.display_name) %></h3>
+				<h3><%# link_to current_user.display_name, profile_page_path(current_user.display_name) %></h3>
 
 			</div>
 
@@ -83,23 +97,23 @@
 
 			<div class="dashboard-profile clickable">
 
-				<h5>Following <%= current_user.followings.count %> Users</h5>
+				<h5>Following <%# current_user.followings.count %> Users</h5>
 
 				<div class="dashboard-profile-content default-off">
 
-					<% current_user.followings.each do |follower| %>
+					<%# current_user.followings.each do |follower| %>
 
 						  <div class="content-panel list">
 
 						    <div class="user-info-header">
 
 						      <div class="user-info-image">
-						        <%= image_tag follower.image.url(:medium), class: "tiny-profile-image" %>
+						        <%# image_tag follower.image.url(:medium), class: "tiny-profile-image" %>
 						      </div>
 
 						      <div class="user-info-name">
 
-						        <span class="post-display-name"><%= link_to follower.display_name, profile_page_path(follower.display_name) %></span>
+						        <span class="post-display-name"><%# link_to follower.display_name, profile_page_path(follower.display_name) %></span>
 
 						      </div>
 						      
@@ -108,7 +122,7 @@
 
 						  </div>
 
-					<%end%>
+					<%#end%>
 
 				</div>
 
@@ -120,20 +134,20 @@
 
 				<div class="dashboard-profile-content">
 
-					<% Community.all.each do |community| %>
+					<%# Community.all.each do |community| %>
 
 						  <div class="content-panel list">
 
-						  	<p><%= link_to community.name, community_path(community.name) %></p>
+						  	<p><%# link_to community.name, community_path(community.name) %></p>
 						  </div>
 
-					<%end%>
+					<%#end%>
 
 				</div>
 
 			</div>
 
-		</div>
+		</div> -->
 
 	</div>
 

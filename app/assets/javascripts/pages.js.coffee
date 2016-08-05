@@ -163,6 +163,7 @@ ready = ->
 			if $(@).data('option-type') == "posts"
 				$('body').find('.column-content#column_content_posts').fadeIn()
 				$('body').find('.column-content#column_content_works').hide()
+				$('body').find('.column-content#column_content_new').hide()
 				$('body').find('.column-content#column_content_subscribers').hide()
 				$('body').find('.column-content#column_content_communities').hide()
 			else if $(@).data('option-type') == "subscribers"
@@ -177,6 +178,10 @@ ready = ->
 				$('body').find('.column-content#column_content_communities').hide()
 			else if $(@).data('option-type') == "communities"
 				$('body').find('.column-content#column_content_communities').fadeIn()
+				$('body').find('.column-content#column_content_posts').hide()
+				$('body').find('.column-content#column_content_subscribers').hide()	
+			else if $(@).data('option-type') == "new"
+				$('body').find('.column-content#column_content_new').fadeIn()
 				$('body').find('.column-content#column_content_posts').hide()
 				$('body').find('.column-content#column_content_subscribers').hide()		
 
