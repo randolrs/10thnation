@@ -198,4 +198,4 @@ ready = ->
 			$('body').find('.modal-container#comment-form').show()
 
 $(document).ready(ready)
-$(document).on('page:load', ready)
+$(document).on('turbolinks:load', ready)
