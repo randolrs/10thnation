@@ -831,6 +831,7 @@ span.citizen-badge{
 
 		#dashboard-header-for-mobile{
 			display: block;
+			padding: 0px 10px;
 		}
 
 		.profile-header{
@@ -843,7 +844,8 @@ span.citizen-badge{
 				ul {
 
 					li{
-						width: 33.3%;
+						width: 30%;
+						
 					}
 				}
 
@@ -877,6 +879,19 @@ span.citizen-badge{
 		a.comment-cta-mobile{
 
 			display: block;
+		}
+
+	}
+
+}
+
+@media only screen and (max-width: 600px) {
+	
+	body{
+
+		li.profile-header-option{
+			
+			font-size: 16px;
 		}
 
 	}
