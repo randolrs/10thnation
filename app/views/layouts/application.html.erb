@@ -30,6 +30,8 @@
 
 		</div>
 
+		<%= render 'layouts/footer' %>
+
 		<% if user_signed_in? %>
 
 			<%= render 'modals/upload_track_modal' %>
@@ -47,6 +49,7 @@
 		<%end%>
 
 		<%= render 'layouts/sidebar_nav' %>
+
 
 		<%# render 'modals/audio/audio_player' %>
 
