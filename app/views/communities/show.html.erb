@@ -64,34 +64,36 @@
 
     <ul>
       <li class="profile-header-option active" id="profile_option_posts" data-option-type="posts">
-        <a><span class="profile-header-numbers">12<%# @community.posts.count %></span><br>Posts</a>
+        <a>Posts</a>
       </li>
 
       <li class="profile-header-option" id="profile_option_subscribers" data-option-type="subscribers">
-        <a><span class="profile-header-numbers">11<%# @community.followers.count %></span><br>Subscribers</a>
+        <a>Subscribers</a>
       </li>
 
       <li class="profile-header-option" id="profile_option_subscribers" data-option-type="subscribers">
-        <a><span class="profile-header-numbers">1666<%# @community.followers.count %></span><br>Citizens</a>
+        <a>Citizens</a>
       </li>
 
     </ul>
 
+    <% if current_user.is_following_community(@community.id)  %>
+
+      <a class="user-cta follow-community-cta following community" data-following-id="<%= @community.id%>">
+        &#10004; Subscribed
+      </a>
+
+    <% else %>
+
+      <a class="user-cta follow-community-cta community" data-following-id="<%= @community.id%>">
+        Subscribe
+      </a>
+
+    <% end %>
+
   </div>
 
-  <% if current_user.is_following_community(@community.id)  %>
 
-    <a class="user-cta follow-community-cta following community" data-following-id="<%= @community.id%>">
-      &#10004; Subscribed
-    </a>
-
-  <% else %>
-
-    <a class="user-cta follow-community-cta community" data-following-id="<%= @community.id%>">
-      Subscribe
-    </a>
-
-  <% end %>
 
 <!--   <%# if current_user.is_member_of_community(@community.id)  %>
 
@@ -117,6 +119,16 @@
     <div class="main-content-column">
 
       <div class="column-content" id="column_content_posts">
+
+        <% Post.all.reverse.each do |post| %>
+
+          <%= render :partial => 'posts/list', :locals => {:post => post} %>
+
+        <%end%>
+
+      </div>
+
+      <div class="column-content" id="column_content_subscribers">
 
         <% Post.all.reverse.each do |post| %>
 
