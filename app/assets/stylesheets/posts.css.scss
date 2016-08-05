@@ -35,6 +35,17 @@
     		line-height: 20px;
 		}
 
+		span.post-body{
+			margin: 20px 10px;
+
+			border-radius: 3px;
+			border: 2px solid #fff;
+			background: #333;
+			padding: 10px 20px;
+			display: block;
+			font-size: 16px;
+		}
+
 	}
 
 	.post-panel.image{

@@ -12,6 +12,9 @@ class PostsController < ApplicationController
   def show
     @comment = Comment.new
     @commentable = true
+    if @post.body
+      @show_post_details = true
+    end
   end
 
   # GET /posts/new

@@ -12,7 +12,7 @@
 
 				<%= render 'modals/new_comment_modal' %>
 
-				<h5>Top Comments</h5>
+				<h5><%= @post.comments.count %> Comments</h5>
 
 				<% @post.comments.reverse.each do |comment| %>
 
@@ -20,11 +20,11 @@
 					
 						<%= render :partial => 'comments/list', :locals => {:comment => comment} %>
 
-						<div class="comment-content">
+<!-- 						<div class="comment-content">
 					
-							<%= render :partial => 'comments/list', :locals => {:comment => comment} %>
+							<%# render :partial => 'comments/list', :locals => {:comment => comment} %>
 
-						</div>
+						</div> -->
 
 					</div>
 
