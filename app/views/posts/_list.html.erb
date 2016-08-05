@@ -12,7 +12,7 @@
 
   <div class="post-panel message">
 
-    <span class="post-title"><% if post.url.length > 0 %><%= link_to post.title, post.url %><%else%><%= link_to post.title, post_path(post.id) %><%end%></span>
+    <span class="post-title"><% if post.url %><%= link_to post.title, post.url %><%else%><%= link_to post.title, post_path(post.id) %><%end%></span>
     <span class="submitter">Submitted on <%= post.created_at.strftime("%b %e") %> by <a href="<%=profile_page_path(post.user.display_name)%>"><%= image_tag post.user.image.url(:medium), class: "tiny-user-image" %><%= post.user.display_name %></a></span> in
     <span class="post-community"><%= link_to "10th Nation", community_path(1)%></span>
     <br>
