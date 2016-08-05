@@ -19,9 +19,9 @@
 
 			<div class="column-content default-off" id="column_content_subscribers">
 
-				<% @user.followers.each do |follower| %>
+				<% @user.followers.each do |user| %>
 
-					<%= render :partial => 'pages/users/list', :locals => {:post => follower} %>
+					<%= render :partial => 'pages/users/list', :locals => {:follower => user} %>
 
 				<%end%>
 
