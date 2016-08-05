@@ -26,56 +26,53 @@ body{
     	text-shadow: 0px 2px 0px #000;
 	}
 
+	.dashboard-profile{
+  
+		display: block;
+		border-radius: 3px 3px 0px 0px;
+		padding: 10px 0px;
+		font-size: 24px;
+	    font-weight: 400;
+	    text-shadow: 0px 2px 0px #000;
+	    text-align: center;
+	    color: #FFA100;
+	    line-height: 50px;
+	    letter-spacing: 1px;
+	    background: #111;
+	    box-shadow: inset 0px 2px 5px #333;
+	    border: 1px solid #000;
+	    border-bottom: none;
+
+	    h5{
+	    	padding: 10px 5px;
+	    }
+    }
+
+	.dashboard-profile.clickable{
+			
+			padding: 0px;
+		
+	}
+
+	.dashboard-profile.clickable:hover{
+			
+		cursor: pointer;
+		
+	}
+
+	.dashboard-profile.mobile{
+			
+		display: none;
+		
+	}
+
+	.dashboard-followings{
+		border-top: 1px solid #000;
+	}
+
 	.three-columns {
     	display: inline-block;
     	vertical-align: top;
-
-    	.dashboard-profile{
-  
-    		display: block;
-    		border-radius: 3px 3px 0px 0px;
-    		padding: 10px 0px;
-    		font-size: 24px;
-		    font-weight: 400;
-		    text-shadow: 0px 2px 0px #000;
-		    text-align: center;
-		    color: #FFA100;
-		    line-height: 50px;
-		    letter-spacing: 1px;
-		    background: #111;
-		    box-shadow: inset 0px 2px 5px #333;
-		    border: 1px solid #000;
-		    border-bottom: none;
-
-		    h5{
-		    	padding: 10px 5px;
-		    }
-    	}
-
-    	.dashboard-profile.clickable{
-  			
-  			padding: 0px;
-    		
-    	}
-
-    	.dashboard-profile.clickable:hover{
-  			
-  			cursor: pointer;
-    		
-    	}
-
-    	.dashboard-profile.mobile{
-  			
-  			display: none;
-    		
-    	}
-
-    	.dashboard-followings{
-    		border-top: 1px solid #000;
-    	}
-
-
-
 	}
 
 	.three-columns.first {
@@ -551,7 +548,7 @@ input.dashboard-post-input:focus{
 }
 
 .side-content-column{
-	width: 400px;
+	
 	display: table-cell;
 	padding: 0px 20px;
     vertical-align: top;
@@ -573,7 +570,6 @@ input.dashboard-post-input:focus{
     h5{
     	font-size: 20px;
     	font-weight: 400;
-    	margin-bottom: 10px;
     	text-shadow: 0px 2px 0px #000;
     	letter-spacing: 1px;
     }
@@ -612,23 +608,6 @@ span.citizen-badge{
 	
 	body{
 
-		.main-content-column{
-			display: block;
-			margin: 0 auto;
-			width: auto;
-			max-width: 950px;
-			min-width:0px;
-			margin-bottom:30px;
-		}
-
-		.side-content-column{
-			display: block;
-			margin: 0 auto;
-			
-			width: auto;
-			padding: 0px;
-			max-width: 600px;
-		}
 
 		.content-box{
 
@@ -718,7 +697,7 @@ span.citizen-badge{
 
 }
 
-@media only screen and (max-width: 1030px) {
+@media only screen and (max-width: 1150px) {
 	
 	body{
 
@@ -847,7 +826,7 @@ span.citizen-badge{
 		}
 
 		.header-offset{
-			padding-bottom: 150px;
+			padding-bottom: 50px;
 		}
 
 		#dashboard-header-for-mobile{
@@ -890,7 +869,15 @@ span.citizen-badge{
 
 		}
 
+		a.comment-cta{
 
+			display: none;
+		}
+
+		a.comment-cta-mobile{
+
+			display: block;
+		}
 
 	}
 

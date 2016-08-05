@@ -194,5 +194,8 @@ ready = ->
 		$('a.comment-cta').click (event), ->
 			$('body').find('.modal-container#comment-form').show()
 
+		$('a.comment-cta-mobile').click (event), ->
+			$('body').find('.modal-container#comment-form').show()
+
 $(document).ready(ready)
 $(document).on('page:load', ready)

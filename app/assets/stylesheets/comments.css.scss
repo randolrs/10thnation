@@ -48,13 +48,14 @@
 
 .comment-text-field{
 	width: 100%;
-    max-width: 400px;
+    max-width: 500px;
     resize: vertical;
     background: #222;
     height: 100px;
     border: 2px solid #fff;
     padding: 5px;
     max-height: 300px;
+    font-size: 16px;
 }
 
 .comment-content{
@@ -90,5 +91,33 @@
 }
 
 a.comment-cta:hover{
+    cursor: pointer;
+}
+
+.comment-cta-mobile{
+    display: none;
+    bottom: 0px;
+    position: fixed;
+    width:100%;
+    left: 0px;
+    text-align: center;
+
+    background-color: #A81300;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#F21D00), to(#A81300));
+    background-image: -webkit-linear-gradient(top, #F21D00, #A81300);
+    background-image: -moz-linear-gradient(top, #F21D00, #A81300);
+    background-image: -ms-linear-gradient(top, #F21D00, #A81300);
+    background-image: -o-linear-gradient(top, #F21D00, #A81300);
+    background-image: linear-gradient(top, #F21D00, #A81300);
+    font-weight: 500;
+    font-size: 20px;
+    text-shadow: 0px 2px 1px #111;
+    padding: 10px;
+    border-bottom: 1px solid #111;
+    border-left: 1px solid #111;
+    box-shadow: 0px 2px 3px #1c1c1c;
+}
+
+a.comment-cta-mobile:hover{
     cursor: pointer;
 }

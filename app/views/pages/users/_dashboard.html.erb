@@ -7,12 +7,12 @@
 				<a>Posts</a>
 			</li>
 
-			<li class="profile-header-option" id="profile_option_subscribers" data-option-type="subscribers">
-				<a>Following</a>
-			</li>
-
 			<li class="profile-header-option" id="profile_option_subscribers" data-option-type="communities">
 				<a>Communities</a>
+			</li>
+
+			<li class="profile-header-option" id="profile_option_subscribers" data-option-type="subscribers">
+				<a>Following</a>
 			</li>
 
 		</ul>
@@ -26,8 +26,8 @@
 
 	<div class="content-box">
 
-		<div class="three-columns first">
-		
+		<div class="side-content-column">
+
 			<div class="dashboard-profile">
 
 				<%= image_tag current_user.image.url(:medium), class: "tiny-profile-image" %>
@@ -110,19 +110,7 @@
 
 		</div>
 
-		<div class="three-columns second">
-
-			<div class="content-frame stacked form" id="dashboard">
-
-			  <div class="content-panel list">
-
-			  	<input class="dashboard-post-input" placeholder="What's up?"></input>
-
-			  	<submit class="dashboard-post-submit" style="display:none;">Post</submit>
-
-			  </div>
-
-			</div>
+		<div class="main-content-column">
 
 			<div class="column-content" id="column_content_posts">
 
@@ -142,30 +130,6 @@
 			<div class="column-content" id="column_content_communities" style="display:none;">
 
 				communities
-
-			</div>
-
-		</div>
-
-		<div class="three-columns third">
-		
-			<div class="dashboard-profile">
-
-				<h4>Suggested</h4>
-
-				<div class="dashboard-profile-content">
-
-					<% Community.all.each do |community| %>
-
-					  <div class="content-panel list">
-
-					  	<p><%= link_to community.name, community_page_path(community.id) %></p>
-
-					  </div>
-
-					<%end%>
-
-				</div>
 
 			</div>
 
