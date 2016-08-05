@@ -212,6 +212,4 @@ ready = ->
 		$('.sidebar').click (event), ->
 			event.stopPropagation()
 
-
-$(document).ready(ready)
 $(document).on('turbolinks:load', ready)

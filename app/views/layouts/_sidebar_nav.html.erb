@@ -4,7 +4,7 @@
 
 	<div class="sidebar">
 
-		<% if user_signed_in?%>
+		<% if user_signed_in? %>
 		
 			<div class="sidebar-profile-header">
 
@@ -15,12 +15,11 @@
 			</div>
 
 			<ul>
-
+				<li><a href="<%= root_path %>">Home</a></li>
 				<li><a href="<%= profile_page_path(current_user.display_name)%>">Profile</a></li>
 				<li><a>Messages</a></li>
 				<li><a href="<%= requests_path %>">Requests</a></li>
 				<li><a data-method="delete" href='<%=destroy_user_session_path%>'>Logout</a></li>
-				<li class="logout"><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
 
 			</ul>
 
