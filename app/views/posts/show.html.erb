@@ -12,7 +12,7 @@
 
 				<%= render 'modals/new_comment_modal' %>
 
-				<h5><%= @post.comments.count %> Comments</h5>
+				<h5><%= @post.comments.count %> <%= "Comment".pluralize(@post.comments.count) %></h5>
 
 				<% if @post.comments.count > 0 %>
 

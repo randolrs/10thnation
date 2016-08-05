@@ -23,7 +23,7 @@
 
     <%else%>
 
-      <span class="post-comments"><%= link_to post.comments.count.to_s + " Comments", post_path(post.id) %></span>
+      <span class="post-comments"><a href=" <%= post_path(post.id) %>"><%= post.comments.count %> <%= "Comment".pluralize(post.comments.count) %></a></span>
       <span class="divider">&#183;</span>
       <span class="post-share">Share</span>
       <span class="divider">&#183;</span>

@@ -38,16 +38,18 @@
 
 		<ul>
 			<li class="profile-header-option active" id="profile_option_posts" data-option-type="posts">
-				<a><span class="profile-header-numbers"><%= profile.posts.count %></span><br>Posts</a>
+				<a><span class="profile-header-numbers"><%= profile.posts.count %></span><br><%= "Post".pluralize(profile.posts.count) %></a>
 			</li>
 
 			<li class="profile-header-option" id="profile_option_comments" data-option-type="comments">
-				<a><span class="profile-header-numbers"><%= profile.comments.count %></span><br>Comments</a>
+				<a><span class="profile-header-numbers"><%= profile.comments.count %></span><br><%= "Comment".pluralize(profile.comments.count) %></a>
 			</li>
 
 			<li class="profile-header-option" id="profile_option_subscribers" data-option-type="subscribers">
-				<a><span class="profile-header-numbers"><%= profile.followers.count %></span><br>Followers</a>
+				<a><span class="profile-header-numbers"><%= profile.followers.count %></span><br><%= "Followers".pluralize(profile.followers.count) %></a>
 			</li>
+
+
 
 		</ul>
 
