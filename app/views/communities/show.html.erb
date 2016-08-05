@@ -130,9 +130,9 @@
 
       <div class="column-content" id="column_content_subscribers">
 
-        <% Post.all.reverse.each do |post| %>
+        <% User.all.each do |follower| %>
 
-          <%= render :partial => 'posts/list', :locals => {:post => post} %>
+          <%= render :partial => 'pages/users/list', :locals => {:follower => follower} %>
 
         <%end%>
 
