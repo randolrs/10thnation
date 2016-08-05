@@ -57,7 +57,6 @@
 
 .comment-content{
     
-    margin-left: 20px;
     display: block;
     padding: 10px;
     font-size: 16px;
@@ -66,18 +65,22 @@
     box-shadow: 0px 2px 2px #222;
     background: #222;
     margin-bottom: 20px;
+    position: relative;
+
 
     a{
-        display: block;
+        display: inline-block;
     }
 
-    span{
+    span.comment-text{
         display: block;
         padding-top: 10px;
         border: 2px solid #fff;
         background: #333;
         padding: 10px;
         margin-top: 10px;
+        border-radius: 3px;
+        box-shadow: inset 0px 0px 3px #000;
     }
 }
 
@@ -132,4 +135,24 @@ a.comment-cta:hover{
 
 a.comment-cta-mobile:hover{
     cursor: pointer;
+}
+
+a.comment-reply-cta{
+    top: 0px;
+    position: absolute;
+    right: 0px;
+    background-color: #A81300;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#F21D00), to(#A81300));
+    background-image: -webkit-linear-gradient(top, #F21D00, #A81300);
+    background-image: -moz-linear-gradient(top, #F21D00, #A81300);
+    background-image: -ms-linear-gradient(top, #F21D00, #A81300);
+    background-image: -o-linear-gradient(top, #F21D00, #A81300);
+    background-image: linear-gradient(top, #F21D00, #A81300);
+    font-weight: 500;
+    font-size: 14px;
+    text-shadow: 0px 2px 1px #111;
+    padding: 10px;
+    border-bottom: 1px solid #111;
+    border-left: 1px solid #111;
+    box-shadow: 0px 2px 3px #1c1c1c;
 }

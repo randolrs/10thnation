@@ -23,7 +23,11 @@
 
     <%else%>
 
-    <span class="post-comments"><%= link_to post.comments.count.to_s + " Comments", post_path(post.id) %></span><span class="divider">&#183;</span><span class="post-share">Share</span><span class="post-share">Save</span>
+      <span class="post-comments"><%= link_to post.comments.count.to_s + " Comments", post_path(post.id) %></span>
+      <span class="divider">&#183;</span>
+      <span class="post-share">Share</span>
+      <span class="divider">&#183;</span>
+      <span class="post-share">Email it to me</span>
 
     <%end%>
 
