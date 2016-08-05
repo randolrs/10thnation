@@ -517,7 +517,7 @@ input.dashboard-post-input:focus{
 .main-content-column{
 	
 	width: 950px;
-    padding: 0px 30px;
+    padding: 0px;
     display: table-cell;
     vertical-align: top;
 
@@ -600,8 +600,12 @@ span.citizen-badge{
     box-shadow: 0px 1px 2px #333;
 }
 
-#dashboard-header-for-mobile{
-	display: none;
+.profile-header#dashboard-header-for-mobile{
+
+	.centered-content{
+		max-width: 950px;
+	}
+	
 }
 
 @media only screen and (max-width: 1300px) {
@@ -834,32 +838,6 @@ span.citizen-badge{
 			padding: 0px 10px;
 		}
 
-		.profile-header{
-
-			text-align: center;
-
-			.centered-content{
-				margin-left: 0px;
-
-				ul {
-
-					white-space: nowrap;
-
-					li{
-						
-						
-						
-					}
-				}
-
-			}
-
-			.user-cta{
-				display: none;
-			}
-
-		}
-
 	}
 
 }
@@ -891,22 +869,32 @@ span.citizen-badge{
 		}
 
 
-
 		.profile-header{
 
+			text-align: center;
+
 			.centered-content{
-				
+				margin-left: 0px;
 
 				ul {
 
-					li{
+					white-space: nowrap;
+					width: 100%;
 
+					li{
+						
 						padding: 10px;
 						margin: 0px 10px;
-
+						
 					}
 				}
+
 			}
+
+			.user-cta{
+				display: none;
+			}
+
 		}
 
 	}

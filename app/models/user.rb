@@ -35,6 +35,12 @@ class User < ActiveRecord::Base
 
 	end
 
+
+	def hot_posts
+
+		return Post.all
+	end
+
 	def followers
 
 		@following_users = Array.new
