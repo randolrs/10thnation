@@ -49,12 +49,12 @@
 				<a><span class="profile-header-numbers"><%= profile.followers.count %></span><br><%= "Followers".pluralize(profile.followers.count) %></a>
 			</li>
 
-
-
 		</ul>
+
+		<%= render 'pages/users/follow_cta' %>
 
 	</div>
 
-	<%= render 'pages/users/follow_cta' %>
+	
 
 </div>
