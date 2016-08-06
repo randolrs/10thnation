@@ -837,7 +837,7 @@ span.citizen-badge{
 
 }
 
-@media only screen and (max-width: 910px) {
+@media only screen and (max-width: 999px) {
 	
 	body{
 
@@ -892,6 +892,10 @@ span.citizen-badge{
 			display: block;
 		}
 
+		.mobile-post-cta{
+			display: inline-block;
+		}
+
 
 		img.small-post-image {
     		height: 70px;
@@ -921,6 +925,8 @@ span.citizen-badge{
 			display: none;
 
 		}
+
+
 
 		#dashboard-header-for-mobile{
 			display: none;
@@ -959,9 +965,16 @@ span.citizen-badge{
 
 }
 
+
 @media only screen and (max-width: 600px) {
 	
 	body{
+
+		.mobile-post-cta{
+    
+    		display: inline-block;
+
+    	}
 
 		li.profile-header-option{
 			

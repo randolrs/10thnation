@@ -220,4 +220,9 @@ ready = ->
 		$('.vote').click (event), ->
 			alert('veal')
 
+		$('.post-corner-cta').click (event), ->
+			$('body').find("#post-form").show()
+			$('body').find('.content-container').addClass('blurred')
+			$('body').addClass('no-scroll')
+
 $(document).on('turbolinks:load', ready)
