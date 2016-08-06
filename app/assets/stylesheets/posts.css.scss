@@ -7,20 +7,24 @@
 	background: #222;
     box-shadow: inset 0px 2px 5px #333;
     border: 1px solid #111;
-    margin-bottom: -1px;
+    margin-bottom: 15px;
     position: relative;
-    padding-left: 55px;
+    padding-left: 63px;
 
 	.post-panel{
 		display:table-cell;
 		vertical-align: top;
 
 		span.post-title{
-    		font-size: 24px;
+    		font-size: 40px;
     		font-weight: 500;
     		display: block;
-    		margin-bottom: 3px;
     		text-align: left;
+    		text-shadow: 0px 2px 2px #000;
+
+    		a{
+    			color: #fff;
+    		}
 		}
 
 		span.post-title.commentable{
@@ -65,7 +69,7 @@
 
 	.post-panel.message{
 		width: 100%;
-		padding: 8px;
+		padding: 5px 15px;
 		text-shadow: 0px 1px 1px #000;
 		position: relative;
 
@@ -100,15 +104,14 @@
 }
 
 .small-post-image{
-    height: 110px;
-    width: 110px;
+    height: 126px;
+    width: 126px;
 }
 
-span.post-community{
-	
-	a{
+span.post-community, span.post-community-mobile{
+	a.community-detail{
 		color: #FFA100;
-		}
+	}
 }
 
 
@@ -129,7 +132,7 @@ span.post-community{
 
 div.upvote{
 	position: absolute;
-    width: 55px;
+    width: 63px;
     height: 100%;
     left: 0px;
     top: 0px;
@@ -138,7 +141,7 @@ div.upvote{
 
     .vote{
     	display:block;
-    	height:55px;
+    	height:63px;
     	text-align: center;
     }
 
@@ -191,3 +194,20 @@ div.upvote{
     bottom: 0px;
     display: none;
 }
+
+.post-community-mobile{
+	display: none;
+}
+
+div.post-title{
+	line-height: 50px;
+}
+
+div.post-submission-details{
+	line-height: 36px;
+}
+
+div.post-actions{
+	line-height: 30px;
+}
+
