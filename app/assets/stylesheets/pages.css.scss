@@ -741,7 +741,6 @@ span.citizen-badge{
 
 		.profile-cover{
 
-	
 
 			.profile-info{
 
@@ -864,12 +863,21 @@ span.citizen-badge{
 
 		}
 
+		span.submitter{
+			display:none;
+		}
+
+		img.small-post-image {
+    		height: 70px;
+    		width: 70px;
+		}
 
 		.profile-header{
 
 			text-align: center;
 
 			.centered-content{
+				
 				margin-left: 0px;
 
 				ul {
