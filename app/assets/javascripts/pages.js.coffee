@@ -14,13 +14,13 @@ ready = ->
 
 		$("span.dismiss-modal").click (event), ->
 			modal = $('body').find(".modal-container")
-			contentContainer = $('body').find(".content-container")
+			contentContainer = $('body').find(".content")
 			contentContainer.removeClass('blurred')
 			$('body').removeClass('no-scroll')
 			modal.hide()
 
 		$(".modal-container").click (event), ->
-			contentContainer = $('body').find(".content-container")
+			contentContainer = $('body').find(".content")
 			contentContainer.removeClass('blurred')
 			$('body').removeClass('no-scroll')
 			$(@).hide()
@@ -31,28 +31,28 @@ ready = ->
 		$(".login-modal-cta").click (event), ->
 			loginModal = $('body').find(".modal-container#login-form")
 			loginModal.find("input#user_email").focus()
-			contentContainer = $('body').find(".content-container")
+			contentContainer = $('body').find(".content")
 			contentContainer.addClass('blurred')
 			$('body').addClass('no-scroll')
 			loginModal.fadeIn()
 
 		$(".join-modal-cta").click (event), ->
 			joinModal = $('body').find(".modal-container#join-form")
-			contentContainer = $('body').find(".content-container")
+			contentContainer = $('body').find(".content")
 			contentContainer.addClass('blurred')
 			$('body').addClass('no-scroll')
 			joinModal.fadeIn()
 
 		$("#upload-track-cta").click (event), ->
 			trackModal = $('body').find(".modal-container#upload-track-form")
-			contentContainer = $('body').find(".content-container")
+			contentContainer = $('body').find(".content")
 			contentContainer.addClass('blurred')
 			$('body').addClass('no-scroll')
 			trackModal.fadeIn()
 
 		$(".account-settings-modal").click (event), ->
 			settingsModal = $('body').find(".modal-container#settings")
-			contentContainer = $('body').find(".content-container")
+			contentContainer = $('body').find(".content")
 			contentContainer.addClass('blurred')
 			$('body').addClass('no-scroll')
 			settingsModal.fadeIn()
@@ -117,7 +117,7 @@ ready = ->
 
 		$("a#new-post").click (event), ->
 			$('body').find("#post-form").show()
-			$('body').find('.content-container').addClass('blurred')
+			$('body').find('.content').addClass('blurred')
 			$('body').addClass('no-scroll')
 
 		$(".dashboard-profile.clickable").click (event), ->
@@ -204,13 +204,13 @@ ready = ->
 
 		$('button.navbar-toggle').click (event), ->
 			$('body').find("#sidebar-nav").show()
-			contentContainer = $('body').find(".content-container")
+			contentContainer = $('body').find(".content")
 			contentContainer.addClass('blurred')
 			$('body').addClass('no-scroll')
 
 		$('a.dropdown-toggle').click (event), ->
 			$('body').find("#sidebar-nav").show()
-			contentContainer = $('body').find(".content-container")
+			contentContainer = $('body').find(".content")
 			contentContainer.addClass('blurred')
 			$('body').addClass('no-scroll')
 
@@ -220,9 +220,14 @@ ready = ->
 		$('.vote').click (event), ->
 			alert('veal')
 
-		$('.post-corner-cta').click (event), ->
+		$('a.post').click (event), ->
 			$('body').find("#post-form").show()
-			$('body').find('.content-container').addClass('blurred')
+			$('body').find('.content').addClass('blurred')
+			$('body').addClass('no-scroll')
+
+		$('a.comment').click (event), ->
+			$('body').find('.modal-container#comment-form').show()
+			$('body').find('.content').addClass('blurred')
 			$('body').addClass('no-scroll')
 
 $(document).on('turbolinks:load', ready)
