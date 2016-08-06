@@ -13,6 +13,12 @@
 
   <div class="field">
     
+    <% if current_user.admin %>
+
+      <%= collection_select(:comment, :user_id, User.all, :id, :display_name) %>
+
+    <% end %>
+
     <%= f.text_area :comment_text, :class => 'comment-text-field', :placeholder=> "Your Comment" %>
 
     <%= f.hidden_field :post_id, :value => @post.id %>

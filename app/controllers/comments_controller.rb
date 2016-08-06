@@ -26,7 +26,17 @@ class CommentsController < ApplicationController
   def create
     @comment = Comment.new(comment_params)
 
-    @comment.update(:user_id => current_user.id)
+    if user_signed_in?
+      
+      unless @comment.user_id
+        @comment.update(:user_id => current_user.id)
+      end
+
+    else
+
+      redirect_to root_path
+
+    end
 
     respond_to do |format|
       if @comment.save
