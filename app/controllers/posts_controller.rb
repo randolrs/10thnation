@@ -35,7 +35,11 @@ class PostsController < ApplicationController
     @post = Post.new(post_params)
 
     if user_signed_in?
-      @post.update(:user_id => current_user.id)
+      
+      unless @post.user_id
+        @post.update(:user_id => current_user.id)
+      end
+      
     else
 
       redirect_to new_user_session_path

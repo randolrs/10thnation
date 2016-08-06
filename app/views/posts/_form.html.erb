@@ -23,6 +23,12 @@
 
       <div class="user-post-content">
 
+        <% if current_user.admin %>
+
+          <%= collection_select(:post, :user_id, User.all, :id, :display_name) %>
+
+        <% end %>
+
         <%= f.text_field :title, placeholder: "Title" %>
 
         <%= f.text_field :url, placeholder: "URL" %>
