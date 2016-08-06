@@ -11,16 +11,25 @@
 				<%= image_tag current_user.image.url(:medium), class: "tiny-profile-image" %>
 
 				<h3><%= link_to current_user.display_name, profile_page_path(current_user.display_name) %></h3>
+				
+				<ul class="header-list">
+					<li><a>Messages</a></li>
+					<li><a>Balance</a></li>
+				</ul>
 
 			</div>
 
-			<ul>
-				<li><a href="<%= root_path %>">Home</a></li>
-				<li><a href="<%= profile_page_path(current_user.display_name)%>">Profile</a></li>
-				<li><a>Messages</a></li>
-				<li><%= link_to "Communities", communities_path %></li> 
-				<li><a href="<%= requests_path %>">Requests</a></li>
-				<li class="logout"><a data-method="delete" href='<%=destroy_user_session_path%>'>Logout</a></li>
+			<ul class="menu-list">
+				<li class="menu-option"><a href="<%= root_path %>">Home</a></li>
+				<li class="menu-option"><%= link_to "My Communities", communities_path %></li> 
+				
+				<ul class="sub-menu">
+					<li><%= link_to "10th Nation", community_path(1) %></li>
+					<li><%= link_to "News", community_path(1) %></li>
+					<li><%= link_to "Spirituality", community_path(1) %></li>
+				</ul>
+
+				<li class="menu-option logout"><a data-method="delete" href='<%=destroy_user_session_path%>'>Logout</a></li>
 
 			</ul>
 
