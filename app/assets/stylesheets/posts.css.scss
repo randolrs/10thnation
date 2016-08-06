@@ -18,7 +18,11 @@
     		font-weight: 500;
     		display: block;
     		margin-bottom: 3px;
-    		padding-right: 110px;
+    		text-align: left;
+		}
+
+		span.post-title.commentable{
+			padding-right: 110px;
 		}
 		
 		span.submitter{
