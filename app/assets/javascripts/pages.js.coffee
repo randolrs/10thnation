@@ -217,4 +217,7 @@ ready = ->
 		$('.sidebar').click (event), ->
 			event.stopPropagation()
 
+		$('.vote').click (event), ->
+			alert('veal')
+
 $(document).on('turbolinks:load', ready)
