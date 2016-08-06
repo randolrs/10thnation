@@ -441,6 +441,7 @@ form#payments{
     position: fixed;
     right: 20px;
     bottom: 20px;
+    text-align: center;
 
     z-index: 999999;
     
@@ -448,6 +449,7 @@ form#payments{
         display: block;
         width: 60px;
         height: 60px;
+        font-weight: 400;
         border: 1px solid #333;
         border-radius: 666px;
         font-size: 60px;
