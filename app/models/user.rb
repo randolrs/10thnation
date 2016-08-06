@@ -38,7 +38,7 @@ class User < ActiveRecord::Base
 
 	def hot_posts
 
-		return Post.all
+		return Post.all.reverse
 	end
 
 	def followers
