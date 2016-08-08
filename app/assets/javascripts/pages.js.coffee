@@ -244,4 +244,7 @@ ready = ->
 			$('body').find('.content').addClass('blurred')
 			$('body').addClass('no-scroll')
 
+		$('.comment-reply-cta').click (event), ->
+			$(@).parent().parent().find(".comment-response").show()
+
 $(document).on('turbolinks:load', ready)

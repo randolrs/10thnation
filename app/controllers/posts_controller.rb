@@ -13,6 +13,7 @@ class PostsController < ApplicationController
     
     @comment = Comment.new
     @commentable = true
+    @response = Comment.new
     
     if @post.body.length > 0
       @show_post_details = true
