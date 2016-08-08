@@ -105,17 +105,33 @@
     background-image: -ms-linear-gradient(top, #F21D00, #A81300);
     background-image: -o-linear-gradient(top, #F21D00, #A81300);
     background-image: linear-gradient(top, #F21D00, #A81300);
+
     font-weight: 500;
-    font-size: 16px;
     text-shadow: 0px 1px 1px #111;
-    padding: 10px;
     border-bottom: 1px solid #111;
     border-left: 1px solid #111;
     box-shadow: 0px 2px 3px #1c1c1c;
+
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 24px;
+    line-height: 24px;
 }
 
 a.comment-cta:hover{
     cursor: pointer;
+
+    background-color: #fff;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#fff));
+    background-image: -webkit-linear-gradient(top, #fff, #fff);
+    background-image: -moz-linear-gradient(top, #fff, #fff);
+    background-image: -ms-linear-gradient(top, #fff, #fff);
+    background-image: -o-linear-gradient(top, #fff, #fff);
+    background-image: linear-gradient(top, #fff, #fff);
+    
+    text-shadow: none;
+
+    color: #F21D00;
 }
 
 .comment-cta-mobile{

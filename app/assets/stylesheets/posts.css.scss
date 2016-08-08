@@ -128,31 +128,36 @@ div.upvote{
 
     .vote{
     	
-    	display:block;
-    	height:63px;
-    	text-align: center;
+    	padding-bottom:10px;
 
     	span{
     		
-    		display: block;
-		    height: 50px;
-		    width: 50px;
-		    line-height: 50px;
-		    border-radius: 50px;
-		    font-size: 30px;
+    		border-radius: 50px;
+    		color: #fff;
+    		font-size: 50px;
     		text-shadow: 0px 1px 3px #222;
     		box-shadow: 0px 2px 2px #222;
-    		border: 1px solid #222;
     	}
 
     	span.up-vote{
-    		color: #fff;
-    		background: #17ED3B;
+
+    		background-color: #17ED3B;
+		    background-image: -webkit-gradient(linear, left top, left bottom, from(#17ED3B), to(#12BA2E));
+		    background-image: -webkit-linear-gradient(top, #17ED3B, #12BA2E);
+		    background-image: -moz-linear-gradient(top, #17ED3B, #12BA2E);
+		    background-image: -ms-linear-gradient(top, #17ED3B, #12BA2E);
+		    background-image: -o-linear-gradient(top, #17ED3B, #12BA2E);
+		    background-image: linear-gradient(top, #17ED3B, #12BA2E);
     	}
 
     	span.down-vote{
-    		color: #222;
-    		background-color: #C91800;
+    		background-color: #A81300;
+		    background-image: -webkit-gradient(linear, left top, left bottom, from(#F21D00), to(#A81300));
+		    background-image: -webkit-linear-gradient(top, #F21D00, #A81300);
+		    background-image: -moz-linear-gradient(top, #F21D00, #A81300);
+		    background-image: -ms-linear-gradient(top, #F21D00, #A81300);
+		    background-image: -o-linear-gradient(top, #F21D00, #A81300);
+		    background-image: linear-gradient(top, #F21D00, #A81300);
     	}
 
     	.glyphicon-arrow-down:before {

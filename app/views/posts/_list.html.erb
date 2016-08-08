@@ -4,13 +4,13 @@
 
     <div class="vote" id="up" data-post-id="<%= post.id %>">
 
-      <span class="up-vote glyphicon glyphicon-arrow-up" title="Upvote" aria-hidden="true"></span>
+      <span class="up-vote glyphicon glyphicon-circle-arrow-up" title="Upvote" data-post-id="<%= post.id %>" aria-hidden="true"></span>
 
     </div>
 
     <div class="vote" id="down" data-post-id="<%= post.id %>">
 
-      <span class="down-vote blue glyphicon glyphicon-arrow-down" title="Downvote" aria-hidden="true"></span>
+      <span class="down-vote blue glyphicon glyphicon-circle-arrow-down" title="Downvote" data-post-id="<%= post.id %>" aria-hidden="true"></span>
 
     </div>
 
@@ -65,13 +65,15 @@
       </div>
 
       <% if @commentable %>
-        <a class="comment-cta">Comment</a>
-      <%end%>
-
-      <% if @commentable %>
+        
+        <a class="comment-cta"><span class="comment red glyphicon glyphicon-comment" aria-hidden="true"></span></a>
+      
         <div class="mobile-cta">
-          <a class="comment">+</a>
+          
+          <span class="comment red glyphicon glyphicon-comment" aria-hidden="true"></span>
+
         </div>
+
       <%end%>
 
     </div>
