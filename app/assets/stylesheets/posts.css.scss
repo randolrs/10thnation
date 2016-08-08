@@ -119,14 +119,15 @@ span.post-community, span.post-community-mobile{
 }
 
 div.upvote{
+	
 	position: absolute;
-    width: 63px;
     height: 100%;
     left: 0px;
     top: 0px;
 
 
     .vote{
+    	
     	display:block;
     	height:63px;
     	text-align: center;
@@ -134,20 +135,33 @@ div.upvote{
     	span{
     		
     		display: block;
-    		height: 100%;
-    		width: 100%;
-    		line-height: 63px;
-    		font-size: 30px;
+		    height: 50px;
+		    width: 50px;
+		    line-height: 50px;
+		    border-radius: 50px;
+		    font-size: 30px;
     		text-shadow: 0px 1px 3px #222;
+    		box-shadow: 0px 2px 2px #222;
+    		border: 1px solid #222;
     	}
 
     	span.up-vote{
-    		color: #17ED3B;
+    		color: #fff;
+    		background: #17ED3B;
     	}
 
     	span.down-vote{
-    		color: #C91800;
+    		color: #222;
+    		background-color: #C91800;
     	}
+
+    	.glyphicon-arrow-down:before {
+    		margin-left: 2px;
+		}
+
+		.glyphicon-arrow-up:before {
+		    margin-right: 2px;
+		}
     }
 
     .vote:hover{
