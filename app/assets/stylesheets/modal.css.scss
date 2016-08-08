@@ -495,4 +495,27 @@ form#payments{
         background-image: -o-linear-gradient(top, #fff, #fff);
         background-image: linear-gradient(top, #fff, #fff);
     }
+
+    span.bright-blue{
+        
+        background-color: #0cc;
+        background-image: -webkit-gradient(linear, left top, left bottom, from(#0cc), to(#088));
+        background-image: -webkit-linear-gradient(top, #0cc, #088);
+        background-image: -moz-linear-gradient(top, #0cc, #088);
+        background-image: -ms-linear-gradient(top, #0cc, #088);
+        background-image: -o-linear-gradient(top, #0cc, #088);
+        background-image: linear-gradient(top, #0cc, #088);
+    }
+
+    span.bright-blue:hover{
+        color:  #0cc;
+        background-color: #fff;
+        background-image: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#fff));
+        background-image: -webkit-linear-gradient(top, #fff, #fff);
+        background-image: -moz-linear-gradient(top, #fff, #fff);
+        background-image: -ms-linear-gradient(top, #fff, #fff);
+        background-image: -o-linear-gradient(top, #fff, #fff);
+        background-image: linear-gradient(top, #fff, #fff);
+    }
+
 }
