@@ -39,8 +39,10 @@ class User < ActiveRecord::Base
 
 
 	def hot_posts
+		
+		@posts = Post.all.sort {|a| a.vote_count}
 
-		return Post.all.reverse
+		return @posts.reverse
 	end
 
 	def followers
