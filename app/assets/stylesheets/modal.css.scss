@@ -437,6 +437,7 @@ form#payments{
 
 
 .mobile-cta{
+    
     display:none;
     position: fixed;
     right: 20px;
@@ -445,24 +446,19 @@ form#payments{
 
     z-index: 999999;
     
-    a{
-        display: block;
+    span{
         width: 60px;
         height: 60px;
-        font-weight: 400;
-        border: 1px solid #333;
-        border-radius: 666px;
-        font-size: 60px;
-        line-height: 45px;
-        text-shadow: 0px 2px 2px #111;
-        box-shadow: 0px 3px 5px #111;
-
-
-
+        display: block;
+        line-height: 60px;
+        border-radius: 60px;
+        color:#fff;
+        font-size: 24px;
+        text-shadow: 0px 2px 1px #333;
+        
     }
 
-
-    a.post{
+    span.blue{
         background-color: #0F4DA8;
         background-image: -webkit-gradient(linear, left top, left bottom, from(#437DD4), to(#0F4DA8));
         background-image: -webkit-linear-gradient(top, #437DD4, #0F4DA8);
@@ -471,6 +467,11 @@ form#payments{
         background-image: -o-linear-gradient(top, #437DD4, #0F4DA8);
         background-image: linear-gradient(top, #437DD4, #0F4DA8);
     }
+
+    span:hover{
+        cursor: pointer;
+    }
+
 
     a.comment{
         background-color: #A81300;

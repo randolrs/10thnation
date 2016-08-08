@@ -220,12 +220,12 @@ ready = ->
 		$('.vote').click (event), ->
 			alert('veal')
 
-		$('a.post').click (event), ->
+		$('span.post').click (event), ->
 			$('body').find("#post-form").show()
 			$('body').find('.content').addClass('blurred')
 			$('body').addClass('no-scroll')
 
-		$('a.comment').click (event), ->
+		$('span.comment').click (event), ->
 			$('body').find('.modal-container#comment-form').show()
 			$('body').find('.content').addClass('blurred')
 			$('body').addClass('no-scroll')

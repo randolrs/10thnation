@@ -32,6 +32,8 @@
 
 		<div class="main-content-column">
 
+			<button type="button" class="btn btn-default btn-circle"><i class="glyphicon glyphicon-ok"></i></button>
+
 			<div class="column-content" id="column_content_posts">
 
 				<% current_user.hot_posts.each do |post| %>
@@ -153,7 +155,8 @@
 
 	<div class="mobile-cta">
 
-		<a class="post">+</a>
+		<span class="post blue glyphicon glyphicon-pencil" aria-hidden="true"></span>
+
 	</div>
 
 </div>

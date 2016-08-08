@@ -13,14 +13,14 @@
 				<h3><%= link_to current_user.display_name, profile_page_path(current_user.display_name) %></h3>
 				
 				<ul class="header-list">
-					<li><a>Messages</a></li>
+					<li><a><span class="glyphicon glyphicon-envelope" aria-hidden="true" style="margin-right: 5px;"></span>Messages</a></li>
 					<li><a>Balance</a></li>
 				</ul>
 
 			</div>
 
 			<ul class="menu-list">
-				<li class="menu-option"><a href="<%= root_path %>">Home</a></li>
+				<li class="menu-option"><a href="<%= root_path %>"><span class="glyphicon glyphicon-home" aria-hidden="true" style="margin-right: 5px;"></span>Home</a></li>
 				<li class="menu-option"><%= link_to "My Communities", communities_path %></li> 
 				
 				<ul class="sub-menu">

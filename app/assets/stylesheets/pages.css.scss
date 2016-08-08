@@ -6,6 +6,13 @@ body{
 
 	background-image: asset-url("seamless_paper_texture.png");
 
+	.content-container{
+
+		a:hover{
+			text-decoration: none;
+		}
+	}
+
 }
 
 .content-box{

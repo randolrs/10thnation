@@ -1,77 +1,78 @@
 <div class="post-frame">
 
-  <% if post.image %>
-  
-    <div class="post-panel image">
-      
-      <%= image_tag post.image.url(:medium), class: "small-post-image" %>
-    
-    </div>
-
-  <%end%>
-
-  <div class="post-panel message">
-
-    <span class="post-community-mobile"><%= link_to "10th Nation", community_path(1), class:"community-detail" %><span class="divider">&#183;</span><%= link_to post.user.display_name, profile_page_path(post.user.display_name) %><span class="divider">&#183;</span><%= time_ago_in_words(post.created_at) %> ago <%# post.created_at.strftime("%b %e") %></span>
-
-    <div class="post-title">
-      
-      <span class="post-title <% if @commentable %>commentable<%end%>"><% if post.url %><%= link_to post.title, post.url %><%else%><%= link_to post.title, post_path(post.id) %><%end%></span>
-
-    </div>
-
-    <div class="post-submission-details">
-
-      <span class="submitter">Submitted by <a href="<%=profile_page_path(post.user.display_name)%>"><%= image_tag post.user.image.url(:medium), class: "tiny-user-image" %><%= post.user.display_name %></a> on <%= post.created_at.strftime("%b %e") %> to</span>
-
-      <span class="post-community"><%= link_to "10th Nation", community_path(1), class:"community-detail" %></span>
-
-    </div>
-    
-    <% if @show_post_details %>
-
-      <span class="post-body"><%= post.body %></span>
-
-    <%end%>
-
-    <div class="post-actions">
-
-      <span class="post-comments"><a href=" <%= post_path(post.id) %>"><%= post.comments.count %> <%= "Comment".pluralize(post.comments.count) %></a></span>
-      <span class="divider">&#183;</span>
-      <span class="post-share">Share</span>
-      <span class="divider">&#183;</span>
-      <span class="post-share">Email it to me</span>
-      
-      <span class="upvote-mobile">Like</span>
-
-    </div>
-
-
-
-
-    <% if @commentable %>
-      <a class="comment-cta">Comment</a>
-    <%end%>
-
-    <% if @commentable %>
-      <div class="mobile-cta">
-        <a class="comment">+</a>
-      </div>
-    <%end%>
-
-  </div>
-
   <div class="upvote">
 
     <div class="vote" id="up" data-post-id="<%= post.id %>">
 
-      <a>&#8679;</a>
+      <span class="up-vote glyphicon glyphicon-arrow-up" aria-hidden="true"></span>
 
     </div>
 
     <div class="vote" id="down" data-post-id="<%= post.id %>">
 
-      <a>&#8681;</a>
+      <span class="down-vote blue glyphicon glyphicon-arrow-down" aria-hidden="true"></span>
+
+    </div>
+
+  </div>
+
+  <div class="post-content">
+  
+    <% if post.image %>
+    
+      <div class="post-panel image">
+        
+        <%= image_tag post.image.url(:medium), class: "small-post-image" %>
+      
+      </div>
+
+    <%end%>
+
+    <div class="post-panel message">
+
+      <span class="post-community-mobile"><%= link_to "10th Nation", community_path(1), class:"community-detail" %><span class="divider">&#183;</span><%= link_to post.user.display_name, profile_page_path(post.user.display_name) %><span class="divider">&#183;</span><%= time_ago_in_words(post.created_at) %> ago <%# post.created_at.strftime("%b %e") %></span>
+
+      <div class="post-title">
+        
+        <span class="post-title <% if @commentable %>commentable<%end%>"><% if post.url %><%= link_to post.title, post.url %><%else%><%= link_to post.title, post_path(post.id) %><%end%></span>
+
+      </div>
+
+      <div class="post-submission-details">
+
+        <span class="submitter">Submitted by <a href="<%=profile_page_path(post.user.display_name)%>"><%= image_tag post.user.image.url(:medium), class: "tiny-user-image" %><%= post.user.display_name %></a> on <%= post.created_at.strftime("%b %e") %> to</span>
+
+        <span class="post-community"><%= link_to "10th Nation", community_path(1), class:"community-detail" %></span>
+
+      </div>
+      
+      <% if @show_post_details %>
+
+        <span class="post-body"><%= post.body %></span>
+
+      <%end%>
+
+      <div class="post-actions">
+
+        <span class="post-comments"><a href=" <%= post_path(post.id) %>"><%= post.comments.count %> <%= "Comment".pluralize(post.comments.count) %></a></span>
+        <span class="divider">&#183;</span>
+        <span class="post-share">Share</span>
+        <span class="divider">&#183;</span>
+        <span class="post-share">Email it to me</span>
+        
+        <span class="upvote-mobile">Like</span>
+
+      </div>
+
+      <% if @commentable %>
+        <a class="comment-cta">Comment</a>
+      <%end%>
+
+      <% if @commentable %>
+        <div class="mobile-cta">
+          <a class="comment">+</a>
+        </div>
+      <%end%>
 
     </div>
 
