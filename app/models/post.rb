@@ -11,5 +11,10 @@ class Post < ActiveRecord::Base
 
 	validates_attachment_content_type :image, :content_type => ["image/jpg", "image/jpeg", "image/png", "image/gif"]
 
+	def top_level_comments
+
+		return self.comments.where(:parent_comment_id => nil).reverse
+
+	end
 
 end

@@ -6,11 +6,14 @@
 <span class="comment-text"><%= comment.comment_text %></span>
 
 <div class="comment-actions">
-	<span>Reply</span>
+	
+	<span class="comment-up-vote glyphicon glyphicon-circle-arrow-up" title="Upvote" data-comment-id="<%= comment.id %>" aria-hidden="true"></span>
+	
+	<span class="comment-down-vote glyphicon glyphicon-circle-arrow-down" title="Downvote" data-comment-id="<%= comment.id %>" aria-hidden="true"></span>
 
 	<div style="float:right;">
-		<span class="comment-up-vote glyphicon glyphicon-circle-arrow-up" title="Upvote" data-comment-id="<%= comment.id %>" aria-hidden="true"></span>
-		<span class="comment-down-vote glyphicon glyphicon-circle-arrow-down" title="Downvote" data-comment-id="<%= comment.id %>" aria-hidden="true"></span>
+		<span>Reply</span>
 	</div>
+	
 </div>
 
