@@ -65,7 +65,7 @@
     border-radius: 2px;
 
     display: block;
-    margin: 20px 0;
+    margin-top: 20px;
 
 
 }
@@ -85,10 +85,9 @@
 .response-text-field{
 
     display: block;
-    padding-top: 10px;
     border: 2px solid #fff;
     background: #333;
-    padding: 10px 20px;
+    padding: 10px;
     margin-top: 10px;
     border-radius: 3px;
     box-shadow: inset 0px 0px 3px #000;
@@ -136,7 +135,7 @@
 .comment-content.response{
     border: 2px solid #fff;
     box-shadow: inset 0px 0px 3px #ccc;
-    padding: 15px;
+    padding: 20px;
     background: #111;
 
     span.comment-text{
@@ -296,4 +295,12 @@ div.comment-actions{
 
 .comment-response.form{
     display: none;
+    background: #111;
+    padding: 10px;
+    border: 2px solid #fff;
+    box-shadow: inset 0px 0px 3px #ccc
+}
+
+.comment-topic-header{
+    padding: 5px 0px;
 }

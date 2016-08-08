@@ -154,6 +154,8 @@ class PagesController < ApplicationController
 	def profile_page
 
 		@page = "profile"
+
+		@comment_standalone = true
 		
 		if params[:username]
 

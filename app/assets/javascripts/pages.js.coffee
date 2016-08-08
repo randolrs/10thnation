@@ -164,6 +164,7 @@ ready = ->
 				$('body').find('.column-content#column_content_posts').fadeIn()
 				$('body').find('.column-content#column_content_works').hide()
 				$('body').find('.column-content#column_content_new').hide()
+				$('body').find('.column-content#column_content_comments').hide()	
 				$('body').find('.column-content#column_content_subscribers').hide()
 				$('body').find('.column-content#column_content_communities').hide()
 			else if $(@).data('option-type') == "subscribers"
@@ -171,6 +172,7 @@ ready = ->
 				$('body').find('.column-content#column_content_posts').hide()
 				$('body').find('.column-content#column_content_works').hide()
 				$('body').find('.column-content#column_content_communities').hide()
+				$('body').find('.column-content#column_content_comments').hide()
 			else if $(@).data('option-type') == "works"
 				$('body').find('.column-content#column_content_works').fadeIn()
 				$('body').find('.column-content#column_content_posts').hide()
@@ -182,6 +184,10 @@ ready = ->
 				$('body').find('.column-content#column_content_subscribers').hide()	
 			else if $(@).data('option-type') == "new"
 				$('body').find('.column-content#column_content_new').fadeIn()
+				$('body').find('.column-content#column_content_posts').hide()
+				$('body').find('.column-content#column_content_subscribers').hide()
+			else if $(@).data('option-type') == "comments"
+				$('body').find('.column-content#column_content_comments').fadeIn()
 				$('body').find('.column-content#column_content_posts').hide()
 				$('body').find('.column-content#column_content_subscribers').hide()		
 

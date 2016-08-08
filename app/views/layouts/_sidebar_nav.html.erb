@@ -11,17 +11,18 @@
 				<%= image_tag current_user.image.url(:medium), class: "tiny-profile-image" %>
 
 				<h3><%= link_to current_user.display_name, profile_page_path(current_user.display_name) %></h3>
-				
+<!-- 				
 				<ul class="header-list">
 					<li><a><span class="glyphicon glyphicon-envelope" aria-hidden="true" style="margin-right: 5px;"></span>Messages</a></li>
 					<li><a>Balance</a></li>
 				</ul>
-
+ -->
 			</div>
 
 			<ul class="menu-list">
 				<li class="menu-option"><a href="<%= root_path %>"><span class="glyphicon glyphicon-home" aria-hidden="true" style="margin-right: 5px;"></span>Home</a></li>
-				<li class="menu-option"><%= link_to "My Communities", communities_path %></li> 
+				<li class="menu-option"><a href="<%= root_path %>"><span class="glyphicon glyphicon-envelope" aria-hidden="true" style="margin-right: 5px;"></span>Messages</a></li>
+				<li class="menu-option"><a href="<%= communities_path %>"><span class="glyphicon glyphicon-globe" aria-hidden="true" style="margin-right: 5px;"></span>My Communities</a></li> 
 				
 				<ul class="sub-menu">
 					<li><a href="<%= community_path(1) %>"><%= image_tag Community.find(1).image.url(:medium), class: "tiny-user-image" %>10th Nation</a></li>
