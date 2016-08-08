@@ -45,6 +45,11 @@ class User < ActiveRecord::Base
 		return @posts.reverse
 	end
 
+	def new_posts
+
+		return Post.all.reverse
+	end
+
 	def followers
 
 		@following_users = Array.new

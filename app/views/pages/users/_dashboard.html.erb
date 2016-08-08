@@ -44,7 +44,7 @@
 
 			<div class="column-content" id="column_content_new" style="display:none;">
 				 
-				 <% Post.all.reverse.each do |post| %>
+				 <% current_user.new_posts.each do |post| %>
 
 					<%= render :partial => 'posts/list', :locals => {:post => post} %>
 
