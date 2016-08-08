@@ -16,17 +16,13 @@
 
 					<% @post.top_level_comments.each do |comment| %>
 
-						
-						
-							<%= render :partial => 'comments/list', :locals => {:comment => comment} %>
+						<%= render :partial => 'comments/list', :locals => {:comment => comment} %>
 
 	<!-- 						<div class="comment-content">
 						
 								<%# render :partial => 'comments/list', :locals => {:comment => comment} %>
 
 							</div> -->
-
-						</div>
 
 					<% end %>
 				

@@ -291,6 +291,16 @@ div.comment-actions{
 .comment-response{
     margin-left: 40px;
     padding:10px 0px;
+
+    .comment-content{
+    
+        border: 2px solid #fff;
+        box-shadow: inset 0px 0px 3px #ccc;
+        padding: 20px;
+        background: #111;
+
+    }
+
 }
 
 .comment-response.form{
