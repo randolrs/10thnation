@@ -6,9 +6,8 @@
 <span class="comment-text"><%= comment.comment_text %></span>
 
 <div class="comment-actions">
-
-	<span>Like</span>
-	<span>Hate</span>
-	<span>Report</span>
+	<span>Reply</span>
+	<span class="up-vote glyphicon glyphicon-circle-arrow-up" title="Upvote" data-comment-id="<%= comment.id %>" aria-hidden="true"></span>
+	<span class="up-vote glyphicon glyphicon-circle-arrow-down" title="Downvote" data-comment-id="<%= comment.id %>" aria-hidden="true"></span>
 </div>
 
