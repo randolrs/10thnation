@@ -23,6 +23,8 @@ class User < ActiveRecord::Base
 
 	has_many :comments
 
+	has_many :post_votes
+
 	def has_cover_image
 
 		if self.cover_image.url == "cover_img_original.png"

@@ -174,7 +174,7 @@ div.upvote{
 
     .vote{
     	
-    	padding-bottom:10px;
+    	padding-bottom:5px;
 
     	span{
     		
@@ -232,10 +232,17 @@ div.upvote{
     	
     }
 
+    div.count{
+    	padding-bottom:5px;
+    	text-align: center;
+    }
+
     a{
 
-    	line-height:55px;
-    	font-size: 40px;
+    	color:#FFA100;
+    	text-shadow: 0px 2px 1px #111;
+    	font-weight: 700;
+    	padding-bottom: 5px;
     	
 
     }

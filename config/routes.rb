@@ -19,6 +19,10 @@ Rails.application.routes.draw do
 
   get 'balance' => "pages#balance"
 
+  get '/post/:post_id/up_vote', :to => 'posts#up_vote'
+
+  get '/post/:post_id/down_vote', :to => 'posts#down_vote'
+
   #devise_for :users, :path_names => { :sign_up => "signup", :sign_in => "login", :edit_registration => "settings"}
 
   get '/:username/' => 'pages#profile_page', as: 'profile_page'

@@ -223,12 +223,6 @@ ready = ->
 		$('.sidebar').click (event), ->
 			event.stopPropagation()
 
-		$('.up-vote').click (event), ->
-			alert('up post')
-
-		$('.down-vote').click (event), ->
-			alert('down post')
-
 		$('.comment-up-vote').click (event), ->
 			alert('up comment')
 
@@ -252,5 +246,23 @@ ready = ->
 
 		$('.comment-reply-cta').click (event), ->
 			$(@).parent().parent().find(".comment-response").show()
+
+		$('span.up-vote').click (event), ->
+			post_id = $(@).data('post-id')
+			$.ajax
+				url: "/post/#{post_id}/up_vote", format: 'js'
+				type: "GET"
+				success: (data) ->
+					console.log(data)
+					alert("up")
+
+		$('span.down-vote').click (event), ->
+			post_id = $(@).data('post-id')
+			$.ajax
+				url: "/post/#{post_id}/down_vote", format: 'js'
+				type: "GET"
+				success: (data) ->
+					console.log(data)
+					alert("down")
 
 $(document).on('turbolinks:load', ready)

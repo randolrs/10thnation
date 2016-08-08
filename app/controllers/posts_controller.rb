@@ -21,6 +21,110 @@ class PostsController < ApplicationController
 
   end
 
+  def up_vote
+
+    if user_signed_in?
+
+      if params[:post_id]
+
+        if Post.exists?(params[:post_id])
+
+          if PostVote.exists?(:user_id => current_user.id, :post_id => params[:post_id])
+
+            @existing_post_vote =  PostVote.where(:user_id => current_user.id, :post_id => params[:post_id]).last
+
+            @existing_post_vote.update(:is_up => true, :is_down => false)
+
+            if @existing_post_vote.save
+
+              render json: { :notice=> notice, content_type: 'text/json' }
+          
+            else
+              
+              render json: { :notice=> notice, content_type: 'text/json' }
+           
+            end
+
+          else
+
+            @post_vote = PostVote.new
+
+            @post_vote.update(:user_id => current_user.id, :post_id => params[:post_id], :is_up => true, :is_down => false)
+
+            if @post_vote.save
+
+              render json: { :notice=> notice, content_type: 'text/json' }
+          
+            else
+              
+              render json: { :notice=> notice, content_type: 'text/json' }
+           
+            end
+
+          end
+
+        end
+
+      end
+
+    end
+
+
+  end
+
+
+
+  def down_vote
+
+    if user_signed_in?
+
+      if params[:post_id]
+
+        if Post.exists?(params[:post_id])
+
+          if PostVote.exists?(:user_id => current_user.id, :post_id => params[:post_id])
+
+            @existing_post_vote =  PostVote.where(:user_id => current_user.id, :post_id => params[:post_id]).last
+
+            @existing_post_vote.update(:is_up => false, :is_down => true)
+
+            if @existing_post_vote.save
+
+              render json: { :notice=> notice, content_type: 'text/json' }
+          
+            else
+              
+              render json: { :notice=> notice, content_type: 'text/json' }
+           
+            end
+            
+          else
+
+            @post_vote = PostVote.new
+
+            @post_vote.update(:user_id => current_user.id, :post_id => params[:post_id], :is_up => false, :is_down => true)
+
+            if @post_vote.save
+
+              render json: { :notice=> notice, content_type: 'text/json' }
+          
+            else
+              
+              render json: { :notice=> notice, content_type: 'text/json' }
+           
+            end
+
+          end
+
+        end
+
+      end
+
+    end
+
+
+  end
+
   # GET /posts/new
   def new
     @post = Post.new
