@@ -1,8 +1,6 @@
 
 <a href="<%=profile_page_path(comment.user.display_name)%>" title="<%= comment.user.display_name %>"><%= image_tag comment.user.image.url(:medium), class: "header-image" %><span class="user-display-name"><%= comment.user.display_name%></span></a>
 
-<!-- <a class="comment-reply-cta"><span class="comment red glyphicon glyphicon-comment" aria-hidden="true"></span></a> -->
-
 <span class="comment-text"><%= comment.comment_text %></span>
 
 <div class="comment-actions">
@@ -14,6 +12,6 @@
 	<div style="float:right;">
 		<span>Reply</span>
 	</div>
-	
+
 </div>
 
