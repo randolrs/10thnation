@@ -202,7 +202,7 @@ ready = ->
 		$('a.comment-cta-mobile').click (event), ->
 			$('body').find('.modal-container#comment-form').show()
 
-		$('button.navbar-toggle').click (event), ->
+		$('button.navbar-toggle.menu').click (event), ->
 			$('body').find("#sidebar-nav").show()
 			contentContainer = $('body').find(".content")
 			contentContainer.addClass('blurred')
@@ -221,6 +221,11 @@ ready = ->
 			alert('veal')
 
 		$('span.post').click (event), ->
+			$('body').find("#post-form").show()
+			$('body').find('.content').addClass('blurred')
+			$('body').addClass('no-scroll')
+
+		$('button.navbar-toggle.right').click (event), ->
 			$('body').find("#post-form").show()
 			$('body').find('.content').addClass('blurred')
 			$('body').addClass('no-scroll')
