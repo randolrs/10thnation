@@ -35,7 +35,17 @@ class PostsController < ApplicationController
 
             if @existing_post_vote.is_up
 
-              render json: { :change => 0, :notice=> notice, content_type: 'text/json' }
+              @existing_post_vote.update(:is_up => false, :is_down => false)
+
+              if @existing_post_vote.save
+
+                render json: { :change => -1, :notice=> notice, content_type: 'text/json' }
+            
+              else
+                
+                render json: { :change => 0, :notice=> notice, content_type: 'text/json' }
+             
+              end
 
             elsif @existing_post_vote.is_down
 
@@ -50,6 +60,22 @@ class PostsController < ApplicationController
                 render json: { :change => 0, :notice=> notice, content_type: 'text/json' }
              
               end
+
+            else
+
+              @existing_post_vote.update(:is_up => true, :is_down => false)
+
+              if @existing_post_vote.save
+
+                render json: { :change => 1, :notice=> notice, content_type: 'text/json' }
+            
+              else
+                
+                render json: { :change => 0, :notice=> notice, content_type: 'text/json' }
+             
+              end
+
+
 
             end
 
@@ -96,7 +122,17 @@ class PostsController < ApplicationController
 
             if @existing_post_vote.is_down
 
-              render json: { :change => 0, :notice=> notice, content_type: 'text/json' }
+              @existing_post_vote.update(:is_up => false, :is_down => false)
+
+              if @existing_post_vote.save
+
+                render json: { :change => 1, :notice=> notice, content_type: 'text/json' }
+            
+              else
+                
+                render json: { :change => 0, :notice=> notice, content_type: 'text/json' }
+             
+              end
 
             elsif @existing_post_vote.is_up
 
@@ -105,6 +141,20 @@ class PostsController < ApplicationController
               if @existing_post_vote.save
 
                 render json: { :change => -2, :notice=> notice, content_type: 'text/json' }
+            
+              else
+                
+                render json: { :change => 0, :notice=> notice, content_type: 'text/json' }
+             
+              end
+
+            else
+
+              @existing_post_vote.update(:is_up => false, :is_down => true)
+
+              if @existing_post_vote.save
+
+                render json: { :change => -1, :notice=> notice, content_type: 'text/json' }
             
               else
                 
