@@ -17,7 +17,11 @@
 
 		<span class="vote-count-mobile"><%= comment.vote_count%></span>
 
-		<span class="comment-reply-cta">Reply</span>
+		<% if @commentable %>
+
+			<span class="comment-reply-cta">Reply</span>
+
+		<%end%>
 
 	</div>
 

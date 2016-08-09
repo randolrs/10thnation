@@ -10,19 +10,13 @@
 
 			<div class="comment-container">
 
-				<h5><%= @post.top_level_comments.count %> <%= "Comment".pluralize(@post.top_level_comments.count) %></h5>
+				<h5>Top <%= "Comment".pluralize(@post.top_level_comments.count) %></h5>
 
 				<% if @post.comments.count > 0 %>
 
 					<% @post.top_level_comments.each do |comment| %>
 
 						<%= render :partial => 'comments/list', :locals => {:comment => comment} %>
-
-	<!-- 						<div class="comment-content">
-						
-								<%# render :partial => 'comments/list', :locals => {:comment => comment} %>
-
-							</div> -->
 
 					<% end %>
 				

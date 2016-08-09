@@ -33,16 +33,24 @@ class PostsController < ApplicationController
 
             @existing_post_vote =  PostVote.where(:user_id => current_user.id, :post_id => params[:post_id]).last
 
-            @existing_post_vote.update(:is_up => true, :is_down => false)
+            if @existing_post_vote.is_up
 
-            if @existing_post_vote.save
+              render json: { :change => 0, :notice=> notice, content_type: 'text/json' }
 
-              render json: { :notice=> notice, content_type: 'text/json' }
-          
-            else
-              
-              render json: { :notice=> notice, content_type: 'text/json' }
-           
+            elsif @existing_post_vote.is_down
+
+              @existing_post_vote.update(:is_up => true, :is_down => false)
+
+              if @existing_post_vote.save
+
+                render json: { :change => 2, :notice=> notice, content_type: 'text/json' }
+            
+              else
+                
+                render json: { :change => 0, :notice=> notice, content_type: 'text/json' }
+             
+              end
+
             end
 
           else
@@ -53,11 +61,11 @@ class PostsController < ApplicationController
 
             if @post_vote.save
 
-              render json: { :notice=> notice, content_type: 'text/json' }
+              render json: { :change => 1, :notice=> notice, content_type: 'text/json' }
           
             else
               
-              render json: { :notice=> notice, content_type: 'text/json' }
+              render json: { :change => 0, :notice=> notice, content_type: 'text/json' }
            
             end
 
@@ -86,16 +94,24 @@ class PostsController < ApplicationController
 
             @existing_post_vote =  PostVote.where(:user_id => current_user.id, :post_id => params[:post_id]).last
 
-            @existing_post_vote.update(:is_up => false, :is_down => true)
+            if @existing_post_vote.is_down
 
-            if @existing_post_vote.save
+              render json: { :change => 0, :notice=> notice, content_type: 'text/json' }
 
-              render json: { :notice=> notice, content_type: 'text/json' }
-          
-            else
-              
-              render json: { :notice=> notice, content_type: 'text/json' }
-           
+            elsif @existing_post_vote.is_up
+
+              @existing_post_vote.update(:is_up => false, :is_down => true)
+
+              if @existing_post_vote.save
+
+                render json: { :change => -2, :notice=> notice, content_type: 'text/json' }
+            
+              else
+                
+                render json: { :change => 0, :notice=> notice, content_type: 'text/json' }
+             
+              end
+
             end
             
           else
@@ -106,11 +122,11 @@ class PostsController < ApplicationController
 
             if @post_vote.save
 
-              render json: { :notice=> notice, content_type: 'text/json' }
+              render json: { :change => -1, :notice=> notice, content_type: 'text/json' }
           
             else
               
-              render json: { :notice=> notice, content_type: 'text/json' }
+              render json: { :change => 0, :notice=> notice, content_type: 'text/json' }
            
             end
 
