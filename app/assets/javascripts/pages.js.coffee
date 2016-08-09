@@ -250,7 +250,7 @@ ready = ->
 				success: (data) ->
 					console.log(data)
 					if data.change
-						voteCounter = me.parent().find('.vote-count-mobile')
+						voteCounter = me.parent().parent().find('.vote-count')
 						count = parseInt(voteCounter.text(), 10) + data.change
 						voteCounter.text(count)
 
@@ -263,7 +263,7 @@ ready = ->
 				success: (data) ->
 					console.log(data)
 					if data.change
-						voteCounter = me.parent().find('.vote-count-mobile')
+						voteCounter = me.parent().parent().find('.vote-count')
 						count = parseInt(voteCounter.text(), 10) + data.change
 						voteCounter.text(count)
 
