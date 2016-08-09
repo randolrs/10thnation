@@ -349,3 +349,14 @@ div.post-actions{
 	    background-image: linear-gradient(top, #437DD4, #0F4DA8);
 
 	}
+
+	.gold-text-background{
+		
+		background-color: #FFA100;
+	    background-image: -webkit-gradient(linear, left top, left bottom, from(#FFA100), to(#FF6600));
+	    background-image: -webkit-linear-gradient(top, #FFA100, #FF6600);
+	    background-image: -moz-linear-gradient(top, #FFA100, #FF6600);
+	    background-image: -ms-linear-gradient(top, #FFA100, #FF6600);
+	    background-image: -o-linear-gradient(top, #FFA100, #FF6600);
+	    background-image: linear-gradient(top, #FFA100, #FF6600);
+	}

@@ -301,6 +301,7 @@ ready = ->
 
 		$('p.post-type#link').click (event), ->
 			$('.form-header#link').show()
+			$('input.new-post-submit')
 
 		$('p.post-type#photo').click (event), ->
 			$('.form-header#photo').show()
