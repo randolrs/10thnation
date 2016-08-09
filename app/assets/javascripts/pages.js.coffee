@@ -253,6 +253,8 @@ ready = ->
 						voteCounter = me.parent().parent().find('.vote-count')
 						count = parseInt(voteCounter.text(), 10) + data.change
 						voteCounter.text(count)
+						me.removeClass('glyphicon-cirle-arrow-up')
+						me.addClass('glyphicon-ok-sign')
 
 		$('span.down-vote').click (event), ->
 			post_id = $(@).data('post-id')
@@ -269,18 +271,28 @@ ready = ->
 
 		$('span.comment-up-vote').click (event), ->
 			comment_id = $(@).data('comment-id')
+			me = $(@)
 			$.ajax
 				url: "/comment/#{comment_id}/up_vote", format: 'js'
 				type: "GET"
 				success: (data) ->
 					console.log(data)
+					if data.change
+						voteCounter = me.parent().parent().find('.vote-count')
+						count = parseInt(voteCounter.text(), 10) + data.change
+						voteCounter.text(count)
 
 		$('span.comment-down-vote').click (event), ->
 			comment_id = $(@).data('comment-id')
+			me = $(@)
 			$.ajax
 				url: "/comment/#{comment_id}/down_vote", format: 'js'
 				type: "GET"
 				success: (data) ->
 					console.log(data)
+					if data.change
+						voteCounter = me.parent().parent().find('.vote-count')
+						count = parseInt(voteCounter.text(), 10) + data.change
+						voteCounter.text(count)
 
 $(document).on('turbolinks:load', ready)

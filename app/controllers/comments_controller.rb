@@ -24,17 +24,50 @@ class CommentsController < ApplicationController
 
             @existing_comment_vote =  CommentVote.where(:user_id => current_user.id, :comment_id => params[:comment_id]).last
 
-            @existing_comment_vote.update(:is_up => true, :is_down => false)
+            if @existing_comment_vote.is_up
 
-            if @existing_comment_vote.save
+              @existing_comment_vote.update(:is_up => false, :is_down => false)
 
-              render json: { :notice=> notice, content_type: 'text/json' }
-          
+              if @existing_comment_vote.save
+
+                render json: { :change => -1, :notice=> notice, content_type: 'text/json' }
+            
+              else
+                
+                render json: { :change => 0, :notice=> notice, content_type: 'text/json' }
+             
+              end
+
+            elsif @existing_comment_vote.is_down
+
+              @existing_comment_vote.update(:is_up => true, :is_down => false)
+
+              if @existing_comment_vote.save
+
+                render json: { :change => 2, :notice=> notice, content_type: 'text/json' }
+            
+              else
+                
+                render json: { :change => 0, :notice=> notice, content_type: 'text/json' }
+             
+              end
+
             else
-              
-              render json: { :notice=> notice, content_type: 'text/json' }
-           
+
+              @existing_comment_vote.update(:is_up => true, :is_down => false)
+
+              if @existing_comment_vote.save
+
+                render json: { :change => 1, :notice=> notice, content_type: 'text/json' }
+            
+              else
+                
+                render json: { :change => 0, :notice=> notice, content_type: 'text/json' }
+             
+              end
+
             end
+
 
           else
 
@@ -44,11 +77,11 @@ class CommentsController < ApplicationController
 
             if @comment_vote.save
 
-              render json: { :notice=> notice, content_type: 'text/json' }
+              render json: { :change => 1, :notice=> notice, content_type: 'text/json' }
           
             else
               
-              render json: { :notice=> notice, content_type: 'text/json' }
+              render json: { :change => 0, :notice=> notice, content_type: 'text/json' }
            
             end
 
@@ -77,16 +110,48 @@ class CommentsController < ApplicationController
 
             @existing_comment_vote =  CommentVote.where(:user_id => current_user.id, :comment_id => params[:comment_id]).last
 
-            @existing_comment_vote.update(:is_up => false, :is_down => true)
+            if @existing_comment_vote.is_down
 
-            if @existing_comment_vote.save
+              @existing_comment_vote.update(:is_up => false, :is_down => false)
 
-              render json: { :notice=> notice, content_type: 'text/json' }
-          
+              if @existing_comment_vote.save
+
+                render json: { :change => 1, :notice=> notice, content_type: 'text/json' }
+            
+              else
+                
+                render json: { :change => 0, :notice=> notice, content_type: 'text/json' }
+             
+              end
+
+            elsif @existing_comment_vote.is_up
+
+              @existing_comment_vote.update(:is_up => false, :is_down => true)
+
+              if @existing_comment_vote.save
+
+                render json: { :change => -2, :notice=> notice, content_type: 'text/json' }
+            
+              else
+                
+                render json: { :change => 0, :notice=> notice, content_type: 'text/json' }
+             
+              end
+
             else
-              
-              render json: { :notice=> notice, content_type: 'text/json' }
-           
+
+              @existing_comment_vote.update(:is_up => false, :is_down => true)
+
+              if @existing_comment_vote.save
+
+                render json: { :change => -1, :notice=> notice, content_type: 'text/json' }
+            
+              else
+                
+                render json: { :change => 0, :notice=> notice, content_type: 'text/json' }
+             
+              end
+
             end
 
           else
@@ -97,11 +162,11 @@ class CommentsController < ApplicationController
 
             if @comment_vote.save
 
-              render json: { :notice=> notice, content_type: 'text/json' }
+              render json: { :change => -1, :notice=> notice, content_type: 'text/json' }
           
             else
               
-              render json: { :notice=> notice, content_type: 'text/json' }
+              render json: { :change => 0, :notice=> notice, content_type: 'text/json' }
            
             end
 
