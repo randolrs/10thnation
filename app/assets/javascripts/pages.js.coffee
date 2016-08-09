@@ -295,4 +295,19 @@ ready = ->
 						count = parseInt(voteCounter.text(), 10) + data.change
 						voteCounter.text(count)
 
+		$('p.post-type').click (event), ->
+			$(@).parent().hide()
+			$('.post-modal-form').fadeIn()
+
+		$('p.post-type#link').click (event), ->
+			$('.form-header#link').show()
+
+		$('p.post-type#photo').click (event), ->
+			$('.form-header#photo').show()
+
+		$('p.post-type#discussion').click (event), ->
+			$('.form-header#discussion').show()
+
+		
+
 $(document).on('turbolinks:load', ready)

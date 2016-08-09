@@ -287,6 +287,7 @@ div.post-actions{
 		
 		display: block;
 		margin-bottom: 20px;
+		color: #fff;
 		padding:15px;
 		text-align:center;
 		font-size: 28px;
@@ -309,9 +310,11 @@ div.post-actions{
 
 	}
 
-	p.post-type#link{
-		
-		color: #fff;
+
+
+}
+
+	.green-text-background{
 
 		background-color: #17ED3B;
         background-image: -webkit-gradient(linear, left top, left bottom, from(#17ED3B), to(#12BA2E));
@@ -323,9 +326,7 @@ div.post-actions{
 
 	}
 
-	p.post-type#photo{
-		
-		color: #fff;
+	.red-text-background{
 
 		background-color: #A81300;
 	    background-image: -webkit-gradient(linear, left top, left bottom, from(#F21D00), to(#A81300));
@@ -337,11 +338,14 @@ div.post-actions{
 
 	}
 
-	p.post-type#discussion{
-		
-		background: red;
-		color: #fff;
+	.blue-text-background{
+
+		background-color: #0F4DA8;
+	    background-image: -webkit-gradient(linear, left top, left bottom, from(#437DD4), to(#0F4DA8));
+	    background-image: -webkit-linear-gradient(top, #437DD4, #0F4DA8);
+	    background-image: -moz-linear-gradient(top, #437DD4, #0F4DA8);
+	    background-image: -ms-linear-gradient(top, #437DD4, #0F4DA8);
+	    background-image: -o-linear-gradient(top, #437DD4, #0F4DA8);
+	    background-image: linear-gradient(top, #437DD4, #0F4DA8);
 
 	}
-
-}

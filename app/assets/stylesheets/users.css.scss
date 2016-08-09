@@ -246,11 +246,13 @@ a.profile-name{
 
 .user-post-content{
 
+	padding: 20px;
 
 	h5{
 		font-weight: 500;
 		font-size: 22px;
 		padding: 10px 0px;
+		text-shadow: 0px 1px 2px #111;
 	}
 
 	p{
@@ -259,7 +261,7 @@ a.profile-name{
 		padding: 10px 0px;
 	}
 
-	input#post_title, textarea {
+	input#post_title, input#post_url, textarea {
 
 		background: transparent;
     	border: 1px solid transparent;
@@ -277,18 +279,32 @@ a.profile-name{
     	font-weight: 500;
 		font-size: 22px;
 		text-shadow: 0px 2px 0px #000;
+		border: 2px solid #fff;
+	}
+
+	input#post-title{
+		font-weight: 500;
+    	font-size: 16px;
+    	text-shadow: 0px 1px 0px #000;
+    	border: 2px solid #fff;
 	}
 
 	textarea{
 
     	font-size: 16px;
     	resize: none;
-    	height: 200px;
+    	height: 50px;
+
+    	border-radius: 3px;
+    	border: 2px solid #fff;
+    	padding: 10px 20px;
+    	display: block;
+    	box-shadow: inset 0px 0px 3px #000;
 
 	}
 
-	input#post_title:focus, textarea:focus{
-		border: 1px solid #fff;
+	input#post_title:focus, input#post_url:focus, textarea:focus{
+		background: #333;
 	}
 
 	.new-post-submit{

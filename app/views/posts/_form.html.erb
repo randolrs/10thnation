@@ -4,22 +4,11 @@
 
     <div class="content-panel list">
 
-      <div class="user-info-header">
+      <h5 class="form-header green-text-background" id="link" style="display:none;"><span class="glyphicon glyphicon-link"></span>New Link</h5>
 
-        <div class="user-info-image">
-          <%= image_tag current_user.image.url(:medium), class: "tiny-profile-image" %>
-        </div>
+      <h5 class="form-header red-text-background" id="photo" style="display:none;"><span class="glyphicon glyphicon-camera"></span>New Photo</h5>
 
-        <div class="user-info-name">
-
-          <span class="post-display-name"><%= link_to current_user.display_name, profile_page_path(current_user.display_name) %></span>
-          
-          <span class="post-date">August 21, 2016</span>
-
-        </div>
-        
-
-      </div>
+      <h5 class="form-header blue-text-background" id="discussion" style="display:none;"><span class="glyphicon glyphicon-comment"></span>New Discussion</h5>
 
       <div class="user-post-content">
 
@@ -29,15 +18,13 @@
 
         <% end %>
 
-        <%= f.text_field :title, placeholder: "Title" %>
+        <%= f.text_field :title, placeholder: "Title", :autocomplete => :off, autofocus: true %>
 
-        <%= f.text_field :url, placeholder: "URL" %>
+        <%= f.text_field :url, placeholder: "Link", :autocomplete => :off %>
 
-        <%= f.file_field :image, class: "form-control" %>
+        <%= f.text_area :body, placeholder: "Additional Text (Optional)", :autocomplete => :off %>
 
-        <%= f.text_area :body, placeholder: "Your Post" %>
-
-         <%= f.submit 'Post', :class=> 'new-post-submit' %>
+         <%= f.submit 'Publish', :class=> 'new-post-submit' %>
 
       </div>
 
