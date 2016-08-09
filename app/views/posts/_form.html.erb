@@ -24,6 +24,8 @@
 
         <%= f.text_area :body, placeholder: "Additional Text (Optional)", :autocomplete => :off %>
 
+        <%= collection_select(:post, :community_id, Community.all, :id, :name) %>
+
          <%= f.submit 'Publish', :class=> 'new-post-submit gold-text-background' %>
 
       </div>

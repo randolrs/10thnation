@@ -1,5 +1,7 @@
 class Community < ActiveRecord::Base
 
+		has_many :posts
+
 		has_attached_file :image, 
 		:styles => { :medium => "194x194#", :small => "70x70#", :thumb => "30x30#"}, 
 		:default_url => 'missing_:style.png',
@@ -18,5 +20,19 @@ class Community < ActiveRecord::Base
 			end
 
 		end
+
+	def hot_posts
+
+		@hot_posts = self.posts.all.sort_by(&:vote_count)
+
+		return @hot_posts.reverse
+	end
+
+	def new_posts
+
+		@new_posts = self.posts.all.reverse
+
+		return @new_posts
+	end
 
 end

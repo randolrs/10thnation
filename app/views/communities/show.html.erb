@@ -116,7 +116,7 @@
 
       <div class="column-content" id="column_content_posts">
 
-        <% Post.all.reverse.each do |post| %>
+        <% @community.hot_posts.each do |post| %>
 
           <%= render :partial => 'posts/list', :locals => {:post => post} %>
 
@@ -126,7 +126,7 @@
 
       <div class="column-content" id="column_content_new" style="display: none;">
 
-        <% Post.all.each do |post| %>
+        <% @community.new_posts.each do |post| %>
 
           <%= render :partial => 'posts/list', :locals => {:post => post} %>
 
