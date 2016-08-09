@@ -10,7 +10,7 @@
 
 			<div class="comment-container">
 
-				<h5><%= @post.comments.count %> <%= "Comment".pluralize(@post.comments.count) %></h5>
+				<h5><%= @post.top_level_comments.count %> <%= "Comment".pluralize(@post.top_level_comments.count) %></h5>
 
 				<% if @post.comments.count > 0 %>
 
