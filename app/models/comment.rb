@@ -8,7 +8,7 @@ class Comment < ActiveRecord::Base
 
 	def responses
 
-		return Comment.all.where(:parent_comment_id => self.id)
+		return Comment.all.where(:parent_comment_id => self.id).sort_by(&:vote_count).reverse
 
 	end
 
@@ -17,6 +17,7 @@ class Comment < ActiveRecord::Base
 		up_votes = self.comment_votes.where(:is_up => true).count
 		down_votes = self.comment_votes.where(:is_down => true).count
 		calc = up_votes - down_votes
+		
 		return calc
 
 	end

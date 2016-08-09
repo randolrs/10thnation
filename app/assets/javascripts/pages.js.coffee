@@ -223,12 +223,6 @@ ready = ->
 		$('.sidebar').click (event), ->
 			event.stopPropagation()
 
-		$('.comment-up-vote').click (event), ->
-			alert('up comment')
-
-		$('.comment-down-vote').click (event), ->
-			alert('down comment')
-
 		$('span.post').click (event), ->
 			$('body').find("#post-form").show()
 			$('body').find('.content').addClass('blurred')
