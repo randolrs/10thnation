@@ -39,10 +39,10 @@ class User < ActiveRecord::Base
 
 
 	def hot_posts
-		
-		@posts = Post.all.sort {|a| a.vote_count}
 
-		return @posts.reverse
+		@hot_posts = Post.all.sort_by(&:vote_count)
+
+		return @hot_posts.reverse
 	end
 
 	def new_posts
