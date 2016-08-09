@@ -25,6 +25,10 @@ Rails.application.routes.draw do
 
   get '/post/:post_id/down_vote', :to => 'posts#down_vote'
 
+  get '/comment/:comment_id/up_vote', :to => 'comments#up_vote'
+
+  get '/comment/:comment_id/down_vote', :to => 'comments#down_vote'
+
   #devise_for :users, :path_names => { :sign_up => "signup", :sign_in => "login", :edit_registration => "settings"}
 
   get '/:username/' => 'pages#profile_page', as: 'profile_page'

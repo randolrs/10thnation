@@ -12,6 +12,111 @@ class CommentsController < ApplicationController
   def show
   end
 
+  def up_vote
+
+    if user_signed_in?
+
+      if params[:comment_id]
+
+        if Comment.exists?(params[:comment_id])
+
+          if CommentVote.exists?(:user_id => current_user.id, :comment_id => params[:comment_id])
+
+            @existing_comment_vote =  CommentVote.where(:user_id => current_user.id, :comment_id => params[:comment_id]).last
+
+            @existing_comment_vote.update(:is_up => true, :is_down => false)
+
+            if @existing_comment_vote.save
+
+              render json: { :notice=> notice, content_type: 'text/json' }
+          
+            else
+              
+              render json: { :notice=> notice, content_type: 'text/json' }
+           
+            end
+
+          else
+
+            @comment_vote = CommentVote.new
+
+            @comment_vote.update(:user_id => current_user.id, :comment_id => params[:comment_id], :is_up => true, :is_down => false)
+
+            if @comment_vote.save
+
+              render json: { :notice=> notice, content_type: 'text/json' }
+          
+            else
+              
+              render json: { :notice=> notice, content_type: 'text/json' }
+           
+            end
+
+          end
+
+        end
+
+      end
+
+    end
+
+
+  end
+
+
+
+  def down_vote
+
+    if user_signed_in?
+
+      if params[:comment_id]
+
+        if Comment.exists?(params[:comment_id])
+
+          if CommentVote.exists?(:user_id => current_user.id, :comment_id => params[:comment_id])
+
+            @existing_comment_vote =  CommentVote.where(:user_id => current_user.id, :comment_id => params[:comment_id]).last
+
+            @existing_comment_vote.update(:is_up => false, :is_down => true)
+
+            if @existing_comment_vote.save
+
+              render json: { :notice=> notice, content_type: 'text/json' }
+          
+            else
+              
+              render json: { :notice=> notice, content_type: 'text/json' }
+           
+            end
+
+          else
+
+            @comment_vote = CommentVote.new
+
+            @comment_vote.update(:user_id => current_user.id, :comment_id => params[:comment_id], :is_up => false, :is_down => true)
+
+            if @comment_vote.save
+
+              render json: { :notice=> notice, content_type: 'text/json' }
+          
+            else
+              
+              render json: { :notice=> notice, content_type: 'text/json' }
+           
+            end
+
+          end
+
+        end
+
+      end
+
+    end
+
+
+  end
+
+
   # GET /comments/new
   def new
     @comment = Comment.new

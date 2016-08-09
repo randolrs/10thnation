@@ -254,7 +254,6 @@ ready = ->
 				type: "GET"
 				success: (data) ->
 					console.log(data)
-					alert("up")
 
 		$('span.down-vote').click (event), ->
 			post_id = $(@).data('post-id')
@@ -263,6 +262,21 @@ ready = ->
 				type: "GET"
 				success: (data) ->
 					console.log(data)
-					alert("down")
+
+		$('span.comment-up-vote').click (event), ->
+			comment_id = $(@).data('comment-id')
+			$.ajax
+				url: "/comment/#{comment_id}/up_vote", format: 'js'
+				type: "GET"
+				success: (data) ->
+					console.log(data)
+
+		$('span.comment-down-vote').click (event), ->
+			comment_id = $(@).data('comment-id')
+			$.ajax
+				url: "/comment/#{comment_id}/down_vote", format: 'js'
+				type: "GET"
+				success: (data) ->
+					console.log(data)
 
 $(document).on('turbolinks:load', ready)

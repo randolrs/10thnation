@@ -15,7 +15,9 @@ class Post < ActiveRecord::Base
 
 	def top_level_comments
 
-		return self.comments.where(:parent_comment_id => nil).reverse
+		@top_level_comments_ordered = self.comments.where(:parent_comment_id => nil).sort_by(&:vote_count)
+
+		return @top_level_comments_ordered.reverse
 
 	end
 
