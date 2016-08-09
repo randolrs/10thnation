@@ -244,12 +244,12 @@ div.comment-actions{
         border-radius: 50px;
         color: #fff;
         text-shadow: 0px 1px 3px #222;
-        box-shadow: 0px 2px 2px #222;
         vertical-align: middle;
     }
 
     span.comment-up-vote{
         font-size: 24px;
+        box-shadow: 0px 2px 2px #222;
         background-color: #17ED3B;
         background-image: -webkit-gradient(linear, left top, left bottom, from(#17ED3B), to(#12BA2E));
         background-image: -webkit-linear-gradient(top, #17ED3B, #12BA2E);
@@ -262,6 +262,7 @@ div.comment-actions{
 
     span.comment-down-vote{
         font-size: 24px;
+        box-shadow: 0px 2px 2px #222;
         border-radius: 100px;
         background-color: #A81300;
         background-image: -webkit-gradient(linear, left top, left bottom, from(#F21D00), to(#A81300));

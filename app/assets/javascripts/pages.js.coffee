@@ -239,7 +239,7 @@ ready = ->
 			$('body').addClass('no-scroll')
 
 		$('.comment-reply-cta').click (event), ->
-			$(@).parent().parent().find(".comment-response").show()
+			$(@).parent().next(".comment-response").show()
 
 		$('span.up-vote').click (event), ->
 			post_id = $(@).data('post-id')
