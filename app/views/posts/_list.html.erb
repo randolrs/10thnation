@@ -36,7 +36,7 @@
 
     <div class="post-panel message">
 
-      <span class="post-community-mobile"><%= link_to "10th Nation", community_path(1), class:"community-detail" %><span class="divider">&#183;</span><%= link_to post.user.display_name, profile_page_path(post.user.display_name) %><span class="divider">&#183;</span><%= time_ago_in_words(post.created_at) %> ago <%# post.created_at.strftime("%b %e") %></span>
+      <span class="post-community-mobile"><% if post.community_id %><%= link_to post.community.name, community_path(post.community.id), class:"community-detail" %><%end%><span class="divider">&#183;</span><%= link_to post.user.display_name, profile_page_path(post.user.display_name) %><span class="divider">&#183;</span><%= time_ago_in_words(post.created_at) %> ago <%# post.created_at.strftime("%b %e") %></span>
 
       <div class="post-title">
         
@@ -48,7 +48,7 @@
 
         <span class="submitter">Submitted by <a href="<%=profile_page_path(post.user.display_name)%>"><%= image_tag post.user.image.url(:medium), class: "tiny-user-image" %><%= post.user.display_name %></a> on <%= post.created_at.strftime("%b %e") %> to</span>
 
-        <span class="post-community"><%= link_to "10th Nation", community_path(1), class:"community-detail" %></span>
+        <span class="post-community"><% if post.community_id %><%= link_to post.community.name, community_path(post.community.id), class:"community-detail" %><%end%></span>
 
       </div>
       
