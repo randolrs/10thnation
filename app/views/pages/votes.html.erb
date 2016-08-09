@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Votes</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Post</th>
+      <th>User</th>
+      <th>Is Up</th>
+      <th>Is Down</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @post_votes.each do |vote| %>
+      <tr>
+        <td><%= vote.post_id %></td>
+        <td><%= vote.user_id %></td>
+        <td><%= vote.is_up %></td>
+        <td><%= vote.is_down %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+

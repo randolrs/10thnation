@@ -12,6 +12,12 @@ class PagesController < ApplicationController
 
 	end
 
+	def votes
+
+		@post_votes = PostVote.all
+
+	end
+
 	def follow
 
 		if params[:followingID]

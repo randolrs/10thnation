@@ -17,6 +17,8 @@ Rails.application.routes.draw do
 
   get 'dashboard' => "pages#dashboard"
 
+  get 'votes' => "pages#votes"
+
   get 'balance' => "pages#balance"
 
   get '/post/:post_id/up_vote', :to => 'posts#up_vote'
