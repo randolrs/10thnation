@@ -1,0 +1,44 @@
+<div class="community-list-frame">
+
+  <div class="side-follow-cta">
+
+    <a class="user-cta follow-community-cta  <% if current_user.is_following_community(community.id)  %>following <%end%> community" data-following-id="<%= community.id%>">
+      <span class="glyphicon glyphicon-ok"></span> 
+      <span class="subscription-status yes">Subscribed</span>
+      <span class="subscription-status no">Subscribe</span>
+    </a>
+
+  </div>
+
+
+  <div class="community-content">
+  
+    <% if community.image %>
+    
+      <div class="community-panel image">
+        
+        <%= image_tag community.image.url(:medium), class: "community-list-image" %>
+      
+      </div>
+
+    <%end%>
+
+    <div class="community-panel message">
+
+      <div class="community-title">
+        
+        <span><%= link_to community.name, community_path(community) %></span>
+
+      </div>
+
+      <div class="community-about">
+        
+        <span>community description</span>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>

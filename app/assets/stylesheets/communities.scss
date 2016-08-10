@@ -1,3 +1,133 @@
 // Place all the styles related to the communities controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.community-list-container{
+
+	.community-list-image{
+
+		width: 80px;
+		height: 80px;
+	}
+
+
+	.user-cta{
+			
+		padding: 10px 15px;
+		display: block;
+		width: 175px;
+		text-align: center;
+		position: relative;
+		margin: 15px auto;
+		color: #fff;
+		font-size: 20px;
+		font-weight: 700;
+		letter-spacing: 0.5px;
+		text-shadow: 0px 1px 1px #333;
+		border: 1px solid #090909;
+		border-radius: 3px;
+
+		border: 2px solid transparent;
+
+		background-color: #B02AE8;
+
+	    background-image: -webkit-gradient(linear, left top, left bottom, from(#B02AE8), to(#721B96));
+	    background-image: -webkit-linear-gradient(top, #B02AE8, #721B96);
+	    background-image: -moz-linear-gradient(top, #B02AE8, #721B96);
+	    background-image: -ms-linear-gradient(top, #B02AE8, #721B96);
+	    background-image: -o-linear-gradient(top, #B02AE8, #721B96);
+	    background-image: linear-gradient(top, #B02AE8, #721B96);
+
+	    span.glyphicon{
+
+	    	display: none;
+	    }
+
+	    span.subscription-status.yes{
+	    	display: none;
+	    }
+
+	    span.subscription-status.no{
+	    	display: inline-block;
+	    }
+	}
+
+	.user-cta.following{
+		color: #B02AE8;
+		border: 2px solid #B02AE8;
+		text-shadow: none;
+		font-weight: 500;
+
+		background-color: #82FF8F;
+
+	    background-image: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#fff));
+	    background-image: -webkit-linear-gradient(top, #fff, #fff);
+	    background-image: -moz-linear-gradient(top, #fff, #fff);
+	    background-image: -ms-linear-gradient(top, #fff, #fff);
+	    background-image: -o-linear-gradient(top, #fff, #fff);
+	    background-image: linear-gradient(top, #fff, #fff);
+
+	    span.glyphicon{
+			display: inline-block;
+		}
+
+		span.subscription-status.yes{
+	    	display: inline-block;
+	    }
+
+	    span.subscription-status.no{
+	    	display: none;
+	    }
+
+	}
+
+	.user-cta:hover{
+
+		cursor: pointer;
+		color: #aaa;
+	}
+
+
+
+	.community-list-frame{
+
+		
+	    margin-bottom: 15px;
+	    position: relative;
+	    padding-left: 200px;
+
+	    .side-follow-cta{
+	    	position: absolute;
+	    	height: 100%;
+	    	left: 0px;
+	    	top: 0px;
+	    	width: 200px;
+	    	text-align:center;
+	    }
+	    .community-content{
+	    	background: #222;
+	    	box-shadow: inset 0px 2px 5px #333;
+	    	border: 1px solid #111;
+	    }
+
+		.community-panel{
+			display:table-cell;
+			vertical-align: top;
+
+			span.community-name{
+	    		font-size: 30px;
+	    		font-weight: 500;
+	    		display: block;
+	    		text-align: left;
+	    		text-shadow: 0px 2px 2px #000;
+
+	    		a{
+	    			color: #fff;
+	    		}
+			}
+
+		}
+
+	}
+
+}

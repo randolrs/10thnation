@@ -98,19 +98,30 @@
 	        text-shadow: 0px 1px 3px #222;
 	        box-shadow: 0px 2px 2px #222;
 	        vertical-align: middle;
-	        
     	}
 
     	span.up-vote{
 	        font-size: 24px;
-	        background: #0F4DA8;
-
+	        background-color: #17ED3B;
+	        background-image: -webkit-gradient(linear, left top, left bottom, from(#17ED3B), to(#12BA2E));
+	        background-image: -webkit-linear-gradient(top, #17ED3B, #12BA2E);
+	        background-image: -moz-linear-gradient(top, #17ED3B, #12BA2E);
+	        background-image: -ms-linear-gradient(top, #17ED3B, #12BA2E);
+	        background-image: -o-linear-gradient(top, #17ED3B, #12BA2E);
+	        background-image: linear-gradient(top, #17ED3B, #12BA2E);
     
     	}
 
     	span.down-vote{
 	        font-size: 24px;
-	        background: #0F4DA8;
+	        border-radius: 100px;
+	        background-color: #A81300;
+	        background-image: -webkit-gradient(linear, left top, left bottom, from(#F21D00), to(#A81300));
+	        background-image: -webkit-linear-gradient(top, #F21D00, #A81300);
+	        background-image: -moz-linear-gradient(top, #F21D00, #A81300);
+	        background-image: -ms-linear-gradient(top, #F21D00, #A81300);
+	        background-image: -o-linear-gradient(top, #F21D00, #A81300);
+	        background-image: linear-gradient(top, #F21D00, #A81300);
 
     	}
 
@@ -230,7 +241,13 @@ div.upvote{
 
     	span.up-vote{
 
-    		background: #0F4DA8;
+    		background-color: #17ED3B;
+		    background-image: -webkit-gradient(linear, left top, left bottom, from(#17ED3B), to(#12BA2E));
+		    background-image: -webkit-linear-gradient(top, #17ED3B, #12BA2E);
+		    background-image: -moz-linear-gradient(top, #17ED3B, #12BA2E);
+		    background-image: -ms-linear-gradient(top, #17ED3B, #12BA2E);
+		    background-image: -o-linear-gradient(top, #17ED3B, #12BA2E);
+		    background-image: linear-gradient(top, #17ED3B, #12BA2E);
     	}
 
     	span.up-vote.active{
@@ -253,7 +270,13 @@ div.upvote{
     	}
 
     	span.down-vote{
-    		background: #0F4DA8;
+    		background-color: #A81300;
+		    background-image: -webkit-gradient(linear, left top, left bottom, from(#F21D00), to(#A81300));
+		    background-image: -webkit-linear-gradient(top, #F21D00, #A81300);
+		    background-image: -moz-linear-gradient(top, #F21D00, #A81300);
+		    background-image: -ms-linear-gradient(top, #F21D00, #A81300);
+		    background-image: -o-linear-gradient(top, #F21D00, #A81300);
+		    background-image: linear-gradient(top, #F21D00, #A81300);
     	}
 
     	span.down-vote.active{

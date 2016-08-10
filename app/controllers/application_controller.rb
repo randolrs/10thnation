@@ -67,7 +67,7 @@ class ApplicationController < ActionController::Base
 
   			default_communities = Array.new
 
-  			default_communities = ["All", "News", "Sports", "Entertainment"]
+  			default_communities = ["All", "News", "Business", "Music", "Sports", "Entertainment"]
   			
   			default_communities.each do |community|
 

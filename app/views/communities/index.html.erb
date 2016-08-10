@@ -1,4 +1,7 @@
-<p id="notice"><%= notice %></p>
+
+<% if user_signed_in?%>
+
+  <% if current_user.admin %>
 
 <h1>Listing Communities</h1>
 
@@ -33,3 +36,65 @@
 <br>
 
 <%= link_to 'New Community', new_community_path %>
+
+<%else%>
+
+  <div class="content">
+
+    <div class="content-box">
+
+      <div class="main-content-column">
+
+        <div class="column-content" id="column_content_posts">
+
+          <div class="community-list-container">
+
+            <% Community.all.each do |community| %>
+
+              <%= render :partial => 'communities/list', :locals => {:community => community} %>
+
+            <%end%>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+<%end%>
+
+
+<%else%>
+
+  <div class="content">
+
+    <div class="content-box">
+
+      <div class="main-content-column">
+
+        <div class="column-content" id="column_content_posts">
+
+          <div class="community-list-container">
+
+            <% Community.all.each do |community| %>
+
+              <%= render :partial => 'communities/list', :locals => {:community => community} %>
+
+            <%end%>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+<%end%>
