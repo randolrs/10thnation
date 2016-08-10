@@ -306,6 +306,13 @@ a.profile-name{
 		background: #333;
 	}
 
+	select#post_community_id{
+		font-size: 30px;
+    	background: transparent;
+    	color: #fff;
+    	padding: 5px 20px;
+	}
+
 	.new-post-submit{
 		display: block;
     	padding: 10px 30px;
