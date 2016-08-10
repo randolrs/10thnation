@@ -126,23 +126,24 @@ class User < ActiveRecord::Base
 
 	def communities_array
 
-		@communities_array = Array.new
+		@communities = Array.new
 
-		@user_community_join = UserCommunityJoin.where(:user_id => self.id, :active => true)
+		@followings = Following.where(:follower_id => self.id, :active => true)
 		
-		@user_community_join.each do |following|
+		@followings.each do |following|
 			
-			@user_following = User.where(id: following.follower_id).first
+			community = Community.where(id: following.following_id).first
 			
-			if @user_following 
+			if community
 			
-				@communities_array << @user_following
+				@communities << community
 
 			end
 
 		end
 
-		return @communities_array
+		return @communities
+
 	end
 
 end
