@@ -4,7 +4,9 @@
 
     <div class="vote" id="up" data-post-id="<%= post.id %>">
 
-      <span class="up-vote glyphicon glyphicon-circle-arrow-up" title="Upvote" data-post-id="<%= post.id %>" aria-hidden="true"></span>
+      <span class="up-vote glyphicon glyphicon-circle-arrow-up <% if current_user.has_upvote(post.id) %>active<%end%>" title="Upvote" data-post-id="<%= post.id %>" aria-hidden="true"></span>
+
+
 
     </div>
 
@@ -16,7 +18,7 @@
 
     <div class="vote" id="down" data-post-id="<%= post.id %>">
 
-      <span class="down-vote blue glyphicon glyphicon-circle-arrow-down" title="Downvote" data-post-id="<%= post.id %>" aria-hidden="true"></span>
+      <span class="down-vote blue glyphicon glyphicon-circle-arrow-down <% if current_user.has_downvote(post.id) %>active<%end%>" title="Downvote" data-post-id="<%= post.id %>" aria-hidden="true"></span>
 
     </div>
 

@@ -7,7 +7,7 @@
 	
     margin-bottom: 15px;
     position: relative;
-    padding-left: 50px;
+    padding-left: 70px;
 
     .post-content{
     	background: #222;
@@ -178,9 +178,12 @@ div.upvote{
     height: 100%;
     left: 0px;
     top: 0px;
+    width: 70px;
 
 
     .vote{
+
+    	text-align: center;
 
     	span{
     		
@@ -189,6 +192,8 @@ div.upvote{
     		font-size: 40px;
     		text-shadow: 0px 1px 3px #222;
     		box-shadow: 0px 2px 2px #222;
+
+    		background-color: #666;
     	}
 
     	span.up-vote{
@@ -202,6 +207,25 @@ div.upvote{
 		    background-image: linear-gradient(top, #17ED3B, #12BA2E);
     	}
 
+    	span.up-vote.active{
+
+    		color: #12BA2E;
+
+    		text-shadow:none;
+
+    		box-shadow: none;
+
+    		font-size: 44px;
+
+    		background-color: #fff;
+		    background-image: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#fff));
+		    background-image: -webkit-linear-gradient(top, #fff, #fff);
+		    background-image: -moz-linear-gradient(top, #fff, #fff);
+		    background-image: -ms-linear-gradient(top, #fff, #fff);
+		    background-image: -o-linear-gradient(top, #fff, #fff);
+		    background-image: linear-gradient(top, #fff, #fff);
+    	}
+
     	span.down-vote{
     		background-color: #A81300;
 		    background-image: -webkit-gradient(linear, left top, left bottom, from(#F21D00), to(#A81300));
@@ -210,6 +234,25 @@ div.upvote{
 		    background-image: -ms-linear-gradient(top, #F21D00, #A81300);
 		    background-image: -o-linear-gradient(top, #F21D00, #A81300);
 		    background-image: linear-gradient(top, #F21D00, #A81300);
+    	}
+
+    	span.down-vote.active{
+
+    		color: #F21D00;
+
+    		text-shadow:none;
+
+    		box-shadow: none;
+
+    		font-size: 44px;
+
+    		background-color: #fff;
+		    background-image: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#fff));
+		    background-image: -webkit-linear-gradient(top, #fff, #fff);
+		    background-image: -moz-linear-gradient(top, #fff, #fff);
+		    background-image: -ms-linear-gradient(top, #fff, #fff);
+		    background-image: -o-linear-gradient(top, #fff, #fff);
+		    background-image: linear-gradient(top, #fff, #fff);
     	}
 
     	.glyphicon-arrow-down:before {

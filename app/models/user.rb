@@ -153,4 +153,14 @@ class User < ActiveRecord::Base
 
 	end
 
+	def has_upvote(post_id)
+
+		return PostVote.exists?(:user_id => self.id, :post_id => post_id, :is_up => true)
+	end
+
+	def has_downvote(post_id)
+
+		return PostVote.exists?(:user_id => self.id, :post_id => post_id, :is_down => true)
+	end
+
 end
