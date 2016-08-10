@@ -243,4 +243,38 @@ a.header-cta{
 
 }
 
+span.circle-number{
+    padding: 2px 7px;
+    border-radius: 20px;
+}
+
+span.circle-number.green{
+    
+    background: green;
+}
+
+a.messages-header{
+    
+    background-color: #A81300;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#F21D00), to(#A81300));
+    background-image: -webkit-linear-gradient(top, #F21D00, #A81300);
+    background-image: -moz-linear-gradient(top, #F21D00, #A81300);
+    background-image: -ms-linear-gradient(top, #F21D00, #A81300);
+    background-image: -o-linear-gradient(top, #F21D00, #A81300);
+    background-image: linear-gradient(top, #F21D00, #A81300);
+
+    border-right: 2px solid #000;
+
+    span{
+
+        vertical-align: top;
+    }
+}
+
+a.messages-header:hover{
+    color: #eee;
+}
+
+
+
 

@@ -2,6 +2,9 @@
 <div class="footer-container">
 
 	<ul>
+		<% if user_signed_in? %>
+			<li class="menu-option logout"><a data-method="delete" href='<%=destroy_user_session_path%>'>Logout</a></li>
+		<%end%>
 		<li><a>About</a></li>
 		<li><a>Legal</a></li>
 		<li><a>Terms</a></li>

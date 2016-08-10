@@ -21,19 +21,11 @@
 
       <li class="for-mobile">
 
-        <% if current_user.is_following_community(@community.id)  %>
-
-          <a class="user-cta follow-community-cta following" data-following-id="<%= @community.id%>">
-            &#10004; Subscribed
-          </a>
-
-        <% else %>
-
-          <a class="user-cta follow-community-cta" data-following-id="<%= @community.id%>">
-            Subscribe
-          </a>
-
-        <% end %>
+        <a class="user-cta follow-community-cta  <% if current_user.is_following_community(@community.id)  %>following <%end%> community" data-following-id="<%= @community.id%>">
+          <span class="glyphicon glyphicon-ok"></span>
+          <span class="subscription-status yes">Subscribed</span>
+          <span class="subscription-status no">Subscribe</span>
+        <a>
 
       </li>
 
@@ -58,19 +50,9 @@
 
     </ul>
 
-    <% if current_user.is_following_community(@community.id)  %>
-
-      <a class="user-cta follow-community-cta following community" data-following-id="<%= @community.id%>">
-        &#10004; Subscribed
+      <a class="user-cta follow-community-cta  <% if current_user.is_following_community(@community.id)  %>following <%end%> community" data-following-id="<%= @community.id%>">
+        <span class="glyphicon glyphicon-ok"></span> <span class="subscription-status yes">Subscribed</span><span class="subscription-status no">Subscribe</span>
       </a>
-
-    <% else %>
-
-      <a class="user-cta follow-community-cta community" data-following-id="<%= @community.id%>">
-        Subscribe
-      </a>
-
-    <% end %>
 
   </div>
 
@@ -106,7 +88,7 @@
 
     </div>
 
-    <div class="side-content-column">
+<!--     <div class="side-content-column">
 
       <h4>Filter</h4>
 
@@ -120,7 +102,7 @@
 
       </div>
 
-    </div>
+    </div> -->
 
   </div>
 

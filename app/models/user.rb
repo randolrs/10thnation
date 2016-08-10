@@ -116,7 +116,19 @@ class User < ActiveRecord::Base
 
 	def is_following_community(community_id)
 
-		return false
+		@existing_following = Following.where(following_id: community_id, follower_id: self.id, active: true).last
+			
+		if @existing_following
+
+			
+			return true
+		
+		else
+			
+			return false
+
+		end
+
 	end
 
 	def is_member_of_community(community_id)

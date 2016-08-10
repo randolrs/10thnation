@@ -30,17 +30,20 @@
     	
       <% if user_signed_in?%>
 
-	    	<li>
+<!--         <li>
 
-		    	<div class="dropdown">
+          <div class="dropdown">
 
-  					<a class="btn dropdown-toggle" type="button" data-toggle="dropdown">
-  						<%= image_tag current_user.image.url(:medium), class: "header-image" %>
-  	  			</a>
+            <a class="btn dropdown-toggle" type="button" data-toggle="dropdown">
+              <%# image_tag current_user.image.url(:medium), class: "header-image" %>
+            </a>
 
-		      </div>
+          </div>
             
-	      </li>
+        </li> -->
+
+
+        <li><a class="messages-header"><span class="glyphicon glyphicon-bell" aria-hidden="true" style="margin-right: 5px;"></span><span class="">0</span></a></li>
 
         <li><a class="header-cta blue" id="new-post"><span class="glyphicon glyphicon-pencil" aria-hidden="true" style="margin-right: 5px;"></span>New Post</a></li>
 

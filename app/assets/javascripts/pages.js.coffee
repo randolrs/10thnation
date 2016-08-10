@@ -143,19 +143,17 @@ ready = ->
 		
 		$(".follow-community-cta").click (event), ->
 			followingID = $(@).data('following-id')
-			alert("alert")
 			$me = $(@)
+			all_follow_ctas = $('body').find('.follow-community-cta')
 			$.ajax
 				url: "/user/community/follow/#{followingID}"
 				type: "GET"
 				success: (data) ->
 			  		console.log(data)
 			  		if data.now_following
-			  			$me.text("Following")
-			  			$me.addClass('following')
+			  			all_follow_ctas.addClass('following')
 			  		else
-			  			$me.text("Follow")
-			  			$me.removeClass('following')
+			  			all_follow_ctas.removeClass('following')
 
 		$(".profile-header-option").click (event), ->
 			$('body').find('.profile-header-option.active').removeClass("active")

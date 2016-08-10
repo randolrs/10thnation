@@ -94,8 +94,13 @@ nav.header-fixed{
 }
 
 
-.navbar-default .navbar-nav > li > a:hover {
+.navbar-default .navbar-left > li > a:hover {
     color: #0ff;
+    cursor: pointer;
+}
+
+.navbar-default .navbar-right > li > a:hover {
+    color: #eee;
     cursor: pointer;
 }
 

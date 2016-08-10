@@ -780,50 +780,80 @@ span.citizen-badge{
 		    		li.for-mobile{
 						display: inline-block;
 						height: 100%;
-    					
-    					a.user-cta{
-    						line-height: 20px;
+
+						a.user-cta{
+		
+							padding: 10px 15px;
+					    	line-height: 20px;
     						margin: 20px 5px;
     						padding: 10px;
     						display: block;
     						float: left;
-    						color: #fff;
+					    	color: #fff;
+							font-size: 16px;
+							font-weight: 700;
+							letter-spacing: 1px;
+							text-shadow: 0px 1px 1px #333;
+							border: 1px solid #090909;
+							border-radius: 3px;
 
-    						text-align: center;
-						    font-size: 16px;
-						    font-weight: 500;
-						    text-shadow: 0px 1px 1px #333;
-						    border: 1px solid #090909;
-						    border-radius: 3px;
-						    background-color: #A81300;
-						    background-image: -webkit-gradient(linear, left top, left bottom, from(#F21D00), to(#A81300));
-						    background-image: -webkit-linear-gradient(top, #F21D00, #A81300);
-						    background-image: -moz-linear-gradient(top, #F21D00, #A81300);
-						    background-image: -ms-linear-gradient(top, #F21D00, #A81300);
-						    background-image: -o-linear-gradient(top, #F21D00, #A81300);
-						    background-image: linear-gradient(top, #F21D00, #A81300);
-    					}
+							border: 2px solid transparent;
 
-    					a.user-cta:hover{
-    						cursor: pointer;
-    					}
+							background-color: #fff;
 
+					        background-image: -webkit-gradient(linear, left top, left bottom, from(#B02AE8), to(#721B96));
+					        background-image: -webkit-linear-gradient(top, #B02AE8, #721B96);
+					        background-image: -moz-linear-gradient(top, #B02AE8, #721B96);
+					        background-image: -ms-linear-gradient(top, #B02AE8, #721B96);
+					        background-image: -o-linear-gradient(top, #B02AE8, #721B96);
+					        background-image: linear-gradient(top, #B02AE8, #721B96);
 
-    					a.user-cta.following{
-							color: #FF413A;
-					    	border: 2px solid #00B80B;
+					        span.glyphicon{
+
+					        	display: none;
+					        }
+
+					        span.subscription-status.yes{
+					        	display: none;
+					        }
+
+					        span.subscription-status.no{
+					        	display: inline-block;
+					        }
+						}
+
+						a.user-cta.following{
+							color: #B02AE8;
+					    	border: 2px solid #B02AE8;
 					    	text-shadow: none;
-					    	font-weight: 500;
+							font-weight: 700;
+							letter-spacing: 1px;
 
 							background-color: #82FF8F;
 
-					        background-image: -webkit-gradient(linear, left top, left bottom, from(#82FF8F), to(#82FF8F));
-					        background-image: -webkit-linear-gradient(top, #82FF8F, #82FF8F);
-					        background-image: -moz-linear-gradient(top, #82FF8F, #82FF8F);
-					        background-image: -ms-linear-gradient(top, #82FF8F, #82FF8F);
-					        background-image: -o-linear-gradient(top, #82FF8F, #82FF8F);
-					        background-image: linear-gradient(top, #82FF8F, #82FF8F);
+					        background-image: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#fff));
+					        background-image: -webkit-linear-gradient(top, #fff, #fff);
+					        background-image: -moz-linear-gradient(top, #fff, #fff);
+					        background-image: -ms-linear-gradient(top, #fff, #fff);
+					        background-image: -o-linear-gradient(top, #fff, #fff);
+					        background-image: linear-gradient(top, #fff, #fff);
 
+					        span.glyphicon{
+								display: inline-block;
+							}
+
+							span.subscription-status.yes{
+					        	display: inline-block;
+					        }
+
+					        span.subscription-status.no{
+					        	display: none;
+					        }
+
+						}
+
+						a.user-cta:hover{
+							cursor: pointer;
 						}
 
 					}
@@ -968,7 +998,7 @@ span.citizen-badge{
 					li{
 						
 						padding: 10px;
-						width: 10%;
+						
 						
 					}
 				}
