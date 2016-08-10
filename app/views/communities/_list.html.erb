@@ -2,7 +2,7 @@
 
   <div class="side-follow-cta">
 
-    <a class="user-cta follow-community-cta  <% if current_user.is_following_community(community.id)  %>following <%end%> community" data-following-id="<%= community.id%>">
+    <a class="user-cta follow-community-from-list  <% if current_user.is_following_community(community.id)  %>following <%end%> community" data-following-id="<%= community.id%>">
       <span class="glyphicon glyphicon-ok"></span> 
       <span class="subscription-status yes">Subscribed</span>
       <span class="subscription-status no">Subscribe</span>
