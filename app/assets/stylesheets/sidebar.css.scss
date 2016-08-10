@@ -23,12 +23,20 @@
                 display: block;
                 font-size: 16px;
                 letter-spacing: 1.5px;
+                text-decoration: none;
 
 
             }
 
             a:hover{
-                background: #333;
+                
+                color: #111;
+                font-weight: 700;
+
+                cursor: pointer;
+                background: #FFA100;
+                text-shadow: none;
+                text-decoration: none;
             }
 
         }
