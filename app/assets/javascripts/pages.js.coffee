@@ -319,9 +319,12 @@ ready = ->
 
 		$('p.post-type#photo').click (event), ->
 			$('.form-header#photo').show()
+			$('.post-modal-form').find('input#post_url').attr("placeholder", "Link to Photo")
 
 		$('p.post-type#discussion').click (event), ->
 			$('.form-header#discussion').show()
+			$('.post-modal-form').find('input#post_url').hide()
+			$('.post-modal-form').find('input#post_title').attr("placeholder", "Topic")
 
 		
 
