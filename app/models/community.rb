@@ -35,4 +35,10 @@ class Community < ActiveRecord::Base
 		return @new_posts
 	end
 
+	def main
+
+		return Community.find(1)
+
+	end
+
 end

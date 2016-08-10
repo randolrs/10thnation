@@ -20,8 +20,21 @@
   <div class="collapse navbar-collapse navbar-ex1-collapse">
     
     <ul class="nav navbar-nav navbar-left">
-      <% Community.first(3).each do |community|%>
-      <li><%= link_to community.name, community_path(community.id) %></li> 
+      
+      <% if user_signed_in? %>
+
+        <% current_user.communities_array.first(3).each do |community|%>
+          <li><%= link_to community.name, community_path(community.id) %></li> 
+        <%end%>
+
+         <li><a>More<span class="glyphicon glyphicon-menu-down"></span></a></li> 
+
+      <% else %>
+
+        <% Community.first(3).each do |community|%>
+          <li><%= link_to community.name, community_path(community.id) %></li> 
+        <%end%>
+
       <%end%>
 
     </ul>

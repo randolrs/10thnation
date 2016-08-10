@@ -60,4 +60,40 @@ class ApplicationController < ActionController::Base
     	devise_parameter_sanitizer.permit(:account_update, keys: registration_params)
 
   	end
+
+  	def after_sign_in_path_for(user)
+  		
+  		if current_user.communities_array.count == 0
+
+  			default_communities = Array.new
+
+  			default_communities = ["All", "News", "Sports", "Entertainment"]
+  			
+  			default_communities.each do |community|
+
+  				if Community.exists?(:name => community)
+  					
+  					@community = Community.where(:name => community).last
+	  				
+	  				@following = Following.new
+
+					@following.update(:following_id => @community.id, :follower_id => current_user.id, :active => true)
+
+					@following.save
+
+				end
+
+  			end
+
+  		end
+
+  		root_path
+
+	end
+
+  	def after_sign_out_path_for(user)
+  		request.referrer
+	end
+
+
 end
