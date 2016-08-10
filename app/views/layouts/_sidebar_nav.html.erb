@@ -25,9 +25,12 @@
 				<li class="menu-option"><a href="<%= communities_path %>"><span class="glyphicon glyphicon-globe" aria-hidden="true" style="margin-right: 5px;"></span>My Communities</a></li> 
 				
 				<ul class="sub-menu">
-					<li><a href="<%= community_path(1) %>"><%= image_tag Community.find(1).image.url(:medium), class: "tiny-user-image" %>10th Nation</a></li>
-					<li><a href="<%= community_path(1) %>"><%= image_tag Community.find(1).image.url(:medium), class: "tiny-user-image" %>News</a></li>
-					<li><a href="<%= community_path(1) %>"><%= image_tag Community.find(1).image.url(:medium), class: "tiny-user-image" %>Spirituality</a></li>
+
+					<% current_user.communities_array.each do |community| %>
+
+						<li><%= link_to community.name, community_path(community) %></li>
+
+					<%end%>
 				</ul>
 
 				<li class="menu-option logout"><a data-method="delete" href='<%=destroy_user_session_path%>'>Logout</a></li>
