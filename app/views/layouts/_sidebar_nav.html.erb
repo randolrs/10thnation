@@ -28,7 +28,7 @@
 
 					<% current_user.communities_array.each do |community| %>
 
-						<li><%= link_to community.name, community_path(community) %></li>
+						<li><a href="<%= community_path(community) %>"><%= image_tag community.image.url(:medium), class: "tiny-user-image" %><%= community.name %></a></li>
 
 					<%end%>
 				</ul>

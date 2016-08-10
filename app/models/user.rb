@@ -146,4 +146,11 @@ class User < ActiveRecord::Base
 
 	end
 
+	def default_subscriptions
+
+
+
+
+	end
+
 end
