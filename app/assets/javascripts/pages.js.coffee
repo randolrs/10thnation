@@ -278,6 +278,7 @@ ready = ->
 		$('span.comment-up-vote').click (event), ->
 			comment_id = $(@).data('comment-id')
 			me = $(@)
+			down_vote = $(@).parent().find('.comment-down-vote')
 			$.ajax
 				url: "/comment/#{comment_id}/up_vote", format: 'js'
 				type: "GET"
@@ -287,10 +288,14 @@ ready = ->
 						voteCounter = me.parent().find('.vote-count')
 						count = parseInt(voteCounter.text(), 10) + data.change
 						voteCounter.text(count)
+						me.toggleClass('active')
+						if data.change == 2
+							down_vote.removeClass('active')
 
 		$('span.comment-down-vote').click (event), ->
 			comment_id = $(@).data('comment-id')
 			me = $(@)
+			up_vote = $(@).parent().find('.comment-up-vote')
 			$.ajax
 				url: "/comment/#{comment_id}/down_vote", format: 'js'
 				type: "GET"
@@ -300,6 +305,9 @@ ready = ->
 						voteCounter = me.parent().find('.vote-count')
 						count = parseInt(voteCounter.text(), 10) + data.change
 						voteCounter.text(count)
+						me.toggleClass('active')
+						if data.change == -2
+							up_vote.removeClass('active')
 
 		$('p.post-type').click (event), ->
 			$(@).parent().hide()

@@ -69,8 +69,8 @@
         <span class="post-share">Email it to me</span>
         
         <div class="mobile-actions">
-          <span class="up-vote glyphicon glyphicon-circle-arrow-up" title="Upvote" data-post-id="<%= post.id %>" aria-hidden="true"></span>
-          <span class="down-vote glyphicon glyphicon-circle-arrow-down" title="Downvote" data-post-id="<%= post.id %>" aria-hidden="true"></span>
+          <span class="up-vote glyphicon glyphicon-circle-arrow-up <% if current_user.has_upvote(post.id) %>active<%end%>" title="Upvote" data-post-id="<%= post.id %>" aria-hidden="true"></span>
+          <span class="down-vote glyphicon glyphicon-circle-arrow-down <% if current_user.has_downvote(post.id) %>active<%end%>" title="Downvote" data-post-id="<%= post.id %>" aria-hidden="true"></span>
           <span class="vote-count mobile"><%= post.vote_count %></span>
         </div>
 

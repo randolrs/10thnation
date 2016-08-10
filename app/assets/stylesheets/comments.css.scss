@@ -247,6 +247,10 @@ div.comment-actions{
         vertical-align: middle;
     }
 
+    span.vote-count{
+        font-weight: 600;
+    }
+
     span.comment-up-vote{
         font-size: 24px;
         box-shadow: 0px 2px 2px #222;
@@ -257,6 +261,26 @@ div.comment-actions{
         background-image: -ms-linear-gradient(top, #17ED3B, #12BA2E);
         background-image: -o-linear-gradient(top, #17ED3B, #12BA2E);
         background-image: linear-gradient(top, #17ED3B, #12BA2E);
+    
+    }
+
+    span.comment-up-vote.active{
+        
+        color: #12BA2E;
+
+        text-shadow:none;
+
+        box-shadow: none;
+
+        font-size: 28px;
+
+        background-color: #fff;
+        background-image: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#fff));
+        background-image: -webkit-linear-gradient(top, #fff, #fff);
+        background-image: -moz-linear-gradient(top, #fff, #fff);
+        background-image: -ms-linear-gradient(top, #fff, #fff);
+        background-image: -o-linear-gradient(top, #fff, #fff);
+        background-image: linear-gradient(top, #fff, #fff);
     
     }
 
@@ -271,6 +295,26 @@ div.comment-actions{
         background-image: -ms-linear-gradient(top, #F21D00, #A81300);
         background-image: -o-linear-gradient(top, #F21D00, #A81300);
         background-image: linear-gradient(top, #F21D00, #A81300);
+
+    }
+
+    span.comment-down-vote.active{
+        
+        color: #F21D00;
+
+        text-shadow:none;
+
+        box-shadow: none;
+
+        font-size: 28px;
+
+        background-color: #fff;
+        background-image: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#fff));
+        background-image: -webkit-linear-gradient(top, #fff, #fff);
+        background-image: -moz-linear-gradient(top, #fff, #fff);
+        background-image: -ms-linear-gradient(top, #fff, #fff);
+        background-image: -o-linear-gradient(top, #fff, #fff);
+        background-image: linear-gradient(top, #fff, #fff);
 
     }
 

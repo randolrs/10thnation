@@ -11,9 +11,9 @@
 
 	<div class="comment-actions">
 		
-		<span class="comment-up-vote glyphicon glyphicon-circle-arrow-up" title="Upvote" data-comment-id="<%= comment.id %>" aria-hidden="true"></span>
+		<span class="comment-up-vote glyphicon glyphicon-circle-arrow-up <% if current_user.has_comment_upvote(comment.id) %>active<%end%>" title="Upvote" data-comment-id="<%= comment.id %>" aria-hidden="true"></span>
 		
-		<span class="comment-down-vote glyphicon glyphicon-circle-arrow-down" title="Downvote" data-comment-id="<%= comment.id %>" aria-hidden="true"></span>
+		<span class="comment-down-vote glyphicon glyphicon-circle-arrow-down <% if current_user.has_comment_downvote(comment.id) %>active<%end%>" title="Downvote" data-comment-id="<%= comment.id %>" aria-hidden="true"></span>
 
 		<span class="vote-count"><%= comment.vote_count%></span>
 

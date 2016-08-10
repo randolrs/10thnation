@@ -122,6 +122,46 @@
 
     	}
 
+    	span.up-vote.active{
+        
+	        color: #12BA2E;
+
+	        text-shadow:none;
+
+	        box-shadow: none;
+
+	        font-size: 28px;
+
+	        background-color: #fff;
+	        background-image: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#fff));
+	        background-image: -webkit-linear-gradient(top, #fff, #fff);
+	        background-image: -moz-linear-gradient(top, #fff, #fff);
+	        background-image: -ms-linear-gradient(top, #fff, #fff);
+	        background-image: -o-linear-gradient(top, #fff, #fff);
+	        background-image: linear-gradient(top, #fff, #fff);
+    
+    	}
+
+    	span.down-vote.active{
+	        
+	        color: #F21D00;
+
+        	text-shadow:none;
+
+	        box-shadow: none;
+
+	        font-size: 28px;
+
+	        background-color: #fff;
+	        background-image: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#fff));
+	        background-image: -webkit-linear-gradient(top, #fff, #fff);
+	        background-image: -moz-linear-gradient(top, #fff, #fff);
+	        background-image: -ms-linear-gradient(top, #fff, #fff);
+	        background-image: -o-linear-gradient(top, #fff, #fff);
+	        background-image: linear-gradient(top, #fff, #fff);
+
+    	}
+
 	}
 }
 
