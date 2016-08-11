@@ -219,6 +219,13 @@ class PostsController < ApplicationController
 
     respond_to do |format|
       if @post.save
+        
+        @post_vote = PostVote.new
+
+        @post_vote.update(:user_id => current_user.id, :post_id => @post.id, :is_up => true, :is_down => false)
+
+        @post_vote.save 
+
         format.html { redirect_to root_path, notice: 'Post was successfully created.' }
       else
         format.html { render :new }
