@@ -24,7 +24,7 @@
       <% if user_signed_in? %>
 
         <% current_user.communities_array.first(3).each do |community|%>
-          <li><%= link_to community.name, community_path(community.id) %></li> 
+          <li><%= link_to community.name, community_page_path(community.url_name) %></li> 
         <%end%>
 
          <li><%= link_to "More", communities_path %></li> 
@@ -32,7 +32,7 @@
       <% else %>
 
         <% Community.first(3).each do |community|%>
-          <li><%= link_to community.name, community_path(community.id) %></li> 
+          <li><%= link_to community.name, community_page_path(community.url_name) %></li> 
         <%end%>
 
       <%end%>
