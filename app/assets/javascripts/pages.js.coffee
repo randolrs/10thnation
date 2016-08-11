@@ -294,7 +294,7 @@ ready = ->
 			$('body').addClass('no-scroll')
 			joinModal.fadeIn()
 
-		$('span.comment-up-vote').click (event), ->
+		$('span.comment-up-vote-cta').click (event), ->
 			comment_id = $(@).data('comment-id')
 			me = $(@)
 			down_vote = $(@).parent().find('.comment-down-vote')
@@ -311,7 +311,7 @@ ready = ->
 						if data.change == 2
 							down_vote.removeClass('active')
 
-		$('span.comment-down-vote').click (event), ->
+		$('span.comment-down-vote-cta').click (event), ->
 			comment_id = $(@).data('comment-id')
 			me = $(@)
 			up_vote = $(@).parent().find('.comment-up-vote')

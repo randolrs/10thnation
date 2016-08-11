@@ -11,9 +11,9 @@
 
 	<div class="comment-actions">
 		
-		<span class="comment-up-vote glyphicon glyphicon-circle-arrow-up <% if current_user.has_comment_upvote(comment.id) %>active<%end%>" title="Upvote" data-comment-id="<%= comment.id %>" aria-hidden="true"></span>
+		<span class="comment-up-vote glyphicon glyphicon-circle-arrow-up <% if user_signed_in?%>comment-up-vote-cta<% if current_user.has_comment_upvote(comment.id) %>active<%end%><%else%>login-modal-cta<%end%>" title="Upvote" data-comment-id="<%= comment.id %>" aria-hidden="true"></span>
 		
-		<span class="comment-down-vote glyphicon glyphicon-circle-arrow-down <% if current_user.has_comment_downvote(comment.id) %>active<%end%>" title="Downvote" data-comment-id="<%= comment.id %>" aria-hidden="true"></span>
+		<span class="comment-down-vote glyphicon glyphicon-circle-arrow-down <% if user_signed_in?%>comment-down-vote-cta<% if current_user.has_comment_downvote(comment.id) %>active<%end%><%else%>login-modal-cta<%end%>" title="Downvote" data-comment-id="<%= comment.id %>" aria-hidden="true"></span>
 
 		<span class="vote-count"><%= comment.vote_count%></span>
 
@@ -27,34 +27,38 @@
 
 	<% if @commentable %>
 
-		<div class="comment-response form">
+		<% if user_signed_in? %>
 
-			<%= form_for(@response) do |f| %>
-		    
-				<% if current_user.admin %>
+			<div class="comment-response form">
 
-					<%= collection_select(:comment, :user_id, User.all, :id, :display_name) %>
+				<%= form_for(@response) do |f| %>
+			    
+					<% if current_user.admin %>
 
-				<%else%>
+						<%= collection_select(:comment, :user_id, User.all, :id, :display_name) %>
 
-					<a href="<%=profile_page_path(comment.user.display_name)%>" title="<%= comment.user.display_name %>"><%= image_tag current_user.image.url(:medium), class: "header-image" %><span class="user-display-name"><%= current_user.display_name%></span></a>
+					<%else%>
 
+						<a href="<%=profile_page_path(comment.user.display_name)%>" title="<%= comment.user.display_name %>"><%= image_tag current_user.image.url(:medium), class: "header-image" %><span class="user-display-name"><%= current_user.display_name%></span></a>
+
+					<% end %>
+
+				    <%= f.text_area :comment_text, :class => 'response-text-field', :placeholder=> "Your Comment" %>
+
+				    <%= f.hidden_field :post_id, :value => @post.id %>
+
+				    <%= f.hidden_field :parent_comment_id, :value => comment.id %>
+
+					<div class="actions">
+						<%= f.submit 'Save', :class => 'submit-response' %>
+					</div>
+				
 				<% end %>
 
-			    <%= f.text_area :comment_text, :class => 'response-text-field', :placeholder=> "Your Comment" %>
+			</div>
 
-			    <%= f.hidden_field :post_id, :value => @post.id %>
-
-			    <%= f.hidden_field :parent_comment_id, :value => comment.id %>
-
-				<div class="actions">
-					<%= f.submit 'Save', :class => 'submit-response' %>
-				</div>
-			
-			<% end %>
-
-		</div>
-
+		<% end %>
+		
 		<% comment.responses.each do |response| %>
 			
 			<div class="comment-response">
