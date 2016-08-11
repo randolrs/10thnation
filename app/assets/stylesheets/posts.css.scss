@@ -98,6 +98,7 @@
 	        text-shadow: 0px 1px 3px #222;
 	        box-shadow: 0px 2px 2px #222;
 	        vertical-align: middle;
+	        background-color: #222;
     	}
 
     	span.up-vote{
@@ -189,8 +190,8 @@ span.vote-count.mobile{
 
 
 .small-post-image{
-    height: 126px;
-    width: 126px;
+    height: 115px;
+    width: 115px;
 }
 
 span.post-community, span.post-community-mobile{
@@ -327,6 +328,7 @@ div.upvote{
     div.count{
     	padding:5px 0px;
     	text-align: center;
+    	font-size: 20px;
     }
 
     a{

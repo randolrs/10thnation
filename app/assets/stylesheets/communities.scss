@@ -10,6 +10,18 @@
 		height: 80px;
 	}
 
+	.community-title{
+
+		font-size: 30px;
+		display: block;
+
+	}
+
+	.community-about{
+		font-size: 16px;
+		display: block;
+	}
+
 
 	.user-cta{
 			
@@ -126,6 +138,10 @@
 	    		}
 			}
 
+		}
+
+		.community-panel.message{
+			padding:5px 10px;
 		}
 
 	}

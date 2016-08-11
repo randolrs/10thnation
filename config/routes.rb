@@ -31,9 +31,9 @@ Rails.application.routes.draw do
 
   #devise_for :users, :path_names => { :sign_up => "signup", :sign_in => "login", :edit_registration => "settings"}
 
-  get '/:username/' => 'pages#profile_page', as: 'profile_page'
+  get '/:url_name/' => 'communities#profile', as: 'community_page'
 
-  get '/community/:id/' => 'communities#show', as: 'community_page'
+  get '/user/:username/' => 'pages#profile_page', as: 'profile_page'
 
   get '/user/follow/:followingID', :to => 'pages#follow'
 

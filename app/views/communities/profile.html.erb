@@ -1,0 +1,109 @@
+<div class="profile-cover <%# unless @user.has_cover_image %> empty <%#end%>">
+
+  <%# if @community.has_cover_image %>
+    <%# image_tag @community.cover_image.url(:large), class: "profile-cover-image" %>
+  <%#end%>
+
+  <div class="profile-info">
+
+    <ul>
+
+      <li><%= image_tag @community.image.url(:medium), class: "profile-user-image squared" %></li>
+
+      <li>
+
+        <h2 class="name"><%= @community.name %></h2>
+
+        <h3 class="community">Community</h3>
+
+      </li>
+
+
+      <li class="for-mobile">
+
+        <a class="user-cta follow-community-cta  <% if current_user.is_following_community(@community.id)  %>following <%end%> community" data-following-id="<%= @community.id%>">
+          <span class="glyphicon glyphicon-ok"></span>
+          <span class="subscription-status yes">Subscribed</span>
+          <span class="subscription-status no">Subscribe</span>
+        <a>
+
+      </li>
+
+    </ul>
+
+  </div>
+
+</div>
+
+<div class="profile-header">
+
+  <div class="centered-content">
+
+    <ul>
+      <li class="profile-header-option active" id="profile_option_posts" data-option-type="posts">
+        <a>Top</a>
+      </li>
+
+      <li class="profile-header-option" id="profile_option_new" data-option-type="new">
+        <a>New</a>
+      </li>
+
+    </ul>
+
+      <a class="user-cta follow-community-cta  <% if current_user.is_following_community(@community.id)  %>following <%end%> community" data-following-id="<%= @community.id%>">
+        <span class="glyphicon glyphicon-ok"></span> <span class="subscription-status yes">Subscribed</span><span class="subscription-status no">Subscribe</span>
+      </a>
+
+  </div>
+
+
+</div>
+
+
+<div class="content">
+
+  <div class="content-box">
+
+    <div class="main-content-column">
+
+      <div class="column-content" id="column_content_posts">
+
+        <% @community.hot_posts.each do |post| %>
+
+          <%= render :partial => 'posts/list', :locals => {:post => post} %>
+
+        <%end%>
+
+      </div>
+
+      <div class="column-content" id="column_content_new" style="display: none;">
+
+        <% @community.new_posts.each do |post| %>
+
+          <%= render :partial => 'posts/list', :locals => {:post => post} %>
+
+        <%end%>
+
+      </div>
+
+    </div>
+
+<!--     <div class="side-content-column">
+
+      <h4>Filter</h4>
+
+      <div class="content-frame stacked">
+
+        <div class="content-panel">
+
+          <p>Improve Your Account</p>
+
+        </div>
+
+      </div>
+
+    </div> -->
+
+  </div>
+
+</div>

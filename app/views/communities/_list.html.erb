@@ -27,13 +27,13 @@
 
       <div class="community-title">
         
-        <span><%= link_to community.name, community_path(community) %></span>
+        <span><%= link_to community.name, community_page_path("news") %></span>
 
       </div>
 
       <div class="community-about">
         
-        <span>community description</span>
+        <span><%= community.description %></span>
 
       </div>
 

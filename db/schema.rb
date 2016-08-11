@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160809160228) do
+ActiveRecord::Schema.define(version: 20160811014333) do
 
   create_table "comment_votes", force: :cascade do |t|
     t.integer  "user_id"
@@ -38,8 +38,8 @@ ActiveRecord::Schema.define(version: 20160809160228) do
     t.text     "description"
     t.boolean  "approved"
     t.integer  "parent_community_id"
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
+    t.datetime "created_at",                            null: false
+    t.datetime "updated_at",                            null: false
     t.string   "image_file_name"
     t.string   "image_content_type"
     t.integer  "image_file_size"
@@ -48,6 +48,7 @@ ActiveRecord::Schema.define(version: 20160809160228) do
     t.string   "cover_image_content_type"
     t.integer  "cover_image_file_size"
     t.datetime "cover_image_updated_at"
+    t.string   "url_name",                 default: ""
   end
 
   create_table "followings", force: :cascade do |t|

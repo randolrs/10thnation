@@ -14,7 +14,30 @@ class CommunitiesController < ApplicationController
     
     if params[:id]
      
-      @community = Community.find(params[:id])
+        @community = Community.find(params[:id])
+
+    else
+
+      redirect_to root_path
+
+    end
+
+  end
+
+
+  def profile
+    
+    if params[:url_name]
+
+      if Community.exists?(:url_name => params[:url_name])
+     
+        @community = Community.where(:url_name => params[:url_name]).last
+
+      else
+
+        redirect_to root_path
+
+      end
 
     else
 
@@ -81,6 +104,6 @@ class CommunitiesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def community_params
-      params.require(:community).permit(:user_id, :name, :description, :approved, :parent_community_id, :image)
+      params.require(:community).permit(:user_id, :name, :description, :approved, :parent_community_id, :image, :url_name)
     end
 end
