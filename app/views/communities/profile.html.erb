@@ -21,7 +21,7 @@
 
       <li class="for-mobile">
 
-        <a class="user-cta follow-community-cta  <% if current_user.is_following_community(@community.id)  %>following <%end%> community" data-following-id="<%= @community.id%>">
+        <a class="user-cta <% if user_signed_in?%> follow-community-cta <% if current_user.is_following_community(@community.id)  %> following <%end%> <%else%> login-modal-cta <%end%> community" data-following-id="<%= @community.id%>">
           <span class="glyphicon glyphicon-ok"></span>
           <span class="subscription-status yes">Subscribed</span>
           <span class="subscription-status no">Subscribe</span>
@@ -50,7 +50,7 @@
 
     </ul>
 
-      <a class="user-cta follow-community-cta  <% if current_user.is_following_community(@community.id)  %>following <%end%> community" data-following-id="<%= @community.id%>">
+      <a class="user-cta <% if user_signed_in?%> follow-community-cta <% if current_user.is_following_community(@community.id)  %> following <%end%> <%else%> login-modal-cta <%end%> community" data-following-id="<%= @community.id%>">
         <span class="glyphicon glyphicon-ok"></span> <span class="subscription-status yes">Subscribed</span><span class="subscription-status no">Subscribe</span>
       </a>
 
