@@ -1,13 +1,17 @@
 @import 'bootstrap';
 
-a {
-    color: #eee;
-    text-decoration: none;
-}
+body{
 
-a:hover {
-    color: #eee;
-    text-decoration: none;
+    a {
+        color: #eee;
+        text-decoration: none;
+    }
+
+    a:hover {
+        color: #eee;
+        text-decoration: none;
+    }
+
 }
 
 nav.header-fixed{

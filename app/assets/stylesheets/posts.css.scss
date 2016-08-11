@@ -56,6 +56,7 @@
 		span.post-body{
 			
 			margin: 10px 0px;
+			letter-spacing: 0.5px;
 
 			border-radius: 3px;
 			border: 2px solid #fff;
@@ -357,18 +358,20 @@ div.upvote{
 }
 
 div.post-title{
-	line-height: 36px;
+	line-height: 40px;
 }
 
 div.post-submission-details{
 	line-height: 30px;
 	color: #ccc;
+	letter-spacing: 1px;
 }
 
 div.post-actions{
 	line-height: 24px;
 	position: relative;
 	color: #ccc;
+	letter-spacing: 1px;
 }
 
 .select-post-type{
