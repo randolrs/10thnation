@@ -87,13 +87,13 @@ class ApplicationController < ActionController::Base
 
   		end
 
-  		root_path
+  		request.referrer
 
 	end
 
   	def after_sign_out_path_for(user)
-  		#request.referrer
-  		root_path
+  		request.referrer
+  		#root_path
 	end
 
 
