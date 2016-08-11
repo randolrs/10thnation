@@ -276,5 +276,32 @@ a.messages-header:hover{
 }
 
 
+.simple-header-container{
+    
+    position: fixed;
+    top: 0px;
+    display: block;
+    text-align: center;
+    width: 100%;
+    background: #000;
+
+
+    a{
+        padding:10px 20px;
+        display: block;
+
+        text-shadow: 0px 3px 0px #000;
+        color: #FFA100;
+        font-size: 30px;
+
+    }
+
+    a:hover{
+        cursor: pointer;
+        color: #FFA100;
+    }
+}
+
+
 
 

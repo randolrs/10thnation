@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160811014333) do
+ActiveRecord::Schema.define(version: 20160811221617) do
 
   create_table "comment_votes", force: :cascade do |t|
     t.integer  "user_id"
@@ -119,6 +119,7 @@ ActiveRecord::Schema.define(version: 20160811014333) do
     t.integer  "cover_image_file_size"
     t.datetime "cover_image_updated_at"
     t.boolean  "admin",                    default: false
+    t.boolean  "onboarded",                default: false
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

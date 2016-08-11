@@ -15,6 +15,10 @@ Rails.application.routes.draw do
 
   get 'requests' => "pages#requests"
 
+  get 'welcome' => "pages#welcome"
+
+  get 'setup' => "pages#setup"
+
   get 'dashboard' => "pages#dashboard"
 
   get 'votes' => "pages#votes"

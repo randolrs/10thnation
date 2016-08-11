@@ -63,31 +63,40 @@ class ApplicationController < ActionController::Base
 
   	def after_sign_in_path_for(user)
   		
-  		if current_user.communities_array.count == 0
+  		if current_user.onboarded
 
-  			default_communities = Array.new
+  			if current_user.communities_array.count == 0
 
-  			default_communities = ["All", "News", "Business", "Music", "Sports", "Entertainment"]
+	  			default_communities = Array.new
+
+	  			default_communities = ["All", "News", "Business", "Music", "Sports", "Entertainment"]
+	  			
+	  			default_communities.each do |community|
+
+	  				if Community.exists?(:name => community)
+	  					
+	  					@community = Community.where(:name => community).last
+		  				
+		  				@following = Following.new
+
+						@following.update(:following_id => @community.id, :follower_id => current_user.id, :active => true)
+
+						@following.save
+
+					end
+
+	  			end
+
+	  		end
+
+  			request.referrer
   			
-  			default_communities.each do |community|
 
-  				if Community.exists?(:name => community)
-  					
-  					@community = Community.where(:name => community).last
-	  				
-	  				@following = Following.new
+  		else
 
-					@following.update(:following_id => @community.id, :follower_id => current_user.id, :active => true)
-
-					@following.save
-
-				end
-
-  			end
+  			welcome_path
 
   		end
-
-  		request.referrer
 
 	end
 

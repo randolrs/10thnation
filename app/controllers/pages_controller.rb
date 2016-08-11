@@ -6,6 +6,18 @@ class PagesController < ApplicationController
 
 	end
 
+	def welcome
+
+		@hide_menu = true
+
+	end
+
+	def setup 
+
+		@hide_menu = true
+
+	end
+
 	def dashboard
 
 
