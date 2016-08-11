@@ -10,9 +10,19 @@
 
     <%= link_to "10th Nation", root_path, class: "navbar-brand site-title" %>
 
-    <button type="button" class="navbar-toggle right" data-toggle="collapse" data-target=".navbar-ex1-collapse" title="New Post">
-      <span class="blue glyphicon glyphicon-pencil" aria-hidden="true"></span>
-    </button>
+    <% if user_signed_in?%>
+
+      <button type="button" class="navbar-toggle right" data-toggle="collapse" data-target=".navbar-ex1-collapse" title="New Post">
+        <span class="blue glyphicon glyphicon-pencil" aria-hidden="true"></span>
+      </button>
+
+    <%else%>
+
+      <button type="button" class="navbar-toggle right join-modal-cta" data-toggle="collapse" data-target=".navbar-ex1-collapse" title="Join">
+        <a>Join</a>
+      </button>
+
+    <%end%>
 
   </div>
 

@@ -170,6 +170,10 @@ nav.header-fixed{
     background-image: -ms-linear-gradient(top, #fff, #fff);
     background-image: -o-linear-gradient(top, #fff, #fff);
     background-image: linear-gradient(top, #fff, #fff);
+
+    a{
+        color: #0F4DA8;
+    }
 }
 
 .navbar-default .navbar-toggle:focus {
