@@ -783,7 +783,6 @@ span.citizen-badge{
 
 						a.user-cta{
 		
-							padding: 10px 15px;
 					    	line-height: 20px;
     						margin: 20px 5px;
     						padding: 10px;
@@ -794,12 +793,9 @@ span.citizen-badge{
 							font-weight: 700;
 							letter-spacing: 1px;
 							text-shadow: 0px 1px 1px #333;
-							border: 1px solid #090909;
 							border-radius: 3px;
 
-							border: 2px solid transparent;
-
-							background-color: #fff;
+							background-color: #B02AE8;
 
 					        background-image: -webkit-gradient(linear, left top, left bottom, from(#B02AE8), to(#721B96));
 					        background-image: -webkit-linear-gradient(top, #B02AE8, #721B96);
@@ -807,6 +803,8 @@ span.citizen-badge{
 					        background-image: -ms-linear-gradient(top, #B02AE8, #721B96);
 					        background-image: -o-linear-gradient(top, #B02AE8, #721B96);
 					        background-image: linear-gradient(top, #B02AE8, #721B96);
+
+							border: 2px solid transparent;
 
 					        span.glyphicon{
 
@@ -823,20 +821,19 @@ span.citizen-badge{
 						}
 
 						a.user-cta.following{
-							color: #B02AE8;
-					    	border: 2px solid #B02AE8;
-					    	text-shadow: none;
+
 							font-weight: 700;
 							letter-spacing: 1px;
 
-							background-color: #82FF8F;
+							color: #fff;
+						    background-color: #17ED3B;
+						    background-image: -webkit-gradient(linear, left top, left bottom, from(#17ED3B), to(#12BA2E));
+						    background-image: -webkit-linear-gradient(top, #17ED3B, #12BA2E);
+						    background-image: -moz-linear-gradient(top, #17ED3B, #12BA2E);
+						    background-image: -ms-linear-gradient(top, #17ED3B, #12BA2E);
+						    background-image: -o-linear-gradient(top, #17ED3B, #12BA2E);
+						    background-image: linear-gradient(top, #17ED3B, #12BA2E);
 
-					        background-image: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#fff));
-					        background-image: -webkit-linear-gradient(top, #fff, #fff);
-					        background-image: -moz-linear-gradient(top, #fff, #fff);
-					        background-image: -ms-linear-gradient(top, #fff, #fff);
-					        background-image: -o-linear-gradient(top, #fff, #fff);
-					        background-image: linear-gradient(top, #fff, #fff);
 
 					        span.glyphicon{
 								display: inline-block;
