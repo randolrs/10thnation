@@ -34,7 +34,7 @@
 
 			<div class="column-content" id="column_content_posts">
 
-				<% Post.all.each do |post| %>
+				<% Post.all.sort_by(&:vote_count).reverse.each do |post| %>
 
 					<%= render :partial => 'posts/list', :locals => {:post => post} %>
 

@@ -213,11 +213,10 @@ ready = ->
 				submitButton.hide()
 			end
 
-		$('a.comment-cta').click (event), ->
+		$('a.comment-cta-modal').click (event), ->
 			$('body').find('.modal-container#comment-form').show()
-
-		$('a.comment-cta-mobile').click (event), ->
-			$('body').find('.modal-container#comment-form').show()
+			$('body').find('.content').addClass('blurred')
+			$('body').addClass('no-scroll')
 
 		$('button.navbar-toggle.menu').click (event), ->
 			$('body').find("#sidebar-nav").show()
@@ -241,11 +240,6 @@ ready = ->
 
 		$('button.navbar-toggle.right').click (event), ->
 			$('body').find("#post-form").show()
-			$('body').find('.content').addClass('blurred')
-			$('body').addClass('no-scroll')
-
-		$('span.comment').click (event), ->
-			$('body').find('.modal-container#comment-form').show()
 			$('body').find('.content').addClass('blurred')
 			$('body').addClass('no-scroll')
 

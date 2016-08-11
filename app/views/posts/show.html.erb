@@ -54,4 +54,6 @@
 
 </div>
 
-<%= render 'modals/new_comment_modal' %>
+<%if user_signed_in? %>
+	<%= render 'modals/new_comment_modal' %>
+<%end%>

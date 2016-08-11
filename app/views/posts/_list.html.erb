@@ -106,11 +106,11 @@
 
       <% if @commentable %>
         
-        <a class="comment-cta"><span class="comment red glyphicon glyphicon-comment" aria-hidden="true"></span></a>
+        <a class="comment-cta <% if user_signed_in?%>comment-cta-modal <%else%>login-modal-cta<%end%>"><span class="comment glyphicon glyphicon-comment" aria-hidden="true"></span></a>
       
         <div class="mobile-cta">
           
-          <span class="comment bright-blue glyphicon glyphicon-comment" title="Add a Comment" aria-hidden="true"></span>
+          <span class="comment <% if user_signed_in?%>comment-cta-modal <%else%>login-modal-cta<%end%> bright-blue glyphicon glyphicon-comment" title="Add a Comment" aria-hidden="true"></span>
 
         </div>
 
