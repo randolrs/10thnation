@@ -6,8 +6,6 @@
 
       <span class="up-vote glyphicon glyphicon-circle-arrow-up <% if current_user.has_upvote(post.id) %>active<%end%>" title="Upvote" data-post-id="<%= post.id %>" aria-hidden="true"></span>
 
-
-
     </div>
 
     <div class="count">
@@ -48,7 +46,7 @@
 
       <div class="post-submission-details">
 
-        <span class="submitter">Submitted by <a href="<%=profile_page_path(post.user.display_name)%>"><%= image_tag post.user.image.url(:medium), class: "tiny-user-image" %><%= post.user.display_name %></a> on <%= post.created_at.strftime("%b %e") %> to</span>
+        <span class="submitter">Submitted by <a href="<%=profile_page_path(post.user.display_name)%>"><%= image_tag post.user.image.url(:medium), class: "tiny-user-image" %><%= post.user.display_name %></a> <%= time_ago_in_words(post.created_at) %> ago in</span>
 
         <span class="post-community"><% if post.community_id %><%= link_to post.community.name, community_page_path(post.community.url_name), class:"community-detail" %><%end%></span>
 

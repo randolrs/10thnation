@@ -21,7 +21,9 @@
 
 		span.post-title{
     		font-size: 30px;
-    		font-weight: 500;
+    		font-weight: 700;
+    		letter-spacing: 1px;
+    		padding: 10px 0px;
     		display: block;
     		text-align: left;
     		text-shadow: 0px 2px 2px #000;
@@ -47,7 +49,7 @@
 		}
 
 		span.divider{
-			margin: 0px 5px;
+			margin: 0px 3px;
 			font-weight: 800;
 		}
 
@@ -190,8 +192,8 @@ span.vote-count.mobile{
 
 
 .small-post-image{
-    height: 115px;
-    width: 115px;
+    height: 121px;
+    width: 121px;
 }
 
 span.post-community, span.post-community-mobile{
@@ -359,12 +361,14 @@ div.post-title{
 }
 
 div.post-submission-details{
-	line-height: 36px;
+	line-height: 30px;
+	color: #ccc;
 }
 
 div.post-actions{
-	line-height: 30px;
+	line-height: 24px;
 	position: relative;
+	color: #ccc;
 }
 
 .select-post-type{
