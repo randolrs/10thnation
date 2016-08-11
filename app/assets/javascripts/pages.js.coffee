@@ -252,7 +252,7 @@ ready = ->
 		$('.comment-reply-cta').click (event), ->
 			$(@).parent().next(".comment-response").show()
 
-		$('span.up-vote').click (event), ->
+		$('span.up-vote-enabled').click (event), ->
 			post_id = $(@).data('post-id')
 			me = $(@)
 			down_vote = $(@).parent().parent().find('.down-vote')
@@ -269,7 +269,7 @@ ready = ->
 						if data.change == 2
 							down_vote.removeClass('active')
 
-		$('span.down-vote').click (event), ->
+		$('span.down-vote-enabled').click (event), ->
 			post_id = $(@).data('post-id')
 			me = $(@)
 			up_vote = $(@).parent().parent().find('.up-vote')
@@ -285,6 +285,20 @@ ready = ->
 						me.toggleClass('active')
 						if data.change == -2
 							up_vote.removeClass('active')
+
+		$("span.up-vote-disabled").click (event), ->
+			joinModal = $('body').find(".modal-container#join-form")
+			contentContainer = $('body').find(".content")
+			contentContainer.addClass('blurred')
+			$('body').addClass('no-scroll')
+			joinModal.fadeIn()
+
+		$("span.down-vote-disabled").click (event), ->
+			joinModal = $('body').find(".modal-container#join-form")
+			contentContainer = $('body').find(".content")
+			contentContainer.addClass('blurred')
+			$('body').addClass('no-scroll')
+			joinModal.fadeIn()
 
 		$('span.comment-up-vote').click (event), ->
 			comment_id = $(@).data('comment-id')

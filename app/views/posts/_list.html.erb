@@ -4,7 +4,15 @@
 
     <div class="vote" id="up" data-post-id="<%= post.id %>">
 
-      <span class="up-vote glyphicon glyphicon-circle-arrow-up <% if current_user.has_upvote(post.id) %>active<%end%>" title="Upvote" data-post-id="<%= post.id %>" aria-hidden="true"></span>
+      <%if user_signed_in? %>
+      
+        <span class="up-vote up-vote-enabled glyphicon glyphicon-circle-arrow-up <% if current_user.has_upvote(post.id) %>active<%end%>" title="Upvote" data-post-id="<%= post.id %>" aria-hidden="true"></span>
+      
+      <%else%>
+
+        <span class="up-vote up-vote-disabled glyphicon glyphicon-circle-arrow-up" title="Upvote" data-post-id="<%= post.id %>" aria-hidden="true"></span>
+
+      <%end%>
 
     </div>
 
@@ -16,7 +24,15 @@
 
     <div class="vote" id="down" data-post-id="<%= post.id %>">
 
-      <span class="down-vote blue glyphicon glyphicon-circle-arrow-down <% if current_user.has_downvote(post.id) %>active<%end%>" title="Downvote" data-post-id="<%= post.id %>" aria-hidden="true"></span>
+      <%if user_signed_in? %>
+        
+        <span class="down-vote down-vote-enabled blue glyphicon glyphicon-circle-arrow-down <% if current_user.has_downvote(post.id) %>active<%end%>" title="Downvote" data-post-id="<%= post.id %>" aria-hidden="true"></span>
+      
+      <%else%>
+
+         <span class="down-vote down-vote-disabled blue glyphicon glyphicon-circle-arrow-down" title="Downvote" data-post-id="<%= post.id %>" aria-hidden="true"></span>
+
+      <%end%>
 
     </div>
 
@@ -67,9 +83,23 @@
         <span class="post-share">Email it to me</span>
         
         <div class="mobile-actions">
-          <span class="up-vote glyphicon glyphicon-circle-arrow-up <% if current_user.has_upvote(post.id) %>active<%end%>" title="Upvote" data-post-id="<%= post.id %>" aria-hidden="true"></span>
-          <span class="down-vote glyphicon glyphicon-circle-arrow-down <% if current_user.has_downvote(post.id) %>active<%end%>" title="Downvote" data-post-id="<%= post.id %>" aria-hidden="true"></span>
+          
+          <%if user_signed_in?%>
+            
+            <span class="up-vote up-vote-enabled glyphicon glyphicon-circle-arrow-up <% if current_user.has_upvote(post.id) %>active<%end%>" title="Upvote" data-post-id="<%= post.id %>" aria-hidden="true"></span>
+            
+            <span class="down-vote down-vote-enabled glyphicon glyphicon-circle-arrow-down <% if current_user.has_downvote(post.id) %>active<%end%>" title="Downvote" data-post-id="<%= post.id %>" aria-hidden="true"></span>
+
+          <%else%>
+
+            <span class="up-vote up-vote-disabled glyphicon glyphicon-circle-arrow-up" title="Upvote" data-post-id="<%= post.id %>" aria-hidden="true"></span>
+            
+            <span class="down-vote down-vote-disabled glyphicon glyphicon-circle-arrow-down" title="Downvote" data-post-id="<%= post.id %>" aria-hidden="true"></span>
+
+          <%end%>
+
           <span class="vote-count mobile"><%= post.vote_count %></span>
+        
         </div>
 
       </div>
