@@ -19,6 +19,8 @@ Rails.application.routes.draw do
 
   get 'setup' => "pages#setup"
 
+  post 'community_setup' => "pages#community_setup"
+
   get 'dashboard' => "pages#dashboard"
 
   get 'votes' => "pages#votes"

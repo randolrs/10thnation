@@ -1,11 +1,10 @@
 class ApplicationController < ActionController::Base
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
-  protect_from_forgery with: :exception
 
     Stripe.api_key = ENV["stripe_api_key"]
 
-  	protect_from_forgery with: :exception
+  	protect_from_forgery with: :null_session
 
   	#before_action :new_track_for_form
 
@@ -65,29 +64,29 @@ class ApplicationController < ActionController::Base
   		
   		if current_user.onboarded
 
-  			if current_user.communities_array.count == 0
+  			# if current_user.communities_array.count == 0
 
-	  			default_communities = Array.new
+	  		# 	default_communities = Array.new
 
-	  			default_communities = ["All", "News", "Business", "Music", "Sports", "Entertainment"]
+	  		# 	default_communities = ["All", "News", "Business", "Music", "Sports", "Entertainment"]
 	  			
-	  			default_communities.each do |community|
+	  		# 	default_communities.each do |community|
 
-	  				if Community.exists?(:name => community)
+	  		# 		if Community.exists?(:name => community)
 	  					
-	  					@community = Community.where(:name => community).last
+	  		# 			@community = Community.where(:name => community).last
 		  				
-		  				@following = Following.new
+		  	# 			@following = Following.new
 
-						@following.update(:following_id => @community.id, :follower_id => current_user.id, :active => true)
+					# 	@following.update(:following_id => @community.id, :follower_id => current_user.id, :active => true)
 
-						@following.save
+					# 	@following.save
 
-					end
+					# end
 
-	  			end
+	  		# 	end
 
-	  		end
+	  		# end
 
   			request.referrer
   			

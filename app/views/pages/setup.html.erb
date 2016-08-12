@@ -7,27 +7,33 @@
 
 		<h1 style="text-align: center;">What are you interested in?</h1>
 
-		<div class="community-select-container">
+		<form name="community_setup" action="/community_setup/" method="POST">
 
-			
-			<% Community.all.each do |community|%>
+			<div class="community-select-container">
+
 				
-				<div class="community-select-item">
+				<% Community.all.each do |community|%>
+					
+					<div class="community-select-item">
 
-					<span class="community-select-span"><span class="glyphicon glyphicon-plus"></span><span class="glyphicon glyphicon-ok"></span><%= community.name %></span>
-					<input class="community-select-input" type="checkbox" id="<%= community.name %>"></input>
+						<span class="community-select-span"><span class="glyphicon glyphicon-plus"></span><span class="glyphicon glyphicon-ok"></span><%= community.name %></span>
+						<input class="community-select-input" type="checkbox" name="<%= community.name %>"></input>
 
-				</div>
+					</div>
 
-			<%end%>
+				<%end%>
 
-		</div>
-		
-		<div class="cta-container">
+			</div>
 			
-			<%= link_to "Finish!", root_path, class: "get-started-cta green-text-background" %>
-			
-		</div>
+			<div class="cta-container">
+				
+				<%= link_to "Finish!", root_path, class: "get-started-cta green-text-background" %>
+					
+				<input type="submit">
+
+			</div>
+    
+		</form>
 
 	</div>
 

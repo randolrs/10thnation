@@ -1,5 +1,7 @@
 class PagesController < ApplicationController
 
+	skip_before_filter :verify_authenticity_token
+	
 	def home
 
 		@page = "home"
@@ -15,6 +17,37 @@ class PagesController < ApplicationController
 	def setup 
 
 		@hide_menu = true
+
+	end
+
+	def community_setup 
+
+		if user_signed_in?
+
+			params.each do |key|
+
+				if Community.exists?(:name => key[0])
+
+					@community = Community.where(:name => key[0]).first
+
+					#@community = Community.find(2)
+
+					@following = Following.new
+
+			      	@following.update(:following_id => @community.id, :follower_id => current_user.id, :active => true)
+
+			      	@following.save
+
+				end
+
+			end
+
+			redirect_to root_path
+		else
+
+			crash this shit
+
+		end
 
 	end
 
