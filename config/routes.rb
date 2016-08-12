@@ -25,6 +25,8 @@ Rails.application.routes.draw do
 
   get 'votes' => "pages#votes"
 
+  get 'new' => "pages#new"
+
   get 'balance' => "pages#balance"
 
   get '/post/:post_id/up_vote', :to => 'posts#up_vote'

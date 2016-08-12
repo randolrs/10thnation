@@ -4,11 +4,11 @@
 
 		<ul>
 			<li class="profile-header-option active" id="profile_option_posts" data-option-type="posts">
-				<a>Top</a>
+				<%= link_to "Top", root_path %>
 			</li>
 
 			<li class="profile-header-option" id="profile_option_new" data-option-type="new">
-				<a>New</a>
+				<%= link_to "New", new_path %>
 			</li>
 
 		</ul>
@@ -26,9 +26,9 @@
 
 			<div class="column-content" id="column_content_posts">
 
-				<% if @top_posts.count > 0 %>
+				<% if @posts.count > 0 %>
 
-					<% @top_posts.each do |post| %>
+					<% @posts.each do |post| %>
 
 						<%= render :partial => 'posts/list', :locals => {:post => post} %>
 
@@ -36,7 +36,7 @@
 
 					<div class="center">
 	   					
-	   					<%= will_paginate @top_posts, renderer: BootstrapPagination::Rails %>
+	   					<%= will_paginate @posts, renderer: BootstrapPagination::Rails %>
 
 					</div>
 
@@ -51,16 +51,6 @@
 		          </div>
 
 		        <% end %>
-
-			</div>
-
-			<div class="column-content" id="column_content_new" style="display:none;">
-				 
-				 <% current_user.new_posts.each do |post| %>
-
-					<%= render :partial => 'posts/list', :locals => {:post => post} %>
-
-				<%end%>
 
 			</div>
 

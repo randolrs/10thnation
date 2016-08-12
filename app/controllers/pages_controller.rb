@@ -6,17 +6,18 @@ class PagesController < ApplicationController
 
 		@page = "home"
 
-		if current_user
-			@top_posts = current_user.hot_posts.paginate(:page => params[:page], :per_page => 20)
+		if user_signed_in?
+			
+			@posts = current_user.hot_posts.paginate(:page => params[:page], :per_page => 20)
 
 		else
 
-			@top_posts = Post.all.sort_by(&:vote_count).reverse.paginate(:page => params[:page], :per_page => 20)
+			@posts = Post.all.sort_by(&:vote_count).reverse.paginate(:page => params[:page], :per_page => 20)
 		end
 
 		i = 0
 
-		@top_posts.each do |post|
+		@posts.each do |post|
 
 			i = i + 1
 
@@ -42,6 +43,21 @@ class PagesController < ApplicationController
 	def dashboard
 
 
+
+	end
+
+	def new
+
+		@position = 0
+
+		if user_signed_in?
+			
+			@posts = current_user.new_posts.paginate(:page => params[:page], :per_page => 20)
+
+		else
+
+			@posts = Post.all.reverse.paginate(:page => params[:page], :per_page => 20)
+		end
 
 	end
 

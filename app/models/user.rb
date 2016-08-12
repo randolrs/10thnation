@@ -62,7 +62,17 @@ class User < ActiveRecord::Base
 
 	def new_posts
 
-		return Post.all.reverse
+		@new_posts = Array.new
+
+		self.communities_array.each do |community|
+			
+			community.posts.each do |post|
+				@new_posts << post
+			end
+			
+		end
+
+		return @new_posts.sort_by(&:created_at)
 	end
 
 	def followers
