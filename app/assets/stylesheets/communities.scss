@@ -147,3 +147,35 @@
 	}
 
 }
+
+.community-select-container{
+	
+	padding: 20px 0px;
+
+	.community-select-item{
+		
+		display: inline-block;
+
+		input[type=checkbox] {
+	    	display: none;
+		}
+
+		.community-select-span{
+			    padding: 10px;
+		    	border: 2px solid #fff;
+		    	border-radius: 30px;
+		        display: inline-block;
+		        font-size: 20px;
+		        
+		}
+
+		.community-select-span:hover{
+
+			cursor: pointer;
+			background: #fff;
+			color: blue;
+		}
+
+	}
+
+}

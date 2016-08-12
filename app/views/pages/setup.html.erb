@@ -6,6 +6,22 @@
 	<div class="content-box black">
 
 		<h1>What are you interested in?</h1>
+
+		<div class="community-select-container">
+
+			
+			<% Community.all.each do |community|%>
+				
+				<div class="community-select-item">
+
+					<span class="community-select-span"><span class="glyphicon glyphicon-plus"></span><%= community.name %></span>
+					<input type="checkbox" id="<%= community.name %>"></input>
+
+				</div>
+
+			<%end%>
+
+		</div>
 		
 		<div class="cta-container">
 			
