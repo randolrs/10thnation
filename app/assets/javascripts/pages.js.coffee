@@ -345,6 +345,8 @@ ready = ->
 			$('.post-modal-form').find('input#post_url').hide()
 			$('.post-modal-form').find('input#post_title').attr("placeholder", "Topic")
 
+		$('span.community-select-span').click (event), ->
+			$(@).toggleClass('selected')
 		
 
 $(document).on('turbolinks:load', ready)

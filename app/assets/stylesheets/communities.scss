@@ -167,6 +167,15 @@
 		        display: inline-block;
 		        font-size: 20px;
 		        margin: 0px 10px;
+		        letter-spacing: 1px;
+
+		    span.glyphicon-plus{
+				display: inline-block;
+			}
+
+		    span.glyphicon-ok{
+				display: none;
+			}
 		        
 		}
 
@@ -175,6 +184,19 @@
 			cursor: pointer;
 			background: #fff;
 			color: blue;
+		}
+
+		.community-select-span.selected{
+			background: #fff;
+			color: #12BA2E; 
+
+			span.glyphicon-ok{
+				display: inline-block;
+			}
+
+			span.glyphicon-plus{
+				display: none;
+			}
 		}
 
 	}
