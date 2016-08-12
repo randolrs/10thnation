@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160811221617) do
+ActiveRecord::Schema.define(version: 20160812145357) do
 
   create_table "comment_votes", force: :cascade do |t|
     t.integer  "user_id"
@@ -57,6 +57,22 @@ ActiveRecord::Schema.define(version: 20160811221617) do
     t.boolean  "active",       default: false
     t.datetime "created_at",                   null: false
     t.datetime "updated_at",                   null: false
+  end
+
+  create_table "impressions", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "post_id"
+    t.integer  "position"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "post_click_throughs", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "post_id"
+    t.integer  "position"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "post_votes", force: :cascade do |t|

@@ -56,7 +56,7 @@
 
       <div class="post-title">
         
-        <span class="post-title <% if @commentable %>commentable<%end%>"><% if post.url %><%= link_to post.title, post.url %><%else%><%= link_to post.title, post_path(post.id) %><%end%></span>
+        <span class="post-title <% if @commentable %>commentable<%end%>"><% if post.url %><%= link_to post.title, post.url, class:"post-title-link" %><%else%><%= link_to post.title, post_path(post.id), class:"post-title-link" %><%end%></span>
 
       </div>
 

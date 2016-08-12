@@ -350,5 +350,11 @@ ready = ->
 			checkBox = $(@).parent().find('.community-select-input')
 			checkBox.prop("checked", !checkBox.prop("checked"))
 		
+		$('a.post-title-link').click (event), ->
+			alert("click")
+			post_id = 2
+			$.ajax
+				url: "/click/#{post_id}/", format: 'js'
+				type: "GET"
 
 $(document).on('turbolinks:load', ready)

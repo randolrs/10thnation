@@ -191,6 +191,32 @@ class PostsController < ApplicationController
 
   end
 
+
+  def click
+
+    if user_signed_in?
+
+      if params[:post_id]
+
+        if Post.exists?(params[:post_id])
+
+          @click_through = PostClickThrough.new
+
+          @click_through.update(:post_id => params[:post_id], :user_id => current_user.id, :position => 2)
+
+          @click_through.save
+
+        end
+
+
+      end
+
+
+    end
+
+
+  end
+
   # GET /posts/new
   def new
     @post = Post.new

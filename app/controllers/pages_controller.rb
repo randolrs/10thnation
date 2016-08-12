@@ -6,6 +6,20 @@ class PagesController < ApplicationController
 
 		@posts = current_user.hot_posts.paginate(:page => params[:page], :per_page => 20)
 
+		i = 0
+
+		@posts.each do |post|
+
+			i = i + 1
+
+			@impression = Impression.new
+
+			@impression.update(:user_id => current_user.id, :post_id => post.id, :position => i)
+
+			@impression.save
+
+		end
+
 	end
 
 	def welcome
