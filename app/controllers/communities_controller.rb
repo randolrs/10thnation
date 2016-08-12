@@ -49,6 +49,8 @@ class CommunitiesController < ApplicationController
   def show
 
     @position = 0
+
+    @top_posts = @community.hot_posts.paginate(:page => params[:page], :per_page => 20)
     
     if params[:id]
      

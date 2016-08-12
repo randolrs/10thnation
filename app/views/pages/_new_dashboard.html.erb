@@ -40,6 +40,12 @@
 
 				<%end%>
 
+				<div class="center">
+   					
+   					<%= will_paginate @posts, renderer: BootstrapPagination::Rails %>
+
+				</div>
+
 			</div>
 
 			<div class="column-content" id="column_content_new" style="display:none;">
