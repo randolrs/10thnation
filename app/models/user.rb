@@ -1,7 +1,8 @@
 class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
-  devise :database_authenticatable, :registerable,
+
+  	devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
 
@@ -42,9 +43,17 @@ class User < ActiveRecord::Base
 
 	def hot_posts
 
-		@hot_posts = Post.all.sort_by(&:vote_count)
+		@hot_posts = Array.new
 
-		return @hot_posts.reverse
+		self.communities_array.each do |community|
+			
+			community.posts.each do |post|
+				@hot_posts << post
+			end
+			
+		end
+
+		return @hot_posts.sort_by(&:vote_count).reverse
 	end
 
 	def new_posts
