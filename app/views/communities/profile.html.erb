@@ -68,11 +68,33 @@
 
       <div class="column-content" id="column_content_posts">
 
-        <% @community.hot_posts.each do |post| %>
+        <% if @top_posts.count > 0 %>
 
-          <%= render :partial => 'posts/list', :locals => {:post => post} %>
+          <% @top_posts.each do |post| %>
 
-        <%end%>
+            <%= render :partial => 'posts/list', :locals => {:post => post} %>
+
+          <%end%>
+
+          <div class="center">
+              
+              <%= will_paginate @posts, renderer: BootstrapPagination::Rails %>
+
+          </div>
+
+        <% else %>
+
+          <div class="empty-content">
+
+            <p>Nothing to see here!</p>
+
+            <p>Be first to post to <%= @community.name %>.</p>
+
+            <a class="gold-text-background <% if user_signed_in? %>new-post-cta<%else%>login-modal-cta<%end%>">Submit a <%= @community.name %> Post</a>
+
+          </div>
+
+        <% end %>
 
       </div>
 

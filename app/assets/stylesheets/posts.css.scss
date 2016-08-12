@@ -458,3 +458,28 @@ div.post-actions{
 	    background-image: -o-linear-gradient(top, #FFA100, #FF6600);
 	    background-image: linear-gradient(top, #FFA100, #FF6600);
 	}
+
+.empty-content{
+	
+	padding: 20px;
+    background: #111;
+    border: 2px solid #fff;
+    text-align: center;
+    font-size: 24px;
+    margin-top: 20px;
+
+
+	a{
+		
+		padding: 10px 20px;
+    	display: inline-block;
+    	text-shadow: 0px 1px 1px #111;
+    	margin: 10px auto;
+    	font-size: 28px;
+    	font-weight: 700;
+	}
+
+	a:hover{
+		cursor: pointer;
+	}
+}

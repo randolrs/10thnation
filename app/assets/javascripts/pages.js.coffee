@@ -115,7 +115,7 @@ ready = ->
 			$(@).parent().parent().parent().find('a.active').removeClass('active')
 			$(@).addClass('active')
 
-		$("a#new-post").click (event), ->
+		$('.new-post-cta').click (event), ->
 			$('body').find("#post-form").show()
 			$('body').find('.content').addClass('blurred')
 			$('body').addClass('no-scroll')

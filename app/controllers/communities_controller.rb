@@ -79,6 +79,8 @@ class CommunitiesController < ApplicationController
      
         @community = Community.where(:url_name => params[:url_name]).last
 
+        @top_posts = @community.hot_posts.paginate(:page => params[:page], :per_page => 20)
+
       else
 
         redirect_to root_path
