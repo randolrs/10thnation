@@ -9,7 +9,11 @@ class CommunitiesController < ApplicationController
     @communities = Community.all
   end
 
+  def welcome
 
+    @hide_menu = true
+
+  end
 
 
   def community_setup 

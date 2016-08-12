@@ -31,25 +31,12 @@ class PagesController < ApplicationController
 				@impression.update(:user_id => nil, :post_id => post.id, :position => i)
 			
 			end
-			
+
 			@impression.save
 
 		end
 
 	end
-
-	def welcome
-
-		@hide_menu = true
-
-	end
-
-	def setup 
-
-		@hide_menu = true
-
-	end
-
 
 
 	def dashboard

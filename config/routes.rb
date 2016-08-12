@@ -15,7 +15,7 @@ Rails.application.routes.draw do
 
   get 'requests' => "pages#requests"
 
-  get 'welcome' => "pages#welcome"
+  get 'welcome' => "communities#welcome"
 
   get 'setup' => "pages#setup"
 
