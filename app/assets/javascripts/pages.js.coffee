@@ -347,6 +347,8 @@ ready = ->
 
 		$('span.community-select-span').click (event), ->
 			$(@).toggleClass('selected')
+			checkBox = $(@).parent().find('.community-select-input')
+			checkBox.prop("checked", !checkBox.prop("checked"))
 		
 
 $(document).on('turbolinks:load', ready)
