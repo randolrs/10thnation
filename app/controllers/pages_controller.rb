@@ -2,9 +2,9 @@ class PagesController < ApplicationController
 
 	def home
 
-		@position = 0
+		@page = "top"
 
-		@page = "home"
+		@position = 0
 
 		if user_signed_in?
 			
@@ -48,6 +48,8 @@ class PagesController < ApplicationController
 
 	def new
 
+		@page = "new"
+		
 		@position = 0
 
 		if user_signed_in?

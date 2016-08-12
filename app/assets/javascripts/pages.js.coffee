@@ -57,10 +57,6 @@ ready = ->
 			$('body').addClass('no-scroll')
 			settingsModal.fadeIn()
 
-		$(".option-item").click (event), ->
-			$('body').find('.option-item.active').removeClass("active")
-			$(@).addClass("active")
-
 		$(".content-panel.tracks").click (event), ->
 			$('body').find('.audio-player').show()
 

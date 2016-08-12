@@ -72,7 +72,7 @@ class User < ActiveRecord::Base
 			
 		end
 
-		return @new_posts.sort_by(&:created_at)
+		return @new_posts
 	end
 
 	def followers

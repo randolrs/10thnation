@@ -3,11 +3,11 @@
 	<div class="centered-content">
 
 		<ul>
-			<li class="profile-header-option active" id="profile_option_posts" data-option-type="posts">
+			<li class="profile-header-option <%if @page == "top"%>active<%end%>" id="profile_option_posts" data-option-type="posts">
 				<%= link_to "Top", root_path %>
 			</li>
 
-			<li class="profile-header-option" id="profile_option_new" data-option-type="new">
+			<li class="profile-header-option <%if @page == "new"%>active<%end%>" id="profile_option_new" data-option-type="new">
 				<%= link_to "New", new_path %>
 			</li>
 
