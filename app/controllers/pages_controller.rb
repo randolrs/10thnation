@@ -11,7 +11,7 @@ class PagesController < ApplicationController
 
 		else
 
-			@posts = Post.all.sort_by(&:vote_count).reverse
+			@posts = Post.all.sort_by(&:vote_count).reverse.paginate(:page => params[:page], :per_page => 20)
 		end
 
 		i = 0
