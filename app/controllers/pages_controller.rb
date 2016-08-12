@@ -4,6 +4,8 @@ class PagesController < ApplicationController
 
 		@page = "home"
 
+		@posts = current_user.hot_posts.paginate(:page => params[:page], :per_page => 20)
+
 	end
 
 	def welcome

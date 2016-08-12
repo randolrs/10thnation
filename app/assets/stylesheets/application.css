@@ -137,3 +137,7 @@ span.money-green-span{
 .default-off{
   display: none;
 }
+
+.center{
+    text-align: center;
+}
