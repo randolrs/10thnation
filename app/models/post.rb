@@ -38,7 +38,14 @@ class Post < ActiveRecord::Base
 
 	def ctr
 
-		ctr = (self.post_click_throughs.count.to_f / self.impressions.count.to_f)*100
+		if self.post_click_throughs.count > 0 and self.impressions.count
+			
+			ctr = (self.post_click_throughs.count.to_f / self.impressions.count.to_f)*100
+
+		else
+
+			ctr = 0
+		end
 
 		return ctr.to_i
 
@@ -46,7 +53,14 @@ class Post < ActiveRecord::Base
 
 	def avg_click_through_position
 
-		avg = self.post_click_throughs.sum("position") / self.post_click_throughs.count
+		if self.post_click_throughs.count > 0 and self.post_click_throughs.count > 0
+
+			avg = self.post_click_throughs.sum("position") / self.post_click_throughs.count
+
+		else
+
+			avg = 0
+		end
 
 		#avg = self.post_click_throughs.sum("position") / self.post_click_throughs.count
 
