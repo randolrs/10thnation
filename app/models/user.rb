@@ -67,12 +67,14 @@ class User < ActiveRecord::Base
 		self.communities_array.each do |community|
 			
 			community.posts.each do |post|
+
 				@new_posts << post
+
 			end
 			
 		end
 
-		return @new_posts
+		return @new_posts.sort_by(&:created_at).reverse
 	end
 
 	def followers
