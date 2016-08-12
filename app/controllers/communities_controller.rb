@@ -47,6 +47,8 @@ class CommunitiesController < ApplicationController
   # GET /communities/1.json
   
   def show
+
+    @position = 0
     
     if params[:id]
      
@@ -62,6 +64,8 @@ class CommunitiesController < ApplicationController
 
 
   def profile
+
+    @position = 0
     
     if params[:url_name]
 

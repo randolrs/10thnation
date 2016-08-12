@@ -10,6 +10,8 @@ class PostsController < ApplicationController
   # GET /posts/1
   # GET /posts/1.json
   def show
+
+    @position = 0
     
     @comment = Comment.new
     @commentable = true
