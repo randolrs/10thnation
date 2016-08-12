@@ -421,4 +421,20 @@ span.user-display-name{
 
 
 
+.cta-container{
+	display: block;
+	text-align: center;
+
+	a{
+		padding:10px 0px;
+		display:inline-block;
+		width: 300px;
+		border-radius: 50px;
+		font-size: 30px;
+		text-shadow: 0px 1px 2px #222;
+	}
+}
+
+
+
 

@@ -91,6 +91,8 @@ a:visited {color:#eee;}
     position: absolute;
     height:100%;
     padding: 20px;
+
+
 }
 
 .content-box{
@@ -102,6 +104,10 @@ a:visited {color:#eee;}
   text-align:justify;
 
 
+}
+
+.content-box.black{
+    max-width: 950px;
 }
 
 .content-section{
