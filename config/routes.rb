@@ -19,7 +19,7 @@ Rails.application.routes.draw do
 
   get 'setup' => "pages#setup"
 
-  post 'community_setup' => "pages#community_setup"
+  post 'community_setup' => "communities#community_setup"
 
   get 'dashboard' => "pages#dashboard"
 

@@ -1,11 +1,47 @@
 class CommunitiesController < ApplicationController
   before_action :set_community, only: [:show, :edit, :update, :destroy]
 
+  skip_before_filter :verify_authenticity_token #####****this is a workaround with POSSIBLE SECURITY GAPS####***
+
   # GET /communities
   # GET /communities.json
   def index
     @communities = Community.all
   end
+
+
+
+
+  def community_setup 
+
+    if user_signed_in?
+
+      params.each do |key|
+
+        if Community.exists?(:name => key[0])
+
+          @community = Community.where(:name => key[0]).first
+
+          @following = Following.new
+
+              @following.update(:following_id => @community.id, :follower_id => current_user.id, :active => true)
+
+              @following.save
+
+        end
+
+      end
+
+      current_user.update(:onboarded => true)
+
+      current_user.save
+
+    end
+
+    redirect_to root_path
+
+  end
+
 
   # GET /communities/1
   # GET /communities/1.json
