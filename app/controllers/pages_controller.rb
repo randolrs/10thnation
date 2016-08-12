@@ -7,16 +7,16 @@ class PagesController < ApplicationController
 		@page = "home"
 
 		if current_user
-			@posts = current_user.hot_posts.paginate(:page => params[:page], :per_page => 20)
+			@top_posts = current_user.hot_posts.paginate(:page => params[:page], :per_page => 20)
 
 		else
 
-			@posts = Post.all.sort_by(&:vote_count).reverse.paginate(:page => params[:page], :per_page => 20)
+			@top_posts = Post.all.sort_by(&:vote_count).reverse.paginate(:page => params[:page], :per_page => 20)
 		end
 
 		i = 0
 
-		@posts.each do |post|
+		@top_posts.each do |post|
 
 			i = i + 1
 

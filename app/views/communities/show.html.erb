@@ -68,17 +68,29 @@
 
       <div class="column-content" id="column_content_posts">
 
-        <% @top_posts.each do |post| %>
+        <% if @top_posts.count > 0 %>
 
-          <%= render :partial => 'posts/list', :locals => {:post => post} %>
+          <% @top_posts.each do |post| %>
 
-        <%end%>
+            <%= render :partial => 'posts/list', :locals => {:post => post} %>
 
-        <div class="center">
-            
-            <%= will_paginate @posts, renderer: BootstrapPagination::Rails %>
+          <%end%>
 
-        </div>
+          <div class="center">
+              
+              <%= will_paginate @posts, renderer: BootstrapPagination::Rails %>
+
+          </div>
+
+        <% else %>
+
+          <div class="empty-content">
+
+            <p>Nothing to see here!</p>
+
+          </div>
+
+        <% end %>
 
       </div>
 
