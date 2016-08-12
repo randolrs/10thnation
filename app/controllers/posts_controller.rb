@@ -202,15 +202,33 @@ class PostsController < ApplicationController
 
           @click_through = PostClickThrough.new
 
-          @click_through.update(:post_id => params[:post_id], :user_id => current_user.id, :position => 2)
+          @click_through.update(:post_id => params[:post_id], :user_id => current_user.id, :position => params[:position])
 
-          @click_through.save
+          if @click_through.save
+
+            respond_to do |format|
+              format.js { render json: { :status => "success" } , content_type: 'text/json' }
+            end
+
+          else
+
+            respond_to do |format|
+              format.js { render json: { :status => "failure"} , content_type: 'text/json' }
+            end
+
+          end
 
         end
 
 
       end
 
+    else
+
+
+      respond_to do |format|
+        format.js { render json: { :status => "failure" } , content_type: 'text/json' }
+      end
 
     end
 

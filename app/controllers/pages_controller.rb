@@ -2,6 +2,8 @@ class PagesController < ApplicationController
 
 	def home
 
+		@position = 0
+
 		@page = "home"
 
 		@posts = current_user.hot_posts.paginate(:page => params[:page], :per_page => 20)

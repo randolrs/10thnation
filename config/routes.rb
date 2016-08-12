@@ -35,7 +35,7 @@ Rails.application.routes.draw do
 
   get '/comment/:comment_id/down_vote', :to => 'comments#down_vote'
 
-  get '/click/:post_id/', :to => 'posts#click'
+  get '/click/:post_id/:position', :to => 'posts#click'
 
   #devise_for :users, :path_names => { :sign_up => "signup", :sign_in => "login", :edit_registration => "settings"}
 

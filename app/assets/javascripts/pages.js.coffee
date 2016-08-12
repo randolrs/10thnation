@@ -351,10 +351,10 @@ ready = ->
 			checkBox.prop("checked", !checkBox.prop("checked"))
 		
 		$('a.post-title-link').click (event), ->
-			alert("click")
-			post_id = 2
+			post_id = $(@).data('post-id')
+			position = $(@).data('position')
 			$.ajax
-				url: "/click/#{post_id}/", format: 'js'
+				url: "/click/#{post_id}/#{position}/", format: 'js'
 				type: "GET"
 
 $(document).on('turbolinks:load', ready)

@@ -8,6 +8,10 @@ class Post < ActiveRecord::Base
 
 	has_many :comments
 
+	has_many :post_click_throughs
+
+	has_many :impressions
+
 	has_attached_file :image, 
 	:styles => { :medium => "194x194#", :small => "70x70#", :thumb => "30x30#"},
 	:default_url => 'missing_:style.png',
@@ -29,6 +33,24 @@ class Post < ActiveRecord::Base
 		down_votes = self.post_votes.where(:is_down => true).count
 		calc = up_votes - down_votes
 		return calc
+
+	end
+
+	def ctr
+
+		ctr = (self.post_click_throughs.count.to_f / self.impressions.count.to_f)*100
+
+		return ctr.to_i
+
+	end
+
+	def avg_click_through_position
+
+		avg = self.post_click_throughs.sum("position") / self.post_click_throughs.count
+
+		#avg = self.post_click_throughs.sum("position") / self.post_click_throughs.count
+
+		return avg
 
 	end
 
