@@ -1,17 +1,20 @@
 
 <%= render 'headers/simple_header' %>
 
-<div class="content">
+<div class="content black">
 
-	<div class="content-box">
+	<div class="content-box black">
 
-		<h3>What are you interested in?</h3>
-
-
-		<%= link_to "Finish!", root_path %>
+		<h1>What are you interested in?</h1>
+		
+		<div class="cta-container">
+			
+			<%= link_to "Finish!", root_path, class: "get-started-cta green-text-background" %>
+			
+		</div>
 
 	</div>
 
-
 </div>
+
 
