@@ -6,7 +6,13 @@ class PagesController < ApplicationController
 
 		@page = "home"
 
-		@posts = current_user.hot_posts.paginate(:page => params[:page], :per_page => 20)
+		if current_user
+			@posts = current_user.hot_posts.paginate(:page => params[:page], :per_page => 20)
+
+		else
+
+			@posts = Post.all.sort_by(&:vote_count).reverse
+		end
 
 		i = 0
 
@@ -16,8 +22,16 @@ class PagesController < ApplicationController
 
 			@impression = Impression.new
 
-			@impression.update(:user_id => current_user.id, :post_id => post.id, :position => i)
+			if user_signed_in?
+				
+				@impression.update(:user_id => current_user.id, :post_id => post.id, :position => i)
+			
+			else
 
+				@impression.update(:user_id => nil, :post_id => post.id, :position => i)
+			
+			end
+			
 			@impression.save
 
 		end
