@@ -58,13 +58,25 @@
 
 		<div class="side-content-column">
 
-			<h4>Recommended for You</h4>
+			<h4>My Communities</h4>
 
 			<div class="content-frame stacked">
 
 				<div class="content-panel">
 
-					<p>Improve Your Account</p>
+					<ul>
+
+						<% current_user.communities_array.each do |community| %>
+
+							<li>
+
+								<a href="<%= community_page_path(community.url_name) %>"><%= image_tag community.image.url(:medium), class: "tiny-user-image" %><%= community.name %></a>
+
+							</li>
+							
+						<%end%>
+
+					</ul>
 
 				</div>
 
