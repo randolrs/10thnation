@@ -534,7 +534,7 @@ input.dashboard-post-input:focus{
 
 .main-content-column{
 	
-	width: 950px;
+	width: 750px;
     padding: 0px;
     display: table-cell;
     vertical-align: top;
@@ -568,8 +568,9 @@ input.dashboard-post-input:focus{
 .side-content-column{
 	
 	display: table-cell;
-	padding: 0px 20px;
+	padding-left: 20px;
     vertical-align: top;
+    width: 450px;
     
     h4{
     	font-size: 24px;
@@ -643,7 +644,7 @@ ul.pagination{
 
 }
 
-@media only screen and (max-width: 1300px) {
+@media only screen and (max-width: 800px) {
 	
 	body{
 
@@ -736,7 +737,7 @@ ul.pagination{
 
 }
 
-@media only screen and (max-width: 1025px) {
+@media only screen and (max-width: 800px) {
 	
 	body{
 
@@ -905,7 +906,7 @@ ul.pagination{
 
 }
 
-@media only screen and (max-width: 1025px) {
+@media only screen and (max-width: 800px) {
 	
 	body{
 
@@ -1020,7 +1021,7 @@ ul.pagination{
 
 					li{
 						
-						padding: 10px;
+						
 						
 						
 					}
