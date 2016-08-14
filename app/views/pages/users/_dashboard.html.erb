@@ -63,20 +63,23 @@
 			<div class="content-frame stacked">
 
 				<div class="content-panel">
-
-					<ul>
-
-						<% current_user.communities_array.each do |community| %>
-
-							<li>
-
-								<a href="<%= community_page_path(community.url_name) %>"><%= image_tag community.image.url(:medium), class: "tiny-user-image" %><%= community.name %></a>
-
-							</li>
+					<% if user_signed_in? %>
+						
+						<ul>
 							
-						<%end%>
+							<% current_user.communities_array.each do |community| %>
 
-					</ul>
+								<li>
+
+									<a href="<%= community_page_path(community.url_name) %>"><%= image_tag community.image.url(:medium), class: "tiny-user-image" %><%= community.name %></a>
+
+								</li>
+
+							<%end%>
+
+						</ul>
+
+					<%end%>
 
 				</div>
 
