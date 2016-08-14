@@ -5,19 +5,20 @@
 .post-frame{
 
 	
-    margin-bottom: 15px;
+    margin-bottom: 20px;
     position: relative;
     padding-left: 70px;
 
     .post-content{
     	background: #111;
-    	box-shadow: inset 0px 1px 1px #444;
     	border: 1px solid #111;
+    	box-shadow: 0px 1px 3px #444;
     }
 
 	.post-panel{
 		display:table-cell;
 		vertical-align: top;
+		box-shadow: inset 0px 1px 1px #444;
 
 		span.post-title{
     		font-size: 30px;
