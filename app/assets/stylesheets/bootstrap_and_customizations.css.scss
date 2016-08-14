@@ -29,10 +29,10 @@ nav.header-fixed{
     position:fixed;
     background: #111;
     width:100%;
-    border:none;
     z-index: 99999999;
-    box-shadow: inset 0px 2px 5px #333;
-    border: 1px solid #000;
+    border: none;
+    border-bottom: 1px solid #000;
+    border-radius: 0px;
 }
 
 .navbar-default .navbar-brand {
