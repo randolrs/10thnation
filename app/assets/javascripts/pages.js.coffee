@@ -6,29 +6,29 @@ ready = ->
 		
 	jQuery ->
 
-		$(".full-content-container").click (event), ->
+		$(".full-content-container").click (window.event), ->
 			window.location.href = "/";
 
-		$(".full-content").click (event), ->
-			event.stopPropagation()
+		$(".full-content").click (window.event), ->
+			window.event.stopPropagation()
 
-		$("span.dismiss-modal").click (event), ->
+		$("span.dismiss-modal").click (window.event), ->
 			modal = $('body').find(".modal-container")
 			contentContainer = $('body').find(".content")
 			contentContainer.removeClass('blurred')
 			$('body').removeClass('no-scroll')
 			modal.hide()
 
-		$(".modal-container").click (event), ->
+		$(".modal-container").click (window.event), ->
 			contentContainer = $('body').find(".content")
 			contentContainer.removeClass('blurred')
 			$('body').removeClass('no-scroll')
 			$(@).hide()
 
-		$(".modal-content").click (event), ->
-			event.stopPropagation()
+		$(".modal-content").click (window.event), ->
+			window.event.stopPropagation()
 
-		$(".login-modal-cta").click (event), ->
+		$(".login-modal-cta").click (window.event), ->
 			loginModal = $('body').find(".modal-container#login-form")
 			loginModal.find("input#user_email").focus()
 			contentContainer = $('body').find(".content")
@@ -36,76 +36,45 @@ ready = ->
 			$('body').addClass('no-scroll')
 			loginModal.fadeIn()
 
-		$(".join-modal-cta").click (event), ->
+		$(".join-modal-cta").click (window.event), ->
 			joinModal = $('body').find(".modal-container#join-form")
 			contentContainer = $('body').find(".content")
 			contentContainer.addClass('blurred')
 			$('body').addClass('no-scroll')
 			joinModal.fadeIn()
 
-		$("#upload-track-cta").click (event), ->
-			trackModal = $('body').find(".modal-container#upload-track-form")
-			contentContainer = $('body').find(".content")
-			contentContainer.addClass('blurred')
-			$('body').addClass('no-scroll')
-			trackModal.fadeIn()
-
-		$(".account-settings-modal").click (event), ->
+		$(".account-settings-modal").click (window.event), ->
 			settingsModal = $('body').find(".modal-container#settings")
 			contentContainer = $('body').find(".content")
 			contentContainer.addClass('blurred')
 			$('body').addClass('no-scroll')
 			settingsModal.fadeIn()
 
-		$(".content-panel.tracks").click (event), ->
-			$('body').find('.audio-player').show()
 
-		$("#basic-option").click (event), ->
+		$("#basic-option").click (window.event), ->
 			$('body').find('#cancel-account').hide()
 			$('body').find('form#payments').hide()
 			$('body').find('form#basic').show()
-			event.preventDefault()
+			window.event.preventDefault()
 
-		$("#payment-option").click (event), ->
+		$("#payment-option").click (window.event), ->
 			$('body').find('form#basic').hide()
 			$('body').find('#cancel-account').hide()
 			$('body').find('form#payments').show()
-			event.preventDefault()
+			window.event.preventDefault()
 
-		$("#cancel-option").click (event), ->
+		$("#cancel-option").click (window.event), ->
 			$('body').find('form#basic').hide()
 			$('body').find('form#payments').hide()
 			$('body').find('#cancel-account').show()
-			event.preventDefault()
+			window.event.preventDefault()
 
-		$(".update-profile").click (event), ->
+		$(".update-profile").click (window.event), ->
 			thisForm = $(@).parent().parent().parent()
 			mainForm = thisForm.find('.main-form')
 			confirmForm = thisForm.find('.confirm-form')
 			mainForm.hide()
 			confirmForm.show()
-
-		$(".content").click (event), ->
-			audioContainer = $('body').find('.audio-player')
-			audioPlayer = audioContainer.find('audio.audio-player-object')
-			audioHeader = audioContainer.find('h3.audio-player-header')
-			audioFunctions = audioContainer.find('.audio-functions')
-			if audioContainer.is(":visible")
-				audioPlayer.trigger('pause')
-				audioHeader.addClass("clickable")
-				audioFunctions.slideUp()
-
-		$("h3.audio-player-header").click (event), ->
-			audioContainer = $('body').find('.audio-player')
-			audioPlayer = audioContainer.find('audio.audio-player-object')
-			audioFunctions = audioContainer.find('.audio-functions')
-			audioFunctions.slideDown()
-			audioPlayer.trigger('play')
-
-		$("div.content-panel.tracks").click (event), ->
-			audioContainer = $('body').find('.audio-player')
-			audioFunctions = audioContainer.find('.audio-functions')
-			audioFunctions.show()
 
 		$("a.tabular-option").click (event), ->
 			$(@).parent().parent().parent().find('a.active').removeClass('active')
@@ -116,13 +85,13 @@ ready = ->
 			$('body').find('.content').addClass('blurred')
 			$('body').addClass('no-scroll')
 
-		$(".dashboard-profile.clickable").click (event), ->
+		$(".dashboard-profile.clickable").click (window.event), ->
 			$(@).children(".dashboard-profile-content").slideToggle()
 
-		$(".dashboard-profile-content").click (event), ->
-			event.stopPropagation()
+		$(".dashboard-profile-content").click (window.event), ->
+			window.event.stopPropagation()
 
-		$(".subscribe-cta").click (event), ->
+		$(".subscribe-cta").click (window.event), ->
 			followingID = $(@).data('following-id')
 			$me = $(@)
 			$.ajax
@@ -137,7 +106,7 @@ ready = ->
 			  			$me.text("Follow")
 			  			$me.removeClass('following')
 		
-		$(".follow-community-cta").click (event), ->
+		$(".follow-community-cta").click (window.event), ->
 			followingID = $(@).data('following-id')
 			$me = $(@)
 			all_follow_ctas = $('body').find('.follow-community-cta')
@@ -151,7 +120,7 @@ ready = ->
 			  		else
 			  			all_follow_ctas.removeClass('following')
 		
-		$(".follow-community-from-list").click (event), ->
+		$(".follow-community-from-list").click (window.event), ->
 			followingID = $(@).data('following-id')
 			$me = $(@)
 			$.ajax
@@ -164,7 +133,7 @@ ready = ->
 			  		else
 			  			$me.removeClass('following')
 
-		$(".profile-header-option").click (event), ->
+		$(".profile-header-option").click (window.event), ->
 			$('body').find('.profile-header-option.active').removeClass("active")
 			$(@).addClass("active")
 			if $(@).data('option-type') == "posts"
@@ -198,51 +167,51 @@ ready = ->
 				$('body').find('.column-content#column_content_posts').hide()
 				$('body').find('.column-content#column_content_subscribers').hide()		
 
-		$('input.dashboard-post-input').on 'focusin', (event), ->
+		$('input.dashboard-post-input').on 'focusin', (window.event), ->
 			submitButton = $(@).parent().find('.dashboard-post-submit')
 			submitButton.show()
 
-		$('input.dashboard-post-input').on 'focusout', (event), ->
+		$('input.dashboard-post-input').on 'focusout', (window.event), ->
 			postText = $(@).val()
 			if postText.length == 0
 				submitButton = $(@).parent().find('.dashboard-post-submit')
 				submitButton.hide()
 			end
 
-		$('a.comment-cta-modal').click (event), ->
+		$('a.comment-cta-modal').click (window.event), ->
 			$('body').find('.modal-container#comment-form').show()
 			$('body').find('.content').addClass('blurred')
 			$('body').addClass('no-scroll')
 
-		$('button.navbar-toggle.menu').click (event), ->
+		$('button.navbar-toggle.menu').click (window.event), ->
 			$('body').find("#sidebar-nav").show()
 			contentContainer = $('body').find(".content")
 			contentContainer.addClass('blurred')
 			$('body').addClass('no-scroll')
 
-		$('a.dropdown-toggle').click (event), ->
+		$('a.dropdown-toggle').click (window.event), ->
 			$('body').find("#sidebar-nav").show()
 			contentContainer = $('body').find(".content")
 			contentContainer.addClass('blurred')
 			$('body').addClass('no-scroll')
 
-		$('.sidebar').click (event), ->
-			event.stopPropagation()
+		$('.sidebar').click (window.event), ->
+			window.event.stopPropagation()
 
-		$('span.post').click (event), ->
+		$('span.post').click (window.event), ->
 			$('body').find("#post-form").show()
 			$('body').find('.content').addClass('blurred')
 			$('body').addClass('no-scroll')
 
-		$('button.navbar-toggle.right').click (event), ->
+		$('button.navbar-toggle.right').click (window.event), ->
 			$('body').find("#post-form").show()
 			$('body').find('.content').addClass('blurred')
 			$('body').addClass('no-scroll')
 
-		$('.comment-reply-cta').click (event), ->
+		$('.comment-reply-cta').click (window.event), ->
 			$(@).parent().next(".comment-response").show()
 
-		$('span.up-vote-enabled').click (event), ->
+		$('span.up-vote-enabled').click (window.event), ->
 			post_id = $(@).data('post-id')
 			me = $(@)
 			down_vote = $(@).parent().parent().find('.down-vote')
@@ -259,7 +228,7 @@ ready = ->
 						if data.change == 2
 							down_vote.removeClass('active')
 
-		$('span.down-vote-enabled').click (event), ->
+		$('span.down-vote-enabled').click (window.event), ->
 			post_id = $(@).data('post-id')
 			me = $(@)
 			up_vote = $(@).parent().parent().find('.up-vote')
@@ -276,21 +245,21 @@ ready = ->
 						if data.change == -2
 							up_vote.removeClass('active')
 
-		$("span.up-vote-disabled").click (event), ->
+		$("span.up-vote-disabled").click (window.event), ->
 			joinModal = $('body').find(".modal-container#join-form")
 			contentContainer = $('body').find(".content")
 			contentContainer.addClass('blurred')
 			$('body').addClass('no-scroll')
 			joinModal.fadeIn()
 
-		$("span.down-vote-disabled").click (event), ->
+		$("span.down-vote-disabled").click (window.event), ->
 			joinModal = $('body').find(".modal-container#join-form")
 			contentContainer = $('body').find(".content")
 			contentContainer.addClass('blurred')
 			$('body').addClass('no-scroll')
 			joinModal.fadeIn()
 
-		$('span.comment-up-vote-cta').click (event), ->
+		$('span.comment-up-vote-cta').click (window.event), ->
 			comment_id = $(@).data('comment-id')
 			me = $(@)
 			down_vote = $(@).parent().find('.comment-down-vote')
@@ -307,7 +276,7 @@ ready = ->
 						if data.change == 2
 							down_vote.removeClass('active')
 
-		$('span.comment-down-vote-cta').click (event), ->
+		$('span.comment-down-vote-cta').click (window.event), ->
 			comment_id = $(@).data('comment-id')
 			me = $(@)
 			up_vote = $(@).parent().find('.comment-up-vote')
@@ -324,29 +293,29 @@ ready = ->
 						if data.change == -2
 							up_vote.removeClass('active')
 
-		$('p.post-type').click (event), ->
+		$('p.post-type').click (window.event), ->
 			$(@).parent().hide()
 			$('.post-modal-form').fadeIn()
 
-		$('p.post-type#link').click (event), ->
+		$('p.post-type#link').click (window.event), ->
 			$('.form-header#link').show()
 			$('input.new-post-submit')
 
-		$('p.post-type#photo').click (event), ->
+		$('p.post-type#photo').click (window.event), ->
 			$('.form-header#photo').show()
 			$('.post-modal-form').find('input#post_url').attr("placeholder", "Link to Photo")
 
-		$('p.post-type#discussion').click (event), ->
+		$('p.post-type#discussion').click (window.event), ->
 			$('.form-header#discussion').show()
 			$('.post-modal-form').find('input#post_url').hide()
 			$('.post-modal-form').find('input#post_title').attr("placeholder", "Topic")
 
-		$('span.community-select-span').click (event), ->
+		$('span.community-select-span').click (window.event), ->
 			$(@).toggleClass('selected')
 			checkBox = $(@).parent().find('.community-select-input')
 			checkBox.prop("checked", !checkBox.prop("checked"))
 		
-		$('a.post-title-link').click (event), ->
+		$('a.post-title-link').click (window.event), ->
 			post_id = $(@).data('post-id')
 			position = $(@).data('position')
 			$.ajax
