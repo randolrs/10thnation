@@ -17,25 +17,25 @@ class PagesController < ApplicationController
 
 		i = 0
 
-		@posts.each do |post|
+		# @posts.each do |post|
 
-			i = i + 1
+		# 	i = i + 1
 
-			@impression = Impression.new
+		# 	@impression = Impression.new
 
-			if user_signed_in?
+		# 	if user_signed_in?
 				
-				@impression.update(:user_id => current_user.id, :post_id => post.id, :position => i)
+		# 		@impression.update(:user_id => current_user.id, :post_id => post.id, :position => i)
 			
-			else
+		# 	else
 
-				@impression.update(:user_id => nil, :post_id => post.id, :position => i)
+		# 		@impression.update(:user_id => nil, :post_id => post.id, :position => i)
 			
-			end
+		# 	end
 
-			@impression.save
+		# 	@impression.save
 
-		end
+		# end
 
 	end
 
